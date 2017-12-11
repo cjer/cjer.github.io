@@ -1,0 +1,2090 @@
+<!doctype html>
+<html lang="">
+<head>
+	<meta charset="utf-8"/>
+	<title>associlate</title>
+	<meta name="author" content="Dan Bareket">
+
+
+	<link rel="stylesheet" href="/theme/css/main.css" type="text/css" />
+
+
+
+
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+    <script type="text/javascript">
+      init_mathjax = function()
+      {
+        if (window.MathJax)
+        {
+          // MathJax loaded
+          MathJax.Hub.Config(
+          {
+            tex2jax:
+            {
+              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+              displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS":
+            {
+                scale: 100,
+                styles: {'.MathJax_Display': {"margin": 0}, '.MathJax':{"font-size":  "100%", "color": "black"}}
+            }
+            styles: {'.MathJax_Preview':{"font-size":  "100%", "color": "black"}}
+          });
+          MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        }
+      }
+      init_mathjax();
+    </script>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+	  <header role="banner">
+	    <div class="feeds">
+	    </div>
+		<a href="" class="title">associlate</a>
+      </header>
+
+	  <div class="wrapper">
+
+		  <div role="main" class="content">
+
+
+
+      <article>
+        <h1><a href="/my-fist-post-with-my-stuff-notebook.html">My fist post with my stuff notebook</a></h1>
+        <h1>About</h1>
+<p>Here we can write the blog post using markdown</p>
+<p>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="s1">&#39;talk&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Timezone-manipulations">Timezone manipulations<a class="anchor-link" href="#Timezone-manipulations">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pytz</span>
+<span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+
+<span class="k">def</span> <span class="nf">convert_tz</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">tz_from</span> <span class="o">=</span> <span class="s1">&#39;Asia/Tel_Aviv&#39;</span><span class="p">,</span> <span class="n">tz_to</span> <span class="o">=</span> <span class="s1">&#39;US/Eastern&#39;</span><span class="p">):</span>
+    <span class="n">tz_from</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="n">tz_from</span><span class="p">)</span>
+    <span class="n">tz_to</span> <span class="o">=</span> <span class="n">pytz</span><span class="o">.</span><span class="n">timezone</span><span class="p">(</span><span class="n">tz_to</span><span class="p">)</span>
+    <span class="c1"># So the timestamp needs to be localized</span>
+    <span class="n">ts_local</span> <span class="o">=</span> <span class="n">tz_from</span><span class="o">.</span><span class="n">localize</span><span class="p">(</span><span class="n">ts</span><span class="p">)</span>
+    <span class="c1"># Once localized, it can be expressed in other timezone regions, e.g.: </span>
+    <span class="n">ts_new_locale</span> <span class="o">=</span> <span class="n">ts_local</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">tz_to</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ts_new_locale</span>
+
+<span class="n">convert_tz</span><span class="p">(</span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[14]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;2017-11-06T05:13:38.260409-05:00&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pytz</span><span class="o">.</span><span class="n">all_timezones</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[9]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;Africa/Abidjan&#39;,
+ &#39;Africa/Accra&#39;,
+ &#39;Africa/Addis_Ababa&#39;,
+ &#39;Africa/Algiers&#39;,
+ &#39;Africa/Asmara&#39;,
+ &#39;Africa/Asmera&#39;,
+ &#39;Africa/Bamako&#39;,
+ &#39;Africa/Bangui&#39;,
+ &#39;Africa/Banjul&#39;,
+ &#39;Africa/Bissau&#39;,
+ &#39;Africa/Blantyre&#39;,
+ &#39;Africa/Brazzaville&#39;,
+ &#39;Africa/Bujumbura&#39;,
+ &#39;Africa/Cairo&#39;,
+ &#39;Africa/Casablanca&#39;,
+ &#39;Africa/Ceuta&#39;,
+ &#39;Africa/Conakry&#39;,
+ &#39;Africa/Dakar&#39;,
+ &#39;Africa/Dar_es_Salaam&#39;,
+ &#39;Africa/Djibouti&#39;,
+ &#39;Africa/Douala&#39;,
+ &#39;Africa/El_Aaiun&#39;,
+ &#39;Africa/Freetown&#39;,
+ &#39;Africa/Gaborone&#39;,
+ &#39;Africa/Harare&#39;,
+ &#39;Africa/Johannesburg&#39;,
+ &#39;Africa/Juba&#39;,
+ &#39;Africa/Kampala&#39;,
+ &#39;Africa/Khartoum&#39;,
+ &#39;Africa/Kigali&#39;,
+ &#39;Africa/Kinshasa&#39;,
+ &#39;Africa/Lagos&#39;,
+ &#39;Africa/Libreville&#39;,
+ &#39;Africa/Lome&#39;,
+ &#39;Africa/Luanda&#39;,
+ &#39;Africa/Lubumbashi&#39;,
+ &#39;Africa/Lusaka&#39;,
+ &#39;Africa/Malabo&#39;,
+ &#39;Africa/Maputo&#39;,
+ &#39;Africa/Maseru&#39;,
+ &#39;Africa/Mbabane&#39;,
+ &#39;Africa/Mogadishu&#39;,
+ &#39;Africa/Monrovia&#39;,
+ &#39;Africa/Nairobi&#39;,
+ &#39;Africa/Ndjamena&#39;,
+ &#39;Africa/Niamey&#39;,
+ &#39;Africa/Nouakchott&#39;,
+ &#39;Africa/Ouagadougou&#39;,
+ &#39;Africa/Porto-Novo&#39;,
+ &#39;Africa/Sao_Tome&#39;,
+ &#39;Africa/Timbuktu&#39;,
+ &#39;Africa/Tripoli&#39;,
+ &#39;Africa/Tunis&#39;,
+ &#39;Africa/Windhoek&#39;,
+ &#39;America/Adak&#39;,
+ &#39;America/Anchorage&#39;,
+ &#39;America/Anguilla&#39;,
+ &#39;America/Antigua&#39;,
+ &#39;America/Araguaina&#39;,
+ &#39;America/Argentina/Buenos_Aires&#39;,
+ &#39;America/Argentina/Catamarca&#39;,
+ &#39;America/Argentina/ComodRivadavia&#39;,
+ &#39;America/Argentina/Cordoba&#39;,
+ &#39;America/Argentina/Jujuy&#39;,
+ &#39;America/Argentina/La_Rioja&#39;,
+ &#39;America/Argentina/Mendoza&#39;,
+ &#39;America/Argentina/Rio_Gallegos&#39;,
+ &#39;America/Argentina/Salta&#39;,
+ &#39;America/Argentina/San_Juan&#39;,
+ &#39;America/Argentina/San_Luis&#39;,
+ &#39;America/Argentina/Tucuman&#39;,
+ &#39;America/Argentina/Ushuaia&#39;,
+ &#39;America/Aruba&#39;,
+ &#39;America/Asuncion&#39;,
+ &#39;America/Atikokan&#39;,
+ &#39;America/Atka&#39;,
+ &#39;America/Bahia&#39;,
+ &#39;America/Bahia_Banderas&#39;,
+ &#39;America/Barbados&#39;,
+ &#39;America/Belem&#39;,
+ &#39;America/Belize&#39;,
+ &#39;America/Blanc-Sablon&#39;,
+ &#39;America/Boa_Vista&#39;,
+ &#39;America/Bogota&#39;,
+ &#39;America/Boise&#39;,
+ &#39;America/Buenos_Aires&#39;,
+ &#39;America/Cambridge_Bay&#39;,
+ &#39;America/Campo_Grande&#39;,
+ &#39;America/Cancun&#39;,
+ &#39;America/Caracas&#39;,
+ &#39;America/Catamarca&#39;,
+ &#39;America/Cayenne&#39;,
+ &#39;America/Cayman&#39;,
+ &#39;America/Chicago&#39;,
+ &#39;America/Chihuahua&#39;,
+ &#39;America/Coral_Harbour&#39;,
+ &#39;America/Cordoba&#39;,
+ &#39;America/Costa_Rica&#39;,
+ &#39;America/Creston&#39;,
+ &#39;America/Cuiaba&#39;,
+ &#39;America/Curacao&#39;,
+ &#39;America/Danmarkshavn&#39;,
+ &#39;America/Dawson&#39;,
+ &#39;America/Dawson_Creek&#39;,
+ &#39;America/Denver&#39;,
+ &#39;America/Detroit&#39;,
+ &#39;America/Dominica&#39;,
+ &#39;America/Edmonton&#39;,
+ &#39;America/Eirunepe&#39;,
+ &#39;America/El_Salvador&#39;,
+ &#39;America/Ensenada&#39;,
+ &#39;America/Fort_Nelson&#39;,
+ &#39;America/Fort_Wayne&#39;,
+ &#39;America/Fortaleza&#39;,
+ &#39;America/Glace_Bay&#39;,
+ &#39;America/Godthab&#39;,
+ &#39;America/Goose_Bay&#39;,
+ &#39;America/Grand_Turk&#39;,
+ &#39;America/Grenada&#39;,
+ &#39;America/Guadeloupe&#39;,
+ &#39;America/Guatemala&#39;,
+ &#39;America/Guayaquil&#39;,
+ &#39;America/Guyana&#39;,
+ &#39;America/Halifax&#39;,
+ &#39;America/Havana&#39;,
+ &#39;America/Hermosillo&#39;,
+ &#39;America/Indiana/Indianapolis&#39;,
+ &#39;America/Indiana/Knox&#39;,
+ &#39;America/Indiana/Marengo&#39;,
+ &#39;America/Indiana/Petersburg&#39;,
+ &#39;America/Indiana/Tell_City&#39;,
+ &#39;America/Indiana/Vevay&#39;,
+ &#39;America/Indiana/Vincennes&#39;,
+ &#39;America/Indiana/Winamac&#39;,
+ &#39;America/Indianapolis&#39;,
+ &#39;America/Inuvik&#39;,
+ &#39;America/Iqaluit&#39;,
+ &#39;America/Jamaica&#39;,
+ &#39;America/Jujuy&#39;,
+ &#39;America/Juneau&#39;,
+ &#39;America/Kentucky/Louisville&#39;,
+ &#39;America/Kentucky/Monticello&#39;,
+ &#39;America/Knox_IN&#39;,
+ &#39;America/Kralendijk&#39;,
+ &#39;America/La_Paz&#39;,
+ &#39;America/Lima&#39;,
+ &#39;America/Los_Angeles&#39;,
+ &#39;America/Louisville&#39;,
+ &#39;America/Lower_Princes&#39;,
+ &#39;America/Maceio&#39;,
+ &#39;America/Managua&#39;,
+ &#39;America/Manaus&#39;,
+ &#39;America/Marigot&#39;,
+ &#39;America/Martinique&#39;,
+ &#39;America/Matamoros&#39;,
+ &#39;America/Mazatlan&#39;,
+ &#39;America/Mendoza&#39;,
+ &#39;America/Menominee&#39;,
+ &#39;America/Merida&#39;,
+ &#39;America/Metlakatla&#39;,
+ &#39;America/Mexico_City&#39;,
+ &#39;America/Miquelon&#39;,
+ &#39;America/Moncton&#39;,
+ &#39;America/Monterrey&#39;,
+ &#39;America/Montevideo&#39;,
+ &#39;America/Montreal&#39;,
+ &#39;America/Montserrat&#39;,
+ &#39;America/Nassau&#39;,
+ &#39;America/New_York&#39;,
+ &#39;America/Nipigon&#39;,
+ &#39;America/Nome&#39;,
+ &#39;America/Noronha&#39;,
+ &#39;America/North_Dakota/Beulah&#39;,
+ &#39;America/North_Dakota/Center&#39;,
+ &#39;America/North_Dakota/New_Salem&#39;,
+ &#39;America/Ojinaga&#39;,
+ &#39;America/Panama&#39;,
+ &#39;America/Pangnirtung&#39;,
+ &#39;America/Paramaribo&#39;,
+ &#39;America/Phoenix&#39;,
+ &#39;America/Port-au-Prince&#39;,
+ &#39;America/Port_of_Spain&#39;,
+ &#39;America/Porto_Acre&#39;,
+ &#39;America/Porto_Velho&#39;,
+ &#39;America/Puerto_Rico&#39;,
+ &#39;America/Punta_Arenas&#39;,
+ &#39;America/Rainy_River&#39;,
+ &#39;America/Rankin_Inlet&#39;,
+ &#39;America/Recife&#39;,
+ &#39;America/Regina&#39;,
+ &#39;America/Resolute&#39;,
+ &#39;America/Rio_Branco&#39;,
+ &#39;America/Rosario&#39;,
+ &#39;America/Santa_Isabel&#39;,
+ &#39;America/Santarem&#39;,
+ &#39;America/Santiago&#39;,
+ &#39;America/Santo_Domingo&#39;,
+ &#39;America/Sao_Paulo&#39;,
+ &#39;America/Scoresbysund&#39;,
+ &#39;America/Shiprock&#39;,
+ &#39;America/Sitka&#39;,
+ &#39;America/St_Barthelemy&#39;,
+ &#39;America/St_Johns&#39;,
+ &#39;America/St_Kitts&#39;,
+ &#39;America/St_Lucia&#39;,
+ &#39;America/St_Thomas&#39;,
+ &#39;America/St_Vincent&#39;,
+ &#39;America/Swift_Current&#39;,
+ &#39;America/Tegucigalpa&#39;,
+ &#39;America/Thule&#39;,
+ &#39;America/Thunder_Bay&#39;,
+ &#39;America/Tijuana&#39;,
+ &#39;America/Toronto&#39;,
+ &#39;America/Tortola&#39;,
+ &#39;America/Vancouver&#39;,
+ &#39;America/Virgin&#39;,
+ &#39;America/Whitehorse&#39;,
+ &#39;America/Winnipeg&#39;,
+ &#39;America/Yakutat&#39;,
+ &#39;America/Yellowknife&#39;,
+ &#39;Antarctica/Casey&#39;,
+ &#39;Antarctica/Davis&#39;,
+ &#39;Antarctica/DumontDUrville&#39;,
+ &#39;Antarctica/Macquarie&#39;,
+ &#39;Antarctica/Mawson&#39;,
+ &#39;Antarctica/McMurdo&#39;,
+ &#39;Antarctica/Palmer&#39;,
+ &#39;Antarctica/Rothera&#39;,
+ &#39;Antarctica/South_Pole&#39;,
+ &#39;Antarctica/Syowa&#39;,
+ &#39;Antarctica/Troll&#39;,
+ &#39;Antarctica/Vostok&#39;,
+ &#39;Arctic/Longyearbyen&#39;,
+ &#39;Asia/Aden&#39;,
+ &#39;Asia/Almaty&#39;,
+ &#39;Asia/Amman&#39;,
+ &#39;Asia/Anadyr&#39;,
+ &#39;Asia/Aqtau&#39;,
+ &#39;Asia/Aqtobe&#39;,
+ &#39;Asia/Ashgabat&#39;,
+ &#39;Asia/Ashkhabad&#39;,
+ &#39;Asia/Atyrau&#39;,
+ &#39;Asia/Baghdad&#39;,
+ &#39;Asia/Bahrain&#39;,
+ &#39;Asia/Baku&#39;,
+ &#39;Asia/Bangkok&#39;,
+ &#39;Asia/Barnaul&#39;,
+ &#39;Asia/Beirut&#39;,
+ &#39;Asia/Bishkek&#39;,
+ &#39;Asia/Brunei&#39;,
+ &#39;Asia/Calcutta&#39;,
+ &#39;Asia/Chita&#39;,
+ &#39;Asia/Choibalsan&#39;,
+ &#39;Asia/Chongqing&#39;,
+ &#39;Asia/Chungking&#39;,
+ &#39;Asia/Colombo&#39;,
+ &#39;Asia/Dacca&#39;,
+ &#39;Asia/Damascus&#39;,
+ &#39;Asia/Dhaka&#39;,
+ &#39;Asia/Dili&#39;,
+ &#39;Asia/Dubai&#39;,
+ &#39;Asia/Dushanbe&#39;,
+ &#39;Asia/Famagusta&#39;,
+ &#39;Asia/Gaza&#39;,
+ &#39;Asia/Harbin&#39;,
+ &#39;Asia/Hebron&#39;,
+ &#39;Asia/Ho_Chi_Minh&#39;,
+ &#39;Asia/Hong_Kong&#39;,
+ &#39;Asia/Hovd&#39;,
+ &#39;Asia/Irkutsk&#39;,
+ &#39;Asia/Istanbul&#39;,
+ &#39;Asia/Jakarta&#39;,
+ &#39;Asia/Jayapura&#39;,
+ &#39;Asia/Jerusalem&#39;,
+ &#39;Asia/Kabul&#39;,
+ &#39;Asia/Kamchatka&#39;,
+ &#39;Asia/Karachi&#39;,
+ &#39;Asia/Kashgar&#39;,
+ &#39;Asia/Kathmandu&#39;,
+ &#39;Asia/Katmandu&#39;,
+ &#39;Asia/Khandyga&#39;,
+ &#39;Asia/Kolkata&#39;,
+ &#39;Asia/Krasnoyarsk&#39;,
+ &#39;Asia/Kuala_Lumpur&#39;,
+ &#39;Asia/Kuching&#39;,
+ &#39;Asia/Kuwait&#39;,
+ &#39;Asia/Macao&#39;,
+ &#39;Asia/Macau&#39;,
+ &#39;Asia/Magadan&#39;,
+ &#39;Asia/Makassar&#39;,
+ &#39;Asia/Manila&#39;,
+ &#39;Asia/Muscat&#39;,
+ &#39;Asia/Nicosia&#39;,
+ &#39;Asia/Novokuznetsk&#39;,
+ &#39;Asia/Novosibirsk&#39;,
+ &#39;Asia/Omsk&#39;,
+ &#39;Asia/Oral&#39;,
+ &#39;Asia/Phnom_Penh&#39;,
+ &#39;Asia/Pontianak&#39;,
+ &#39;Asia/Pyongyang&#39;,
+ &#39;Asia/Qatar&#39;,
+ &#39;Asia/Qyzylorda&#39;,
+ &#39;Asia/Rangoon&#39;,
+ &#39;Asia/Riyadh&#39;,
+ &#39;Asia/Saigon&#39;,
+ &#39;Asia/Sakhalin&#39;,
+ &#39;Asia/Samarkand&#39;,
+ &#39;Asia/Seoul&#39;,
+ &#39;Asia/Shanghai&#39;,
+ &#39;Asia/Singapore&#39;,
+ &#39;Asia/Srednekolymsk&#39;,
+ &#39;Asia/Taipei&#39;,
+ &#39;Asia/Tashkent&#39;,
+ &#39;Asia/Tbilisi&#39;,
+ &#39;Asia/Tehran&#39;,
+ &#39;Asia/Tel_Aviv&#39;,
+ &#39;Asia/Thimbu&#39;,
+ &#39;Asia/Thimphu&#39;,
+ &#39;Asia/Tokyo&#39;,
+ &#39;Asia/Tomsk&#39;,
+ &#39;Asia/Ujung_Pandang&#39;,
+ &#39;Asia/Ulaanbaatar&#39;,
+ &#39;Asia/Ulan_Bator&#39;,
+ &#39;Asia/Urumqi&#39;,
+ &#39;Asia/Ust-Nera&#39;,
+ &#39;Asia/Vientiane&#39;,
+ &#39;Asia/Vladivostok&#39;,
+ &#39;Asia/Yakutsk&#39;,
+ &#39;Asia/Yangon&#39;,
+ &#39;Asia/Yekaterinburg&#39;,
+ &#39;Asia/Yerevan&#39;,
+ &#39;Atlantic/Azores&#39;,
+ &#39;Atlantic/Bermuda&#39;,
+ &#39;Atlantic/Canary&#39;,
+ &#39;Atlantic/Cape_Verde&#39;,
+ &#39;Atlantic/Faeroe&#39;,
+ &#39;Atlantic/Faroe&#39;,
+ &#39;Atlantic/Jan_Mayen&#39;,
+ &#39;Atlantic/Madeira&#39;,
+ &#39;Atlantic/Reykjavik&#39;,
+ &#39;Atlantic/South_Georgia&#39;,
+ &#39;Atlantic/St_Helena&#39;,
+ &#39;Atlantic/Stanley&#39;,
+ &#39;Australia/ACT&#39;,
+ &#39;Australia/Adelaide&#39;,
+ &#39;Australia/Brisbane&#39;,
+ &#39;Australia/Broken_Hill&#39;,
+ &#39;Australia/Canberra&#39;,
+ &#39;Australia/Currie&#39;,
+ &#39;Australia/Darwin&#39;,
+ &#39;Australia/Eucla&#39;,
+ &#39;Australia/Hobart&#39;,
+ &#39;Australia/LHI&#39;,
+ &#39;Australia/Lindeman&#39;,
+ &#39;Australia/Lord_Howe&#39;,
+ &#39;Australia/Melbourne&#39;,
+ &#39;Australia/NSW&#39;,
+ &#39;Australia/North&#39;,
+ &#39;Australia/Perth&#39;,
+ &#39;Australia/Queensland&#39;,
+ &#39;Australia/South&#39;,
+ &#39;Australia/Sydney&#39;,
+ &#39;Australia/Tasmania&#39;,
+ &#39;Australia/Victoria&#39;,
+ &#39;Australia/West&#39;,
+ &#39;Australia/Yancowinna&#39;,
+ &#39;Brazil/Acre&#39;,
+ &#39;Brazil/DeNoronha&#39;,
+ &#39;Brazil/East&#39;,
+ &#39;Brazil/West&#39;,
+ &#39;CET&#39;,
+ &#39;CST6CDT&#39;,
+ &#39;Canada/Atlantic&#39;,
+ &#39;Canada/Central&#39;,
+ &#39;Canada/East-Saskatchewan&#39;,
+ &#39;Canada/Eastern&#39;,
+ &#39;Canada/Mountain&#39;,
+ &#39;Canada/Newfoundland&#39;,
+ &#39;Canada/Pacific&#39;,
+ &#39;Canada/Saskatchewan&#39;,
+ &#39;Canada/Yukon&#39;,
+ &#39;Chile/Continental&#39;,
+ &#39;Chile/EasterIsland&#39;,
+ &#39;Cuba&#39;,
+ &#39;EET&#39;,
+ &#39;EST&#39;,
+ &#39;EST5EDT&#39;,
+ &#39;Egypt&#39;,
+ &#39;Eire&#39;,
+ &#39;Etc/GMT&#39;,
+ &#39;Etc/GMT+0&#39;,
+ &#39;Etc/GMT+1&#39;,
+ &#39;Etc/GMT+10&#39;,
+ &#39;Etc/GMT+11&#39;,
+ &#39;Etc/GMT+12&#39;,
+ &#39;Etc/GMT+2&#39;,
+ &#39;Etc/GMT+3&#39;,
+ &#39;Etc/GMT+4&#39;,
+ &#39;Etc/GMT+5&#39;,
+ &#39;Etc/GMT+6&#39;,
+ &#39;Etc/GMT+7&#39;,
+ &#39;Etc/GMT+8&#39;,
+ &#39;Etc/GMT+9&#39;,
+ &#39;Etc/GMT-0&#39;,
+ &#39;Etc/GMT-1&#39;,
+ &#39;Etc/GMT-10&#39;,
+ &#39;Etc/GMT-11&#39;,
+ &#39;Etc/GMT-12&#39;,
+ &#39;Etc/GMT-13&#39;,
+ &#39;Etc/GMT-14&#39;,
+ &#39;Etc/GMT-2&#39;,
+ &#39;Etc/GMT-3&#39;,
+ &#39;Etc/GMT-4&#39;,
+ &#39;Etc/GMT-5&#39;,
+ &#39;Etc/GMT-6&#39;,
+ &#39;Etc/GMT-7&#39;,
+ &#39;Etc/GMT-8&#39;,
+ &#39;Etc/GMT-9&#39;,
+ &#39;Etc/GMT0&#39;,
+ &#39;Etc/Greenwich&#39;,
+ &#39;Etc/UCT&#39;,
+ &#39;Etc/UTC&#39;,
+ &#39;Etc/Universal&#39;,
+ &#39;Etc/Zulu&#39;,
+ &#39;Europe/Amsterdam&#39;,
+ &#39;Europe/Andorra&#39;,
+ &#39;Europe/Astrakhan&#39;,
+ &#39;Europe/Athens&#39;,
+ &#39;Europe/Belfast&#39;,
+ &#39;Europe/Belgrade&#39;,
+ &#39;Europe/Berlin&#39;,
+ &#39;Europe/Bratislava&#39;,
+ &#39;Europe/Brussels&#39;,
+ &#39;Europe/Bucharest&#39;,
+ &#39;Europe/Budapest&#39;,
+ &#39;Europe/Busingen&#39;,
+ &#39;Europe/Chisinau&#39;,
+ &#39;Europe/Copenhagen&#39;,
+ &#39;Europe/Dublin&#39;,
+ &#39;Europe/Gibraltar&#39;,
+ &#39;Europe/Guernsey&#39;,
+ &#39;Europe/Helsinki&#39;,
+ &#39;Europe/Isle_of_Man&#39;,
+ &#39;Europe/Istanbul&#39;,
+ &#39;Europe/Jersey&#39;,
+ &#39;Europe/Kaliningrad&#39;,
+ &#39;Europe/Kiev&#39;,
+ &#39;Europe/Kirov&#39;,
+ &#39;Europe/Lisbon&#39;,
+ &#39;Europe/Ljubljana&#39;,
+ &#39;Europe/London&#39;,
+ &#39;Europe/Luxembourg&#39;,
+ &#39;Europe/Madrid&#39;,
+ &#39;Europe/Malta&#39;,
+ &#39;Europe/Mariehamn&#39;,
+ &#39;Europe/Minsk&#39;,
+ &#39;Europe/Monaco&#39;,
+ &#39;Europe/Moscow&#39;,
+ &#39;Europe/Nicosia&#39;,
+ &#39;Europe/Oslo&#39;,
+ &#39;Europe/Paris&#39;,
+ &#39;Europe/Podgorica&#39;,
+ &#39;Europe/Prague&#39;,
+ &#39;Europe/Riga&#39;,
+ &#39;Europe/Rome&#39;,
+ &#39;Europe/Samara&#39;,
+ &#39;Europe/San_Marino&#39;,
+ &#39;Europe/Sarajevo&#39;,
+ &#39;Europe/Saratov&#39;,
+ &#39;Europe/Simferopol&#39;,
+ &#39;Europe/Skopje&#39;,
+ &#39;Europe/Sofia&#39;,
+ &#39;Europe/Stockholm&#39;,
+ &#39;Europe/Tallinn&#39;,
+ &#39;Europe/Tirane&#39;,
+ &#39;Europe/Tiraspol&#39;,
+ &#39;Europe/Ulyanovsk&#39;,
+ &#39;Europe/Uzhgorod&#39;,
+ &#39;Europe/Vaduz&#39;,
+ &#39;Europe/Vatican&#39;,
+ &#39;Europe/Vienna&#39;,
+ &#39;Europe/Vilnius&#39;,
+ &#39;Europe/Volgograd&#39;,
+ &#39;Europe/Warsaw&#39;,
+ &#39;Europe/Zagreb&#39;,
+ &#39;Europe/Zaporozhye&#39;,
+ &#39;Europe/Zurich&#39;,
+ &#39;GB&#39;,
+ &#39;GB-Eire&#39;,
+ &#39;GMT&#39;,
+ &#39;GMT+0&#39;,
+ &#39;GMT-0&#39;,
+ &#39;GMT0&#39;,
+ &#39;Greenwich&#39;,
+ &#39;HST&#39;,
+ &#39;Hongkong&#39;,
+ &#39;Iceland&#39;,
+ &#39;Indian/Antananarivo&#39;,
+ &#39;Indian/Chagos&#39;,
+ &#39;Indian/Christmas&#39;,
+ &#39;Indian/Cocos&#39;,
+ &#39;Indian/Comoro&#39;,
+ &#39;Indian/Kerguelen&#39;,
+ &#39;Indian/Mahe&#39;,
+ &#39;Indian/Maldives&#39;,
+ &#39;Indian/Mauritius&#39;,
+ &#39;Indian/Mayotte&#39;,
+ &#39;Indian/Reunion&#39;,
+ &#39;Iran&#39;,
+ &#39;Israel&#39;,
+ &#39;Jamaica&#39;,
+ &#39;Japan&#39;,
+ &#39;Kwajalein&#39;,
+ &#39;Libya&#39;,
+ &#39;MET&#39;,
+ &#39;MST&#39;,
+ &#39;MST7MDT&#39;,
+ &#39;Mexico/BajaNorte&#39;,
+ &#39;Mexico/BajaSur&#39;,
+ &#39;Mexico/General&#39;,
+ &#39;NZ&#39;,
+ &#39;NZ-CHAT&#39;,
+ &#39;Navajo&#39;,
+ &#39;PRC&#39;,
+ &#39;PST8PDT&#39;,
+ &#39;Pacific/Apia&#39;,
+ &#39;Pacific/Auckland&#39;,
+ &#39;Pacific/Bougainville&#39;,
+ &#39;Pacific/Chatham&#39;,
+ &#39;Pacific/Chuuk&#39;,
+ &#39;Pacific/Easter&#39;,
+ &#39;Pacific/Efate&#39;,
+ &#39;Pacific/Enderbury&#39;,
+ &#39;Pacific/Fakaofo&#39;,
+ &#39;Pacific/Fiji&#39;,
+ &#39;Pacific/Funafuti&#39;,
+ &#39;Pacific/Galapagos&#39;,
+ &#39;Pacific/Gambier&#39;,
+ &#39;Pacific/Guadalcanal&#39;,
+ &#39;Pacific/Guam&#39;,
+ &#39;Pacific/Honolulu&#39;,
+ &#39;Pacific/Johnston&#39;,
+ &#39;Pacific/Kiritimati&#39;,
+ &#39;Pacific/Kosrae&#39;,
+ &#39;Pacific/Kwajalein&#39;,
+ &#39;Pacific/Majuro&#39;,
+ &#39;Pacific/Marquesas&#39;,
+ &#39;Pacific/Midway&#39;,
+ &#39;Pacific/Nauru&#39;,
+ &#39;Pacific/Niue&#39;,
+ &#39;Pacific/Norfolk&#39;,
+ &#39;Pacific/Noumea&#39;,
+ &#39;Pacific/Pago_Pago&#39;,
+ &#39;Pacific/Palau&#39;,
+ &#39;Pacific/Pitcairn&#39;,
+ &#39;Pacific/Pohnpei&#39;,
+ &#39;Pacific/Ponape&#39;,
+ &#39;Pacific/Port_Moresby&#39;,
+ &#39;Pacific/Rarotonga&#39;,
+ &#39;Pacific/Saipan&#39;,
+ &#39;Pacific/Samoa&#39;,
+ &#39;Pacific/Tahiti&#39;,
+ &#39;Pacific/Tarawa&#39;,
+ &#39;Pacific/Tongatapu&#39;,
+ &#39;Pacific/Truk&#39;,
+ &#39;Pacific/Wake&#39;,
+ &#39;Pacific/Wallis&#39;,
+ &#39;Pacific/Yap&#39;,
+ &#39;Poland&#39;,
+ &#39;Portugal&#39;,
+ &#39;ROC&#39;,
+ &#39;ROK&#39;,
+ &#39;Singapore&#39;,
+ &#39;Turkey&#39;,
+ &#39;UCT&#39;,
+ &#39;US/Alaska&#39;,
+ &#39;US/Aleutian&#39;,
+ &#39;US/Arizona&#39;,
+ &#39;US/Central&#39;,
+ &#39;US/East-Indiana&#39;,
+ &#39;US/Eastern&#39;,
+ &#39;US/Hawaii&#39;,
+ &#39;US/Indiana-Starke&#39;,
+ &#39;US/Michigan&#39;,
+ &#39;US/Mountain&#39;,
+ &#39;US/Pacific&#39;,
+ &#39;US/Pacific-New&#39;,
+ &#39;US/Samoa&#39;,
+ &#39;UTC&#39;,
+ &#39;Universal&#39;,
+ &#39;W-SU&#39;,
+ &#39;WET&#39;,
+ &#39;Zulu&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">תונוכת לעב אוה ןושארה רשאכ ,רחא רבד אטבמ והשלכ רבדש רמאנ ונא</span>
+<span class="s1">.9םייוטיב לש םינוש םיגוס םנשי לבא .אטובמה רבדה לש ויתונוכת לע 8תונועה</span>
+<span class="s1">לש ותינבת תא אטבמ רושימב־סישרת ,הנוכמה תא אטבמ הנוכמ לש םגדה ,לשמל</span>
+<span class="s1">האוושמ ,םירפסמ תואטבמ ת1רפס ,תותימאו תובשחמ אטבמ רוביד ,קצומה רבדה</span>
+<span class="s1">לש הלאה םיגוסה לכל ףתושמה רבדהו :תורחא תורוצ וא לוגיע תאטבמ תירבגלא</span>
+<span class="s1">עיגהל םילוכי ונא ,דבלב 11אטבמה לש תונוכתב 10תוננובתה ידי־לעש אוה םייוטיב</span>
+<span class="s1">אטבמה רבדהש ךרוצ ןיאש רורב ןאכמ .12אטובמה לש תומאותה ויתולוגס תעידיל</span>
+<span class="s1">.םהיתונוכת ןיב תמיוסמ היגולנא אהתש קיפסמו ,אטובמה רבדל המוד היהי</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">sr</span> <span class="o">=</span> <span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">sr</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;([0-9]*)&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sr</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">sr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+אנו נאמר שדבר כלשהו מבטא דבר אחר, כאשר הראשון הוא בעל תכונות
+העונות על תכונותיו של הדבר המבוטא. אבל ישנם סוגים שונים של ביטויים.
+למשל, הדגם של מכונה מבטא את המכונה, תרשיס־במישור מבטא את תבניתו של
+הדבר המוצק, דיבור מבטא מחשבות ואמיתות, ספרת מבטאות מספרים, משוואה
+אלגברית מבטאת עיגול או צורות אחרות: והדבר המשותף לכל הסוגים האלה של
+ביטויים הוא שעל־ידי התבוננות בתכונות של המבטא בלבד, אנו יכולים להגיע
+לידיעת סגולותיו התואמות של המבוטא. מכאן ברור שאין צורך שהדבר המבטא
+יהיה דומה לדבר המבוטא, ומספיק שתהא אנלוגיה מסוימת בין תכונותיהם.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">350000</span><span class="p">,</span> <span class="mi">450000</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">,</span> <span class="mi">6000000</span><span class="p">],</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">25</span><span class="p">]])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[18]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1fa6448c8d0&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+<div class="prompt"></div>
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAo4AAAG6CAYAAACGDcfGAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAALEgAACxIB0t1+/AAAH7VJREFUeJzt3X+QVfV98PEPG4TdNYo8o1aeAimQtmyWNMACC7K6CRAi
+AWQwi1WssRgiK0lrdazUOLaOm3mUUhAs4YdU0wDp0HEnGRnRZBSR6YNCuSIm/HDahK3CEJUtyRZh
+f7mc5w/HnexDcL+GZS+S12tm/7jfc88538N39s577uXs7ZFlWRYAANCJgnxPAACAjwfhCABAEuEI
+AEAS4QgAQBLhCABAkp75nkCKpqam2LNnT1x22WXxiU98It/TAQDodm1tbXHkyJEYNmxYFBYW5mUO
+H4tw3LNnT9x00035ngYAQN59//vfj1GjRuXl3B+LcLzssssi4v1/qCuuuCLPswEA6H5vvfVW3HTT
+Te1dlA8fi3D84OPpK664Ivr375/n2QAA5E8+/9uem2MAAEgiHAEASCIcAQBIIhwBAEgiHAEASCIc
+AQBIIhwBAEgiHAEASCIcAQBIIhwBALrJT37yk6ioqMj3NH5rwhEA4CzLsixqa2vj1ltvjdbW1nxP
+57f2sfiuagCAFK3vnYz6XzV2y7kuvaQoLuiZ9h7cqlWr4tlnn43q6upYs2bNWZ7Z2SMcAYDzQut7
+J6N64eZ45+iJbjnf5f+rOFYtmJgUj1/5yleiuro6/v3f/70bZnb2CEcAgLPs8ssvz/cUuoRwBADO
+Cxf0LIhVCyaekx9Vny+EIwBw3rigZ0H0u/TCfE/jvPW7lckAAPzWhCMAAEmEIwBANykvL48dO3bk
+exq/NeEIAEAS4QgAQBLhCABAEuEIAEAS4QgAQBLhCABAEuEIAEAS4QgAQBLhCABAEuEIAEAS4QgA
+QBLhCABAEuEIAEAS4QgAQBLhCABAEuEIAEAS4QgAQBLhCABAEuEIAEAS4QgAQBLhCABAEuEIAEAS
+4QgAQBLhCABAEuEIAEAS4QgAQBLhCABAkqRwzOVyMWvWrCgrK4tJkybFhg0bIiKipaUlampqory8
+PMrLy+O+++6LlpaW33iMffv2RVVVVQwfPjxmzJgRu3fv7rqrAADgrOs0HBsaGmL+/Pnx1a9+NXbu
+3BnLli2LJUuWxEsvvRRLliyJ//zP/4wf//jH8eMf/zh+9rOfxRNPPHHKMZqbm6O6ujquu+662Llz
+Z9x8881x++23x/Hjx8/KRQEA0PU6DcfDhw9HZWVlTJ8+PQoKCqK0tDTKy8tj165d8a//+q/xt3/7
+t3HJJZfEJZdcEo8++mhMnz79lGNs3749CgoKYvbs2XHBBRdEVVVVXHrppbF169azclEAAHS9TsOx
+pKQkFi1a1P64oaEhcrlcXHTRRdHW1havvfZaTJ48Oa666qr453/+57j88stPOUZdXV0MGTKkw9ig
+QYPiwIEDXXAJAAB0h54f5cnHjh2L6urqKC0tjc985jPR2toaW7Zsidra2jh+/HjMmzcvLrroopg/
+f36H/U6cOBFFRUUdxgoLC6OpqenMrwAAgG6RfFf1wYMH44Ybbog+ffrE8uXLo3fv3nHy5Mn4q7/6
+q7j44oujX79+MWfOnHj++edP2beoqOiUSGxqaori4uIzvwIAALpFUjju3bs3rr/++qioqIgVK1ZE
+YWFh/MEf/EEUFBR0uIu6ra3tN+4/ePDgqKur6zBWV1cXn/70p89g6gAAdKdOw7G+vj7mzp0bc+bM
+iXvvvTcKCt7f5eKLL45JkybFkiVL4n/+53/i7bffju9973txzTXXnHKMcePGRUtLS6xbty5aW1uj
+trY26uvro6KiouuvCACAs6LTcKytrY2jR4/GypUrY8SIEe0/jzzySDz00EPRr1+/+PKXvxzXXntt
+XHnllXHrrbdGRMTGjRtj6tSpERHRq1evWLNmTWzatCnGjBkT69evj5UrV/qoGgDgY6RHlmVZvifR
+mUOHDsXEiRNj8+bN0b9//3xPBwCg250LPeQrBwEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgi
+HAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwB
+AEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBI
+IhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIc
+AQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEA
+SCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEiSFI65XC5mzZoVZWVlMWnS
+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
+EQCAJMIRAIAkwhEAgCTCEQCAJMIRAIAkwhEAgCTCEQCAJMIRAIAkwhEAgCTCEQCAJMIRAIAkwhEA
+gCTCEQCAJMIRAIAkwhEAgCTCEQCAJMIRAIAkwhEAgCTCEQCAJMIRAIAkwhEAgCTCEQCAJMIRAIAk
+whEAgCTCEQCAJMIRAIAkwhEAgCTCEQCAJMIRAIAkwhEAgCTCEQCAJMIRAIAkwhEAgCTCEQCAJMIR
+AIAkwhEAgCTCEQCAJMIRAIAkwhEAgCTCEQCAJMIRAIAkwhEAgCTCEQCAJMIRAIAkwhEAgCTCEQCA
+JMIRAIAkwhEAgCRJ4ZjL5WLWrFlRVlYWkyZNig0bNnTYfvLkybj55ptj4cKFpz3G448/HsOGDYsR
+I0a0/+RyuTObPQAA3aZnZ09oaGiI+fPnx/333x9Tp06N/fv3x5w5c2LgwIFx5ZVXRkTEE088Eblc
+LoYNG3ba4+zbty/uvPPO+NrXvtZ1swcAoNt0+o7j4cOHo7KyMqZPnx4FBQVRWloa5eXlsWvXroiI
+eP311+MHP/hBfPGLX/zQ4+zfvz9KSkq6ZtYAAHS7TsOxpKQkFi1a1P64oaEhcrlcDB06NFpaWmLB
+ggVRU1MTxcXFpz1GY2Nj1NXVxdq1a2P8+PExZcqUqK2t7ZorAACgW3ykm2OOHTsW1dXVUVpaGhMm
+TIjFixdHRUVFlJWVfeh+9fX1UVZWFjfeeGNs2bIlampq4uGHH46tW7ee0eQBAOg+yeF48ODBuOGG
+G6JPnz6xfPny2LFjR2zfvj3uuOOOTvcdMGBArF+/PiorK6NXr14xatSomDFjRmzevPmMJg8AQPfp
+9OaYiIi9e/fG3Llz49prr40FCxZEQUFBPPPMM/Hmm2+23yDT1NQUPXr0iAMHDsTq1atP2X/btm1x
+2223tY81NzdHYWFhF14KAABnU6fhWF9fH3Pnzo05c+Z0CL+ampqoqalpf/w3f/M30bdv31iwYMEp
+xyguLo7ly5fHwIEDY/LkybFjx47YtGlTrF+/vosuAwCAs63Tj6pra2vj6NGjsXLlyg5/g/GRRx75
+0P02btwYU6dOjYiIQYMGxdKlS+M73/lOjBw5Mh544IF46KGHorS0tGuuAgCAs65HlmVZvifRmUOH
+DsXEiRNj8+bN0b9//3xPBwCg250LPeQrBwEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEA
+SCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgi
+HAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwB
+AEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBI
+IhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIc
+AQBIIhwBAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhwBAEiSFI65XC5mzZoVZWVlMWnSpNiw
+YUOH7SdPnoybb745Fi5ceNpj7Nu3L6qqqmL48OExY8aM2L1795nNHACAbtVpODY0NMT8+fPjq1/9
+auzcuTOWLVsWS5YsiZdeeqn9OU888UTkcrnTHqO5uTmqq6vjuuuui507d8bNN98ct99+exw/frxr
+rgIAgLOu03A8fPhwVFZWxvTp06OgoCBKS0ujvLw8du3aFRERr7/+evzgBz+IL37xi6c9xvbt26Og
+oCBmz54dF1xwQVRVVcWll14aW7du7borAQDgrOo0HEtKSmLRokXtjxsaGiKXy8XQoUOjpaUlFixY
+EDU1NVFcXHzaY9TV1cWQIUM6jA0aNCgOHDhwBlMHAKA7faSbY44dOxbV1dVRWloaEyZMiMWLF0dF
+RUWUlZV96H4nTpyIoqKiDmOFhYXR1NT00WcMAEBeJIfjwYMH44Ybbog+ffrE8uXLY8eOHbF9+/a4
+4447Ot23qKjolEhsamr60HcpAQA4t/RMedLevXtj7ty5ce2118aCBQuioKAgnnnmmXjzzTfjyiuv
+jIj3Q7BHjx5x4MCBWL16dYf9Bw8eHOvXr+8wVldXF9OmTeuiywAA4Gzr9B3H+vr6mDt3bsyZMyfu
+vffeKCh4f5eampp49dVXI5fLRS6Xi2nTpsWf/dmfnRKNERHjxo2LlpaWWLduXbS2tkZtbW3U19dH
+RUVF118RAABnRafhWFtbG0ePHo2VK1fGiBEj2n8eeeSRD91v48aNMXXq1IiI6NWrV6xZsyY2bdoU
+Y8aMifXr18fKlSt9VA0A8DHSI8uyLN+T6MyhQ4di4sSJsXnz5ujfv3++pwMA0O3OhR7ylYMAACQR
+jgAAJBGOAAAkEY4AACQRjgAAJBGOAAAkEY4AACQRjgAAJBGOAAAkEY4AACQRjgAAJBGOAAAkEY4A
+ACQRjgAAJBGOAAAkEY4AACQRjgAAJBGOAAAkEY4AACQRjgAAJBGOAAAkEY4AACQRjgAAJBGOAAAk
+EY4AACQRjgAAJBGOAAAkEY4AACQRjgAAJBGOAAAkEY4AACQRjgAAJBGOAAAkEY4AACQRjgAAJBGO
+AAAkEY4AACQRjgAAJBGOAAAkEY4AACQRjgAAJBGOAAAkEY4AACQRjgAAJBGOAAAkEY4AACQRjgAA
+JOmZ7wmkaGtri4iIt956K88zAQDIjw866IMuyoePRTgeOXIkIiJuuummPM8EACC/jhw5Ep/61Kfy
+cu4eWZZleTnzR9DU1BR79uyJyy67LD7xiU/kezoAAN2ura0tjhw5EsOGDYvCwsK8zOFjEY4AAOSf
+m2MAAEgiHAEASCIcAQBIIhwBAEgiHAEASCIcAQBIIhzPkp/85CdRUVHR/rihoSG+8Y1vRFlZWXz+
+85+PJ598sn1blmWxePHiGDt2bIwePTq+/e1vd/ir8E8//XRMnDgxhg8fHvPmzYv6+vr2bfv27Yuq
+qqoYPnx4zJgxI3bv3t0l5zwf5XK5mDVrVpSVlcWkSZNiw4YNEWFtzgXPPPNMTJkyJUaMGBFTp06N
+559/PiKszbmivr4+xo0bF1u2bIkI63IuePzxx2PYsGExYsSI9p9cLmdtzgFvvfVWzJs3L0aOHBlX
+X311rF27NiLOo9+bjC518uTJ7Mknn8zKysqyMWPGtI//xV/8RXb33XdnTU1N2WuvvZaNGTMme/XV
+V7Msy7J169Zl06ZNy95+++3snXfeyWbOnJk99thjWZZl2f79+7ORI0dmu3fvzhobG7Nvfetb2dy5
+c7Msy7Kmpqbsqquuyr7//e9nLS0t2ZNPPpmNHTs2e/fdd8/onOejX/3qV9no0aOzjRs3Zm1tbdme
+PXuy0aNHZ9u2bbM2eXbgwIHsc5/7XPbKK69kWZZl27Zty0pLS7P//u//tjbniNtuuy0bOnRo9sIL
+L2RZ5vXsXHDXXXdl//RP/3TKuLXJr5MnT2YzZ87MHn744aylpSX7j//4j2z06NHZK6+8ct6sjXDs
+YitWrMimT5+erVmzpj0c33333aykpCR7880325/34IMPZn/3d3+XZVmWVVVVZU8++WT7th/96EfZ
+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
+QmCC
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data/www/foo/access-log&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">queue</span><span class="o">,</span> <span class="nn">threading</span>
+<span class="k">def</span> <span class="nf">consume_queue</span><span class="p">(</span><span class="n">thequeue</span><span class="p">):</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">thequeue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">is</span> <span class="ne">StopIteration</span><span class="p">:</span> <span class="k">break</span>
+        <span class="k">yield</span> <span class="n">item</span>
+
+<span class="k">def</span> <span class="nf">consumer</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">consume_queue</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Consumed&quot;</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Done&quot;</span><span class="p">)</span>
+<span class="n">in_q</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+<span class="n">con_thr</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">consumer</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">in_q</span><span class="p">,))</span>
+<span class="n">con_thr</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">in_q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">in_q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="ne">StopIteration</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Consumed 0
+Done
+Consumed 1
+Done
+Consumed 2
+Done
+Consumed 3
+Done
+Consumed 4
+Done
+Consumed 5
+Done
+Consumed 6
+Done
+Consumed 7
+Done
+Consumed 8
+Done
+Consumed 9
+Done
+Consumed 10
+Done
+Consumed 11
+Done
+Consumed 12
+Done
+Consumed 13
+Done
+Consumed 14
+Done
+Consumed 15
+Done
+Consumed 16
+Done
+Consumed 17
+Done
+Consumed 18
+Done
+Consumed 19
+Done
+Consumed 20
+Done
+Consumed 21
+Done
+Consumed 22
+Done
+Consumed 23
+Done
+Consumed 24
+Done
+Consumed 25
+Done
+Consumed 26
+Done
+Consumed 27
+Done
+Consumed 28
+Done
+Consumed 29
+Done
+Consumed 30
+Done
+Consumed 31
+Done
+Consumed 32
+Done
+Consumed 33
+Done
+Consumed 34
+Done
+Consumed 35
+Done
+Consumed 36
+Done
+Consumed 37
+Done
+Consumed 38
+Done
+Consumed 39
+Done
+Consumed 40
+Done
+Consumed 41
+Done
+Consumed 42
+Done
+Consumed 43
+Done
+Consumed 44
+Done
+Consumed 45
+Done
+Consumed 46
+Done
+Consumed 47
+Done
+Consumed 48
+Done
+Consumed 49
+Done
+Consumed 50
+Done
+Consumed 51
+Done
+Consumed 52
+Done
+Consumed 53
+Done
+Consumed 54
+Done
+Consumed 55
+Done
+Consumed 56
+Done
+Consumed 57
+Done
+Consumed 58
+Done
+Consumed 59
+Done
+Consumed 60
+Done
+Consumed 61
+Done
+Consumed 62
+Done
+Consumed 63
+Done
+Consumed 64
+Done
+Consumed 65
+Done
+Consumed 66
+Done
+Consumed 67
+Done
+Consumed 68
+Done
+Consumed 69
+Done
+Consumed 70
+Done
+Consumed 71
+Done
+Consumed 72
+Done
+Consumed 73
+Done
+Consumed 74
+Done
+Consumed 75
+Done
+Consumed 76
+Done
+Consumed 77
+Done
+Consumed 78
+Done
+Consumed 79
+Done
+Consumed 80
+Done
+Consumed 81
+Done
+Consumed 82
+Done
+Consumed 83
+Done
+Consumed 84
+Done
+Consumed 85
+Done
+Consumed 86
+Done
+Consumed 87
+Done
+Consumed 88
+Done
+Consumed 89
+Done
+Consumed 90
+Done
+Consumed 91
+Done
+Consumed 92
+Done
+Consumed 93
+Done
+Consumed 94
+Done
+Consumed 95
+Done
+Consumed 96
+Done
+Consumed 97
+Done
+Consumed 98
+Done
+Consumed 99
+Done
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="mi">999</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">())</span>
+        
+<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+999
+None
+None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="rename-problem-with-spaces">rename problem with spaces<a class="anchor-link" href="#rename-problem-with-spaces">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;cats&#39;</span><span class="p">,</span> <span class="s1">&#39;dogs&#39;</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;tlv&#39;</span><span class="p">,</span> <span class="s1">&#39;haifa&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">))</span>
+<span class="n">column_renames</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;tlv&#39;</span><span class="p">:</span> <span class="s1">&#39;Tel Aviv&#39;</span><span class="p">,</span> <span class="s1">&#39;haifa&#39;</span><span class="p">:</span> <span class="s1">&#39;Haifa&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">:</span> <span class="s1">&#39;Jerusalem&#39;</span><span class="p">}</span>
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">column_renames</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[21]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Tel Aviv</th>
+      <th>Haifa</th>
+      <th>Jerusalem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>cats</th>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>dogs</th>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It doesn't seem to reproduce with just creating a dataframe with a space or empty string column name</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;data/space_name.csv&#39;</span><span class="p">)</span>
+<span class="n">dfr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/space_name.csv&#39;</span><span class="p">)</span>
+<span class="n">dfr</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">column_renames</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[25]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>Tel Aviv</th>
+      <th>Haifa</th>
+      <th>Jerusalem</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>cats</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>dogs</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>same after writing to a csv and reading from it, but for some reason it doesn't work with the NBA csv</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nba</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../effective-pandas-master/data/nba.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="n">nba</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="s1">&#39;PIPIPIPI&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">:</span> <span class="s1">&#39;WAWAWAWAWA&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[2]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>PIPIPIPI</th>
+      <th>Start (ET)</th>
+      <th>Visitor/Neutral</th>
+      <th>PTS</th>
+      <th>Home/Neutral</th>
+      <th>PTS.1</th>
+      <th></th>
+      <th>.1</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>Tue, Oct 27, 2015</td>
+      <td>8:00 pm</td>
+      <td>Detroit Pistons</td>
+      <td>106</td>
+      <td>Atlanta Hawks</td>
+      <td>94</td>
+      <td>Box Score</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>Tue, Oct 27, 2015</td>
+      <td>8:00 pm</td>
+      <td>Cleveland Cavaliers</td>
+      <td>95</td>
+      <td>Chicago Bulls</td>
+      <td>97</td>
+      <td>Box Score</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>Tue, Oct 27, 2015</td>
+      <td>10:30 pm</td>
+      <td>New Orleans Pelicans</td>
+      <td>95</td>
+      <td>Golden State Warriors</td>
+      <td>111</td>
+      <td>Box Score</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>Wed, Oct 28, 2015</td>
+      <td>7:30 pm</td>
+      <td>Philadelphia 76ers</td>
+      <td>95</td>
+      <td>Boston Celtics</td>
+      <td>112</td>
+      <td>Box Score</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Wed, Oct 28, 2015</td>
+      <td>7:30 pm</td>
+      <td>Chicago Bulls</td>
+      <td>115</td>
+      <td>Brooklyn Nets</td>
+      <td>100</td>
+      <td>Box Score</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Implementing-ReLU-with-numpy">Implementing ReLU with numpy<a class="anchor-link" href="#Implementing-ReLU-with-numpy">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">importlib</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">importlib</span><span class="o">.</span><span class="n">reload</span><span class="p">(</span><span class="n">np</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[52]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;module &#39;numpy&#39; from &#39;C:\\Users\\dbare\\Anaconda3\\lib\\site-packages\\numpy\\__init__.py&#39;&gt;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="o">-</span> <span class="mf">0.5</span> 
+<span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[53]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 0.25956883,  0.44069406, -0.27092209,  0.24225234,  0.10410885],
+       [ 0.13198122, -0.48388336, -0.25241084, -0.09530723, -0.41875959],
+       [-0.12282716,  0.36444344, -0.3530789 , -0.3265722 ,  0.01840678],
+       [ 0.04082214,  0.21362468, -0.26104579,  0.19166717, -0.44814682],
+       [ 0.17797562, -0.37254605,  0.15415917,  0.16455579, -0.11823266]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[63]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 0.        ,  0.31276605,  0.        ,  0.10321309,  0.00903231],
+       [ 0.14364516,  0.47768407,  0.        ,  0.26854849,  0.        ],
+       [ 0.        ,  0.11581031,  0.09506785,  0.43119011,  0.29766807],
+       [ 0.02182542,  0.45243396,  0.12998075,  0.        ,  0.31813966],
+       [ 0.03844416,  0.30681251,  0.39158325,  0.4435671 ,  0.        ]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[65]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 0.        ,  0.31276605,  0.        ,  0.10321309,  0.00903231],
+       [ 0.14364516,  0.47768407,  0.        ,  0.26854849,  0.        ],
+       [ 0.        ,  0.11581031,  0.09506785,  0.43119011,  0.29766807],
+       [ 0.02182542,  0.45243396,  0.12998075,  0.        ,  0.31813966],
+       [ 0.03844416,  0.30681251,  0.39158325,  0.4435671 ,  0.        ]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[80]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 0.        ,  0.31276605,  0.        ,  0.10321309,  0.00903231],
+       [ 0.14364516,  0.47768407,  0.        ,  0.26854849,  0.        ],
+       [ 0.        ,  0.11581031,  0.09506785,  0.43119011,  0.29766807],
+       [ 0.02182542,  0.45243396,  0.12998075,  0.        ,  0.31813966],
+       [ 0.03844416,  0.30681251,  0.39158325,  0.4435671 ,  0.        ]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">9999</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span> <span class="o">-</span> <span class="mf">0.5</span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
+rel1 = np.array(X, copy=True)
+rel1[rel1&lt;0]=0
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1 loop, best of 3: 1.27 s per loop
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
+rel2 = np.maximum(x,0,x)
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The slowest run took 20.88 times longer than the fastest. This could mean that an intermediate result is being cached.
+1000000 loops, best of 3: 1.06 µs per loop
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">timeit</span>
+rel3 = X * (X &gt; 0)
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1 loop, best of 3: 456 ms per loop
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+ 
+
+</p>
+      </article>
+
+      <hr />
+
+    
+
+
+
+		  </div>
+
+		  <div class="sidebar">
+		    <div class="sidebar-container" >
+
+
+  	          <nav>
+	            <h2>Categories</h2>
+	            <ul>
+	                <li ><a href="/category/misc.html">misc</a></li>
+	            </ul>
+	          </nav>
+
+	            <aside>
+	            <h2>Social</h2>
+			      <ul class="social">
+				    <li><a href="#">You can add links in your config file</a><i></i></li>
+				    <li><a href="#">Another social link</a><i></i></li>
+			      </ul>
+			    </aside>
+
+	            <aside>
+	              <h2>Blogroll</h2>
+	              <ul>
+	                  <li><a href="http://getpelican.com/">Pelican</a></li>
+	                  <li><a href="http://python.org/">Python.org</a></li>
+	                  <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+	                  <li><a href="#">You can modify those links in your config file</a></li>
+	              </ul>
+	            </aside>
+	        </div>
+		  </div>
+
+	  </div>
+
+      <footer>
+		<p role="contentinfo">
+		  Dan Bareket - Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>. Theme <a href="https://github.com/fle/pelican-sober">pelican-sober</a>.
+    	</p>
+
+	  </footer>
+
+	</div>
+
+
+</body>
+</html>
