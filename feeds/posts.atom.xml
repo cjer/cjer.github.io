@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cjer - Posts</title><link href="https://cjer.github.io/" rel="alternate"></link><link href="https://cjer.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://cjer.github.io/</id><updated>2018-01-05T15:47:00+02:00</updated><entry><title>Playing with GTFS II - Concurrency</title><link href="https://cjer.github.io/playing-with-gtfs-ii-concurrency.html" rel="alternate"></link><published>2018-01-04T21:33:00+02:00</published><updated>2018-01-05T15:47:00+02:00</updated><author><name>Dan Bareket</name></author><id>tag:cjer.github.io,2018-01-04:/playing-with-gtfs-ii-concurrency.html</id><summary type="html">&lt;p&gt;Second post playing with Israel's Ministry of Transportation GTFS data, with a focus on concurrency stats. Using pandas, seaborn and the all new and cool partridge.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Second post of the Playing with GTFS series.&lt;/em&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cjer - Posts</title><link href="https://cjer.github.io/" rel="alternate"></link><link href="https://cjer.github.io/feeds/posts.atom.xml" rel="self"></link><id>https://cjer.github.io/</id><updated>2018-01-06T23:33:00+02:00</updated><entry><title>Playing with GTFS II - Concurrency</title><link href="https://cjer.github.io/playing-with-gtfs-ii-concurrency.html" rel="alternate"></link><published>2018-01-04T21:33:00+02:00</published><updated>2018-01-06T23:33:00+02:00</updated><author><name>Dan Bareket</name></author><id>tag:cjer.github.io,2018-01-04:/playing-with-gtfs-ii-concurrency.html</id><summary type="html">&lt;p&gt;Second post playing with Israel's Ministry of Transportation GTFS data, with a focus on concurrency stats. Using pandas, seaborn and the all new and cool partridge.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Second post of the Playing with GTFS series.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;On the previous episode, we played with stop time stats. This time I'm digging a little deeper, with a focus on concurrency stats.&lt;/p&gt;
 &lt;p&gt;Still using pandas, seaborn and the all new and cool partridge. Adding some more advanced matplotlib tricks, and if you stick till the end, even some bokeh geo.&lt;/p&gt;
 &lt;p&gt;
@@ -2239,10 +2239,10 @@ For every $trip\_id$, we give $departure\_time = min(departure\_time)$, which sh
 
 
 
-&lt;div id="60e56148-4af6-4571-a5c0-4af6e0584306"&gt;&lt;/div&gt;
+&lt;div id="cdc4f613-2e1b-4eea-980b-c1e31af1f536"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#60e56148-4af6-4571-a5c0-4af6e0584306');
+var element = $('#cdc4f613-2e1b-4eea-980b-c1e31af1f536');
 
 (function(root) {
   function now() {
@@ -2602,10 +2602,10 @@ var element = $('#60e56148-4af6-4571-a5c0-4af6e0584306');
 
 
 
-&lt;div id="25f45bf9-ad5d-4d9c-89f3-99051193b783"&gt;&lt;/div&gt;
+&lt;div id="aa1a0de7-e209-4891-a110-4cb9e2107c97"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#25f45bf9-ad5d-4d9c-89f3-99051193b783');
+var element = $('#aa1a0de7-e209-4891-a110-4cb9e2107c97');
 (function(root) {
   function embed_document(root) {
     
@@ -3163,7 +3163,7 @@ var element = $('#25f45bf9-ad5d-4d9c-89f3-99051193b783');
 &lt;/div&gt;
  
 
-&lt;/p&gt;</content><category term="openbus"></category><category term="gtfs"></category><category term="pandas"></category><category term="seaborn"></category><category term="partridge"></category><category term="concurrency"></category></entry><entry><title>Playing with GTFS</title><link href="https://cjer.github.io/playing-with-gtfs.html" rel="alternate"></link><published>2017-12-27T16:58:00+02:00</published><updated>2017-12-27T17:18:00+02:00</updated><author><name>Dan Bareket</name></author><id>tag:cjer.github.io,2017-12-27:/playing-with-gtfs.html</id><summary type="html">&lt;p&gt;First post showing my first plays with Israel's Ministry of Transportation GTFS data. Using pandas, seaborn and the all new and cool partridge.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Here we go!&lt;/h1&gt;
+&lt;/p&gt;</content><category term="openbus"></category><category term="gtfs"></category><category term="pandas"></category><category term="seaborn"></category><category term="partridge"></category><category term="timeseries"></category><category term="concurrency"></category><category term="bokeh"></category></entry><entry><title>Playing with GTFS</title><link href="https://cjer.github.io/playing-with-gtfs.html" rel="alternate"></link><published>2017-12-27T16:58:00+02:00</published><updated>2017-12-27T17:18:00+02:00</updated><author><name>Dan Bareket</name></author><id>tag:cjer.github.io,2017-12-27:/playing-with-gtfs.html</id><summary type="html">&lt;p&gt;First post showing my first plays with Israel's Ministry of Transportation GTFS data. Using pandas, seaborn and the all new and cool partridge.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Here we go!&lt;/h1&gt;
 &lt;p&gt;First post, woohoo!
 So just a notebook showing my first plays with Israel's Ministry of Transportation GTFS data.
 Using pandas, seaborn and the all new and cool partridge.&lt;/p&gt;
