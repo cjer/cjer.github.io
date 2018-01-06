@@ -2239,10 +2239,10 @@ For every $trip\_id$, we give $departure\_time = min(departure\_time)$, which sh
 
 
 
-&lt;div id="17534a19-c122-4ce3-a1ce-e451f1c6a1d3"&gt;&lt;/div&gt;
+&lt;div id="40ede5a6-7f47-450d-8b8c-a54872b4e94d"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#17534a19-c122-4ce3-a1ce-e451f1c6a1d3');
+var element = $('#40ede5a6-7f47-450d-8b8c-a54872b4e94d');
 
 (function(root) {
   function now() {
@@ -2602,10 +2602,10 @@ var element = $('#17534a19-c122-4ce3-a1ce-e451f1c6a1d3');
 
 
 
-&lt;div id="5b01d922-8327-467e-9df4-01ed454f8f50"&gt;&lt;/div&gt;
+&lt;div id="1cdd1924-2f9e-4022-87ac-7c939ef4c155"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#5b01d922-8327-467e-9df4-01ed454f8f50');
+var element = $('#1cdd1924-2f9e-4022-87ac-7c939ef4c155');
 (function(root) {
   function embed_document(root) {
     
