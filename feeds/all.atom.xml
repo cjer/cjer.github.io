@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>cjer</title><link href="https://cjer.github.io/" rel="alternate"></link><link href="https://cjer.github.io/feeds/all.atom.xml" rel="self"></link><id>https://cjer.github.io/</id><updated>2018-01-06T23:33:00+02:00</updated><entry><title>Playing with GTFS II - Concurrency</title><link href="https://cjer.github.io/playing-with-gtfs-ii-concurrency.html" rel="alternate"></link><published>2018-01-04T21:33:00+02:00</published><updated>2018-01-06T23:33:00+02:00</updated><author><name>Dan Bareket</name></author><id>tag:cjer.github.io,2018-01-04:/playing-with-gtfs-ii-concurrency.html</id><summary type="html">&lt;p&gt;Second post playing with Israel's Ministry of Transportation GTFS data, with a focus on concurrency stats. Using pandas, seaborn and the all new and cool partridge.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Second post of the Playing with GTFS series.&lt;/em&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>cjer</title><link href="https://cjer.github.io/" rel="alternate"></link><link href="https://cjer.github.io/feeds/all.atom.xml" rel="self"></link><id>https://cjer.github.io/</id><updated>2018-01-08T17:18:00+02:00</updated><entry><title>Playing with GTFS II - Concurrency</title><link href="https://cjer.github.io/playing-with-gtfs-ii-concurrency.html" rel="alternate"></link><published>2018-01-04T21:33:00+02:00</published><updated>2018-01-08T17:18:00+02:00</updated><author><name>Dan Bareket</name></author><id>tag:cjer.github.io,2018-01-04:/playing-with-gtfs-ii-concurrency.html</id><summary type="html">&lt;p&gt;Second post playing with Israel's Ministry of Transportation GTFS data, with a focus on concurrency stats. Using pandas, seaborn and the all new and cool partridgeת some advanced matplotlib tricks, and if you stick till the end, even some bokeh geo.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Second post of the Playing with GTFS series.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;On the previous episode, we played with stop time stats. This time I'm digging a little deeper, with a focus on concurrency stats.&lt;/p&gt;
 &lt;p&gt;Still using pandas, seaborn and the all new and cool partridge. Adding some more advanced matplotlib tricks, and if you stick till the end, even some bokeh geo.&lt;/p&gt;
 &lt;p&gt;
@@ -2239,10 +2239,10 @@ For every $trip\_id$, we give $departure\_time = min(departure\_time)$, which sh
 
 
 
-&lt;div id="8fd6517c-da7b-4cee-8752-2b4e35d58cbb"&gt;&lt;/div&gt;
+&lt;div id="d2aceb57-4b19-428f-8113-8e2cc629de08"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#8fd6517c-da7b-4cee-8752-2b4e35d58cbb');
+var element = $('#d2aceb57-4b19-428f-8113-8e2cc629de08');
 
 (function(root) {
   function now() {
@@ -2604,10 +2604,10 @@ var element = $('#8fd6517c-da7b-4cee-8752-2b4e35d58cbb');
 
 
 
-&lt;div id="27e6b97e-99da-4458-ae0f-0744af5ecdfe"&gt;&lt;/div&gt;
+&lt;div id="9c2ff7d7-5c27-42df-b852-97ee52c5292e"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#27e6b97e-99da-4458-ae0f-0744af5ecdfe');
+var element = $('#9c2ff7d7-5c27-42df-b852-97ee52c5292e');
 (function(root) {
   function embed_document(root) {
     

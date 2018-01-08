@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://cjer.github.io/</loc>
-<lastmod>2018-01-07T03:05:41-00:00</lastmod>
+<lastmod>2018-01-08T17:19:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/archives.html</loc>
-<lastmod>2018-01-07T03:05:41-00:00</lastmod>
+<lastmod>2018-01-08T17:19:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/tags.html</loc>
-<lastmod>2018-01-07T03:05:41-00:00</lastmod>
+<lastmod>2018-01-08T17:19:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/categories.html</loc>
-<lastmod>2018-01-07T03:05:41-00:00</lastmod>
+<lastmod>2018-01-08T17:19:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/playing-with-gtfs-ii-concurrency.html</loc>
-<lastmod>2018-01-06T23:33:00+02:00</lastmod>
+<lastmod>2018-01-08T17:18:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -47,70 +47,70 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://cjer.github.io/category/posts.html</loc>
-<lastmod>2018-01-06T23:33:00+02:21</lastmod>
+<lastmod>2018-01-08T17:18:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/tag/openbus.html</loc>
-<lastmod>2018-01-06T23:33:00+02:21</lastmod>
+<lastmod>2018-01-08T17:18:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/tag/gtfs.html</loc>
-<lastmod>2018-01-06T23:33:00+02:21</lastmod>
+<lastmod>2018-01-08T17:18:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/tag/pandas.html</loc>
-<lastmod>2018-01-06T23:33:00+02:21</lastmod>
+<lastmod>2018-01-08T17:18:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/tag/seaborn.html</loc>
-<lastmod>2018-01-06T23:33:00+02:21</lastmod>
+<lastmod>2018-01-08T17:18:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/tag/partridge.html</loc>
-<lastmod>2018-01-06T23:33:00+02:21</lastmod>
+<lastmod>2018-01-08T17:18:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/tag/timeseries.html</loc>
-<lastmod>2018-01-06T23:33:00+02:21</lastmod>
+<lastmod>2018-01-08T17:18:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/tag/concurrency.html</loc>
-<lastmod>2018-01-06T23:33:00+02:21</lastmod>
+<lastmod>2018-01-08T17:18:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/tag/bokeh.html</loc>
-<lastmod>2018-01-06T23:33:00+02:21</lastmod>
+<lastmod>2018-01-08T17:18:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/author/dan-bareket.html</loc>
-<lastmod>2018-01-06T23:33:00+02:21</lastmod>
+<lastmod>2018-01-08T17:18:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
