@@ -2239,10 +2239,10 @@ For every $trip\_id$, we give $departure\_time = min(departure\_time)$, which sh
 
 
 
-&lt;div id="2a22d93d-80c8-4d56-b8ec-a239e4cfdae0"&gt;&lt;/div&gt;
+&lt;div id="9c195149-9f6b-4974-98d7-8869dc3353fd"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#2a22d93d-80c8-4d56-b8ec-a239e4cfdae0');
+var element = $('#9c195149-9f6b-4974-98d7-8869dc3353fd');
 
 (function(root) {
   function now() {
@@ -2604,10 +2604,10 @@ var element = $('#2a22d93d-80c8-4d56-b8ec-a239e4cfdae0');
 
 
 
-&lt;div id="813caf67-4805-404c-b962-b2ab37a32f94"&gt;&lt;/div&gt;
+&lt;div id="c7be0cc0-66bd-4c4a-ae0b-60457bd638f7"&gt;&lt;/div&gt;
 &lt;div class="output_subarea output_javascript "&gt;
 &lt;script type="text/javascript"&gt;
-var element = $('#813caf67-4805-404c-b962-b2ab37a32f94');
+var element = $('#c7be0cc0-66bd-4c4a-ae0b-60457bd638f7');
 (function(root) {
   function embed_document(root) {
     
@@ -2647,7 +2647,7 @@ var element = $('#813caf67-4805-404c-b962-b2ab37a32f94');
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;Woooowww... check out that Modi'in Illit Ball of fire :O right between TLV and Jerusalem. Ok, something is definitely off with our data for these lines.&lt;/p&gt;
-&lt;p&gt;Feel free to pan and zoom as much as you like (select exploration tool to the right)&lt;/p&gt;
+&lt;p&gt;Feel free to pan and zoom as much as you like (select exploration tool to the left)&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
