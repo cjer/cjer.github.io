@@ -11868,7 +11868,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -11877,9 +11877,6 @@ jQuery(document).ready(function($) {
 <span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
-
-<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span><span class="s2">&quot;talk&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11898,7 +11895,7 @@ jQuery(document).ready(function($) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">gtfs_utils</span> <span class="k">import</span> <span class="o">*</span>
@@ -11925,7 +11922,7 @@ jQuery(document).ready(function($) {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[3]:</div>
+<div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -11952,7 +11949,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tariff_df</span> <span class="o">=</span> <span class="n">extract_tariff_df</span><span class="p">(</span><span class="n">local_zip_path</span> <span class="o">=</span> <span class="s1">&#39;data/sample/tariff.zip&#39;</span><span class="p">)</span>
@@ -11971,533 +11968,9 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
     <span class="p">},]</span>
 <span class="n">south</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">south</span><span class="p">)</span>
 <span class="n">tariff_df</span> <span class="o">=</span> <span class="n">tariff_df</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">south</span><span class="p">)</span>
-<span class="n">tariff_df</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[4]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Daily</th>
-      <th>FromDate</th>
-      <th>Monthly</th>
-      <th>ShareCode</th>
-      <th>ToDate</th>
-      <th>Weekly</th>
-      <th>zone_id</th>
-      <th>zone_name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>213.0</td>
-      <td>141.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>64.0</td>
-      <td>210</td>
-      <td>גוש דן</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>152.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>221</td>
-      <td>שרון</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>153.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>222</td>
-      <td>ראש העין שוהם</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>154.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>223</td>
-      <td>רחובות</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>155.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>231</td>
-      <td>נתניה</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>156.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>157.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>233</td>
-      <td>אשדוד</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>9.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>171.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>42.5</td>
-      <td>410</td>
-      <td>באר שבע</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>136.0</td>
-      <td>180.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>39.5</td>
-      <td>421</td>
-      <td>רהט להבים</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>136.0</td>
-      <td>181.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>39.5</td>
-      <td>422</td>
-      <td>אופקים</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>136.0</td>
-      <td>182.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>39.5</td>
-      <td>423</td>
-      <td>עומר חורה</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>136.0</td>
-      <td>183.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>39.5</td>
-      <td>431</td>
-      <td>נתיבות שדרות</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>136.0</td>
-      <td>184.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>39.5</td>
-      <td>432</td>
-      <td>ירוחם</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>136.0</td>
-      <td>185.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>39.5</td>
-      <td>433</td>
-      <td>ערד דימונה</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>136.0</td>
-      <td>186.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>39.5</td>
-      <td>434</td>
-      <td>דרום הר חברון</td>
-    </tr>
-    <tr>
-      <th>32</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>213.0</td>
-      <td>500.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>64.0</td>
-      <td>310</td>
-      <td>סובב חיפה</td>
-    </tr>
-    <tr>
-      <th>40</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>560.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>321</td>
-      <td>עכו</td>
-    </tr>
-    <tr>
-      <th>41</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>561.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>322</td>
-      <td>יוקנעם- טבעון</td>
-    </tr>
-    <tr>
-      <th>42</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>562.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>331</td>
-      <td>נהריה</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>563.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>332</td>
-      <td>כרמיאל</td>
-    </tr>
-    <tr>
-      <th>44</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>564.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>333</td>
-      <td>נצרת</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>565.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>334</td>
-      <td>זכרון</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>213.0</td>
-      <td>671.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>64.0</td>
-      <td>110</td>
-      <td>סובב ירושלים</td>
-    </tr>
-    <tr>
-      <th>53</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>693.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>121</td>
-      <td>הרי ירושלים</td>
-    </tr>
-    <tr>
-      <th>54</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>694.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>122</td>
-      <td>בנימין</td>
-    </tr>
-    <tr>
-      <th>55</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>695.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>123</td>
-      <td>גוש עציון</td>
-    </tr>
-    <tr>
-      <th>56</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>696.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>131</td>
-      <td>אזור בית שמש</td>
-    </tr>
-    <tr>
-      <th>57</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>697.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-    </tr>
-    <tr>
-      <th>58</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>698.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>133</td>
-      <td>בקעת ים המלח</td>
-    </tr>
-    <tr>
-      <th>59</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>699.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>134</td>
-      <td>אזור קריית ארבע</td>
-    </tr>
-    <tr>
-      <th>62</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>742.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>501</td>
-      <td>גליל עליון ורמת הגולן</td>
-    </tr>
-    <tr>
-      <th>63</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>743.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>502</td>
-      <td>סובב כנרת ודרום רמת הגולן</td>
-    </tr>
-    <tr>
-      <th>65</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>746.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>602</td>
-      <td>בית שאן</td>
-    </tr>
-    <tr>
-      <th>66</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>747.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>601</td>
-      <td>עפולה</td>
-    </tr>
-    <tr>
-      <th>67</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>748.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>701</td>
-      <td>אזור חדרה</td>
-    </tr>
-    <tr>
-      <th>68</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>749.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>702</td>
-      <td>חריש ואדי ערה</td>
-    </tr>
-    <tr>
-      <th>69</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>750.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>802</td>
-      <td>קריית גת</td>
-    </tr>
-    <tr>
-      <th>70</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>751.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>801</td>
-      <td>אשקלון</td>
-    </tr>
-    <tr>
-      <th>72</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>753.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>234</td>
-      <td>השומרון</td>
-    </tr>
-    <tr>
-      <th>73</th>
-      <td>13.5</td>
-      <td>01/04/2016 00:00:00</td>
-      <td>149.0</td>
-      <td>754.0</td>
-      <td>01/01/2200 00:00:00</td>
-      <td>57.5</td>
-      <td>135</td>
-      <td>גוש שילה ובקעה</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>903</td>
-      <td>מצפה רמון</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>902</td>
-      <td>ערבה</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>901</td>
-      <td>אילת</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -12513,7 +11986,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">LOCAL_ZIP_PATH</span> <span class="o">=</span> <span class="s1">&#39;data/sample/gtfs.zip&#39;</span> 
@@ -12537,7 +12010,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">to_timedelta</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -12558,7 +12031,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">feed</span><span class="o">.</span><span class="n">stops</span>
@@ -12574,7 +12047,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">feed</span><span class="o">.</span><span class="n">stop_times</span><span class="p">[[</span><span class="s1">&#39;trip_id&#39;</span><span class="p">,</span> <span class="s1">&#39;departure_time&#39;</span><span class="p">,</span> <span class="s1">&#39;arrival_time&#39;</span><span class="p">,</span> <span class="s1">&#39;stop_id&#39;</span><span class="p">,</span> <span class="s1">&#39;stop_sequence&#39;</span><span class="p">]]</span>
@@ -12602,7 +12075,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[40]:</div>
+<div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -12748,7 +12221,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Cleanup-Diary">Cleanup Diary<a class="anchor-link" href="#Cleanup-Diary">&#182;</a></h2><p>That's what I was first trying to answer. This is an important parameter we have to be familiar with - trip final stops. Our current best polling strategy sends requests on these stops only.</p>
+<h2 id="Cleanup-Diary">Cleanup Diary<a class="anchor-link" href="#Cleanup-Diary">&#182;</a></h2><p>The question that ignited this post was about final destinations. This is an important parameter we have to be familiar with - last stop of every trip in <code>trips.txt</code>, based on <code>stop_times.txt</code> - since our current best polling strategy sends requests for these stops only.</p>
 
 </div>
 </div>
@@ -12757,7 +12230,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="One-(wrong)-way">One (wrong) way<a class="anchor-link" href="#One-(wrong)-way">&#182;</a></h4><p>So it actually started when I was trying to find simple loop lines (A --&gt; A). I (naively) thought to myself, lets get the first and last stop for all trips.</p>
+<h4 id="One-(wrong)-way">One (wrong) way<a class="anchor-link" href="#One-(wrong)-way">&#182;</a></h4><p>I first tried to use a dataframe I constructed when I was trying to find simple loop lines (A --&gt; A). I (naively) thought to myself, lets get the first and last stop for all trips.</p>
 <p>I did it like so -</p>
 
 </div>
@@ -12765,7 +12238,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
@@ -12779,7 +12252,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># using a custom groupby aggregation function, this is VERY inefficient,</span>
@@ -12809,7 +12282,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
@@ -12827,13 +12300,13 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[67]:</div>
+<div class="prompt output_prompt">Out[16]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1c78d3b7400&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x251ec1e0a90&gt;</pre>
 </div>
 
 </div>
@@ -12846,7 +12319,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -12868,7 +12341,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">orig_dest_only</span><span class="p">[</span><span class="n">orig_dest_only</span><span class="o">.</span><span class="n">stop_sequence</span><span class="o">!=</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;stop_id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -12884,7 +12357,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[23]:</div>
+<div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -12901,7 +12374,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">shape</span>
@@ -12917,7 +12390,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[55]:</div>
+<div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -12946,7 +12419,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">stop_sequence</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
@@ -12962,7 +12435,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[41]:</div>
+<div class="prompt output_prompt">Out[19]:</div>
 
 
 
@@ -12979,7 +12452,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">stop_sequence</span><span class="o">==</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
@@ -12995,7 +12468,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[42]:</div>
+<div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -13015,7 +12488,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There's less first stop than trips, but more 2nd stops than trips. Ok this is crazy, and certainly needs to be looked at in the future, but lets just leave it and use some other field for this task.</p>
-<p>TODO: dig into stop_sequence and talk to MOT about this</p>
+<p>TODO: dig into <code>stop_sequence</code> and talk to MOT about this</p>
 
 </div>
 </div>
@@ -13024,18 +12497,18 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Better-yet---timing-is-everything">Better yet - timing is everything<a class="anchor-link" href="#Better-yet---timing-is-everything">&#182;</a></h4><p>So lets use the <code>arrival_time</code> field instead, which should be cleaner. I'll skip the inefficient method I used before with the custom groupby aggregationm, and go for some neat trick using the mighty <code>transform</code> method.</p>
+<h4 id="Better-yet,-or-&quot;Timing-is-Everything&quot;">Better yet, or "Timing is Everything"<a class="anchor-link" href="#Better-yet,-or-&quot;Timing-is-Everything&quot;">&#182;</a></h4><p>Lets use the <code>arrival_time</code> field instead, which should be cleaner. I'll skip the inefficient method I used before with the custom groupby aggregationm, and go for some neat trick using the mighty <code>transform</code> method.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;trip_id&#39;</span><span class="p">],</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;departure_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="nb">max</span><span class="p">)</span> <span class="o">==</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;departure_time&#39;</span><span class="p">]</span>
-<span class="n">f</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;trip_id&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;trip_id&#39;</span><span class="p">],</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;arrival_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="nb">max</span><span class="p">)</span> <span class="o">==</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;arrival_time&#39;</span><span class="p">]</span>
+<span class="n">f</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;trip_id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -13048,7 +12521,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[43]:</div>
+<div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -13179,1017 +12652,8 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
       <td>101</td>
       <td>מסוף 2000-תל אביב יפו&lt;-&gt;בריכה/עמק דותן-מודיעין...</td>
     </tr>
-    <tr>
-      <th>973520</th>
-      <td>10230038_171217</td>
-      <td>0 days 16:26:40</td>
-      <td>0 days 16:26:40</td>
-      <td>22173</td>
-      <td>31</td>
-      <td>2017-12-21</td>
-      <td>בריכה/עמק דותן</td>
-      <td>31.899377</td>
-      <td>35.017810</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11169</td>
-      <td>1</td>
-      <td>101</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;בריכה/עמק דותן-מודיעין...</td>
-    </tr>
-    <tr>
-      <th>560116</th>
-      <td>10232240_171217</td>
-      <td>0 days 15:40:38</td>
-      <td>0 days 15:40:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560117</th>
-      <td>10232240_171217</td>
-      <td>0 days 15:40:38</td>
-      <td>0 days 15:40:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560143</th>
-      <td>10232241_171217</td>
-      <td>0 days 15:55:38</td>
-      <td>0 days 15:55:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560142</th>
-      <td>10232241_171217</td>
-      <td>0 days 15:55:38</td>
-      <td>0 days 15:55:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560169</th>
-      <td>10232242_171217</td>
-      <td>0 days 16:15:38</td>
-      <td>0 days 16:15:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560168</th>
-      <td>10232242_171217</td>
-      <td>0 days 16:15:38</td>
-      <td>0 days 16:15:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560194</th>
-      <td>10232243_171217</td>
-      <td>0 days 16:25:38</td>
-      <td>0 days 16:25:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560195</th>
-      <td>10232243_171217</td>
-      <td>0 days 16:25:38</td>
-      <td>0 days 16:25:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560221</th>
-      <td>10232244_171217</td>
-      <td>0 days 16:40:38</td>
-      <td>0 days 16:40:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560220</th>
-      <td>10232244_171217</td>
-      <td>0 days 16:40:38</td>
-      <td>0 days 16:40:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560246</th>
-      <td>10232245_171217</td>
-      <td>0 days 16:55:38</td>
-      <td>0 days 16:55:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560247</th>
-      <td>10232245_171217</td>
-      <td>0 days 16:55:38</td>
-      <td>0 days 16:55:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560273</th>
-      <td>10232246_171217</td>
-      <td>0 days 17:10:38</td>
-      <td>0 days 17:10:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560272</th>
-      <td>10232246_171217</td>
-      <td>0 days 17:10:38</td>
-      <td>0 days 17:10:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560298</th>
-      <td>10232247_171217</td>
-      <td>0 days 17:25:38</td>
-      <td>0 days 17:25:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560299</th>
-      <td>10232247_171217</td>
-      <td>0 days 17:25:38</td>
-      <td>0 days 17:25:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560324</th>
-      <td>10232248_171217</td>
-      <td>0 days 17:40:38</td>
-      <td>0 days 17:40:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560325</th>
-      <td>10232248_171217</td>
-      <td>0 days 17:40:38</td>
-      <td>0 days 17:40:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560350</th>
-      <td>10232249_171217</td>
-      <td>0 days 17:55:38</td>
-      <td>0 days 17:55:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>560351</th>
-      <td>10232249_171217</td>
-      <td>0 days 17:55:38</td>
-      <td>0 days 17:55:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>2547964</th>
-      <td>10253006_171217</td>
-      <td>0 days 05:34:11</td>
-      <td>0 days 05:34:11</td>
-      <td>3522</td>
-      <td>46</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חוף כרמל/הורדה</td>
-      <td>32.793368</td>
-      <td>34.959587</td>
-      <td>310</td>
-      <td>סובב חיפה</td>
-      <td>11286</td>
-      <td>1</td>
-      <td>115</td>
-      <td>בית התעשייה-חיפה&lt;-&gt;תחנה מרכזית חוף כרמל/הורדה-...</td>
-    </tr>
-    <tr>
-      <th>1519282</th>
-      <td>10292410_171217</td>
-      <td>0 days 08:43:40</td>
-      <td>0 days 08:43:40</td>
-      <td>21290</td>
-      <td>13</td>
-      <td>2017-12-21</td>
-      <td>סחנין משרד הרישוי</td>
-      <td>32.860660</td>
-      <td>35.308680</td>
-      <td>332</td>
-      <td>כרמיאל</td>
-      <td>9631</td>
-      <td>0</td>
-      <td>291</td>
-      <td>מגאר ג'/מרכז-מגאר&lt;-&gt;סחנין משרד הרישוי-סח'נין-1#</td>
-    </tr>
-    <tr>
-      <th>1519295</th>
-      <td>10292416_171217</td>
-      <td>0 days 16:03:40</td>
-      <td>0 days 16:03:40</td>
-      <td>21290</td>
-      <td>13</td>
-      <td>2017-12-21</td>
-      <td>סחנין משרד הרישוי</td>
-      <td>32.860660</td>
-      <td>35.308680</td>
-      <td>332</td>
-      <td>כרמיאל</td>
-      <td>9631</td>
-      <td>0</td>
-      <td>291</td>
-      <td>מגאר ג'/מרכז-מגאר&lt;-&gt;סחנין משרד הרישוי-סח'נין-1#</td>
-    </tr>
-    <tr>
-      <th>1715796</th>
-      <td>10320309_171217</td>
-      <td>0 days 10:08:42</td>
-      <td>0 days 10:08:42</td>
-      <td>11302</td>
-      <td>37</td>
-      <td>2017-12-21</td>
-      <td>מעלה הזיתים</td>
-      <td>31.772737</td>
-      <td>35.240924</td>
-      <td>110</td>
-      <td>סובב ירושלים</td>
-      <td>10490</td>
-      <td>0</td>
-      <td>51</td>
-      <td>ברנדייס-ירושלים&lt;-&gt;מעלה הזיתים-ירושלים-1#</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>1116494</th>
-      <td>9937764_171217</td>
-      <td>1 days 00:18:48</td>
-      <td>1 days 00:18:48</td>
-      <td>15299</td>
-      <td>47</td>
-      <td>2017-12-21</td>
-      <td>אהרון לובלין/ארבע עונות</td>
-      <td>31.958488</td>
-      <td>34.883585</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>10982</td>
-      <td>1</td>
-      <td>476</td>
-      <td>תחנה מרכזית תל אביב קומה 6/רציפים-תל אביב יפו&lt;...</td>
-    </tr>
-    <tr>
-      <th>1116541</th>
-      <td>9937765_171217</td>
-      <td>1 days 00:58:48</td>
-      <td>1 days 00:58:48</td>
-      <td>15299</td>
-      <td>47</td>
-      <td>2017-12-21</td>
-      <td>אהרון לובלין/ארבע עונות</td>
-      <td>31.958488</td>
-      <td>34.883585</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>10982</td>
-      <td>1</td>
-      <td>476</td>
-      <td>תחנה מרכזית תל אביב קומה 6/רציפים-תל אביב יפו&lt;...</td>
-    </tr>
-    <tr>
-      <th>553987</th>
-      <td>9937798_171217</td>
-      <td>0 days 08:56:43</td>
-      <td>0 days 08:56:43</td>
-      <td>22079</td>
-      <td>46</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת</td>
-      <td>31.943923</td>
-      <td>34.873991</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>10984</td>
-      <td>1</td>
-      <td>464</td>
-      <td>מסוף האוניברסיטה-תל אביב יפו&lt;-&gt;תחנת רכבת-לוד-20</td>
-    </tr>
-    <tr>
-      <th>554033</th>
-      <td>9937799_171217</td>
-      <td>0 days 15:21:43</td>
-      <td>0 days 15:21:43</td>
-      <td>22079</td>
-      <td>46</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת</td>
-      <td>31.943923</td>
-      <td>34.873991</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>10984</td>
-      <td>1</td>
-      <td>464</td>
-      <td>מסוף האוניברסיטה-תל אביב יפו&lt;-&gt;תחנת רכבת-לוד-20</td>
-    </tr>
-    <tr>
-      <th>554079</th>
-      <td>9937800_171217</td>
-      <td>0 days 16:21:43</td>
-      <td>0 days 16:21:43</td>
-      <td>22079</td>
-      <td>46</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת</td>
-      <td>31.943923</td>
-      <td>34.873991</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>10984</td>
-      <td>1</td>
-      <td>464</td>
-      <td>מסוף האוניברסיטה-תל אביב יפו&lt;-&gt;תחנת רכבת-לוד-20</td>
-    </tr>
-    <tr>
-      <th>554125</th>
-      <td>9937801_171217</td>
-      <td>0 days 17:21:43</td>
-      <td>0 days 17:21:43</td>
-      <td>22079</td>
-      <td>46</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת</td>
-      <td>31.943923</td>
-      <td>34.873991</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>10984</td>
-      <td>1</td>
-      <td>464</td>
-      <td>מסוף האוניברסיטה-תל אביב יפו&lt;-&gt;תחנת רכבת-לוד-20</td>
-    </tr>
-    <tr>
-      <th>2641599</th>
-      <td>9951408_171217</td>
-      <td>0 days 06:27:44</td>
-      <td>0 days 06:27:44</td>
-      <td>1119</td>
-      <td>28</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חדרה/הורדה</td>
-      <td>32.435324</td>
-      <td>34.914147</td>
-      <td>702</td>
-      <td>חריש ואדי ערה</td>
-      <td>4711</td>
-      <td>1</td>
-      <td>14</td>
-      <td>הפרדס/משמר הגבול-חדרה&lt;-&gt;תחנה מרכזית חדרה/הורדה...</td>
-    </tr>
-    <tr>
-      <th>2641627</th>
-      <td>9951410_171217</td>
-      <td>0 days 05:17:44</td>
-      <td>0 days 05:17:44</td>
-      <td>1119</td>
-      <td>28</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חדרה/הורדה</td>
-      <td>32.435324</td>
-      <td>34.914147</td>
-      <td>702</td>
-      <td>חריש ואדי ערה</td>
-      <td>4711</td>
-      <td>1</td>
-      <td>14</td>
-      <td>הפרדס/משמר הגבול-חדרה&lt;-&gt;תחנה מרכזית חדרה/הורדה...</td>
-    </tr>
-    <tr>
-      <th>2641655</th>
-      <td>9951415_171217</td>
-      <td>0 days 05:52:44</td>
-      <td>0 days 05:52:44</td>
-      <td>1119</td>
-      <td>28</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חדרה/הורדה</td>
-      <td>32.435324</td>
-      <td>34.914147</td>
-      <td>702</td>
-      <td>חריש ואדי ערה</td>
-      <td>4711</td>
-      <td>1</td>
-      <td>14</td>
-      <td>הפרדס/משמר הגבול-חדרה&lt;-&gt;תחנה מרכזית חדרה/הורדה...</td>
-    </tr>
-    <tr>
-      <th>3229870</th>
-      <td>9957519_171217</td>
-      <td>0 days 06:48:37</td>
-      <td>0 days 06:48:37</td>
-      <td>34354</td>
-      <td>20</td>
-      <td>2017-12-21</td>
-      <td>עלי זהב</td>
-      <td>32.070782</td>
-      <td>35.066418</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9111</td>
-      <td>0</td>
-      <td>77</td>
-      <td>מגרש כדורגל-אריאל&lt;-&gt;עלי זהב-עלי זהב-1#</td>
-    </tr>
-    <tr>
-      <th>3229890</th>
-      <td>9957520_171217</td>
-      <td>0 days 13:28:37</td>
-      <td>0 days 13:28:37</td>
-      <td>34354</td>
-      <td>20</td>
-      <td>2017-12-21</td>
-      <td>עלי זהב</td>
-      <td>32.070782</td>
-      <td>35.066418</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9111</td>
-      <td>0</td>
-      <td>77</td>
-      <td>מגרש כדורגל-אריאל&lt;-&gt;עלי זהב-עלי זהב-1#</td>
-    </tr>
-    <tr>
-      <th>3229910</th>
-      <td>9957521_171217</td>
-      <td>0 days 15:28:37</td>
-      <td>0 days 15:28:37</td>
-      <td>34354</td>
-      <td>20</td>
-      <td>2017-12-21</td>
-      <td>עלי זהב</td>
-      <td>32.070782</td>
-      <td>35.066418</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9111</td>
-      <td>0</td>
-      <td>77</td>
-      <td>מגרש כדורגל-אריאל&lt;-&gt;עלי זהב-עלי זהב-1#</td>
-    </tr>
-    <tr>
-      <th>3229930</th>
-      <td>9957522_171217</td>
-      <td>0 days 17:33:37</td>
-      <td>0 days 17:33:37</td>
-      <td>34354</td>
-      <td>20</td>
-      <td>2017-12-21</td>
-      <td>עלי זהב</td>
-      <td>32.070782</td>
-      <td>35.066418</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9111</td>
-      <td>0</td>
-      <td>77</td>
-      <td>מגרש כדורגל-אריאל&lt;-&gt;עלי זהב-עלי זהב-1#</td>
-    </tr>
-    <tr>
-      <th>3229950</th>
-      <td>9957541_171217</td>
-      <td>0 days 10:58:37</td>
-      <td>0 days 10:58:37</td>
-      <td>34354</td>
-      <td>20</td>
-      <td>2017-12-21</td>
-      <td>עלי זהב</td>
-      <td>32.070782</td>
-      <td>35.066418</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9111</td>
-      <td>0</td>
-      <td>77</td>
-      <td>מגרש כדורגל-אריאל&lt;-&gt;עלי זהב-עלי זהב-1#</td>
-    </tr>
-    <tr>
-      <th>1216743</th>
-      <td>9957728_171217</td>
-      <td>0 days 09:35:51</td>
-      <td>0 days 09:35:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1216775</th>
-      <td>9957734_171217</td>
-      <td>0 days 10:40:51</td>
-      <td>0 days 10:40:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1216807</th>
-      <td>9957740_171217</td>
-      <td>0 days 12:10:51</td>
-      <td>0 days 12:10:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1216839</th>
-      <td>9957746_171217</td>
-      <td>0 days 13:40:51</td>
-      <td>0 days 13:40:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1216871</th>
-      <td>9957752_171217</td>
-      <td>0 days 15:10:51</td>
-      <td>0 days 15:10:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1216903</th>
-      <td>9957757_171217</td>
-      <td>0 days 19:40:51</td>
-      <td>0 days 19:40:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1216935</th>
-      <td>9957762_171217</td>
-      <td>0 days 21:00:51</td>
-      <td>0 days 21:00:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1216967</th>
-      <td>9957767_171217</td>
-      <td>0 days 22:25:51</td>
-      <td>0 days 22:25:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1216620</th>
-      <td>9957772_171217</td>
-      <td>1 days 00:15:23</td>
-      <td>1 days 00:15:23</td>
-      <td>16117</td>
-      <td>54</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9241</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1222174</th>
-      <td>9957863_171217</td>
-      <td>0 days 17:18:02</td>
-      <td>0 days 17:18:02</td>
-      <td>34407</td>
-      <td>36</td>
-      <td>2017-12-21</td>
-      <td>בית כנסת עץ עפר/החרוב</td>
-      <td>32.118996</td>
-      <td>35.047666</td>
-      <td>222</td>
-      <td>ראש העין שוהם</td>
-      <td>9249</td>
-      <td>1</td>
-      <td>185</td>
-      <td>זאב אורלוב/ליברמן-פתח תקווה&lt;-&gt;בית כנסת עץ עפר/...</td>
-    </tr>
-    <tr>
-      <th>3227291</th>
-      <td>9957868_171217</td>
-      <td>0 days 14:23:50</td>
-      <td>0 days 14:23:50</td>
-      <td>34654</td>
-      <td>26</td>
-      <td>2017-12-21</td>
-      <td>קופת חולים לאומית/דרך הנחשונים</td>
-      <td>32.105873</td>
-      <td>35.171849</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9173</td>
-      <td>1</td>
-      <td>101</td>
-      <td>'איתמר א-איתמר&lt;-&gt;קופת חולים לאומית/דרך הנחשוני...</td>
-    </tr>
-    <tr>
-      <th>1021600</th>
-      <td>9957962_211217</td>
-      <td>0 days 17:45:03</td>
-      <td>0 days 17:45:03</td>
-      <td>34412</td>
-      <td>17</td>
-      <td>2017-12-21</td>
-      <td>ערבי הנחל/הדס</td>
-      <td>32.196098</td>
-      <td>35.008524</td>
-      <td>221</td>
-      <td>שרון</td>
-      <td>11077</td>
-      <td>1</td>
-      <td>211</td>
-      <td>דרך ז'בוטינסקי/רבי עקיבא-בני ברק&lt;-&gt;ערבי הנחל/ה...</td>
-    </tr>
-    <tr>
-      <th>1548903</th>
-      <td>9959391_171217</td>
-      <td>0 days 23:35:55</td>
-      <td>0 days 23:35:55</td>
-      <td>14365</td>
-      <td>69</td>
-      <td>2017-12-21</td>
-      <td>השונית/יורדי ים</td>
-      <td>32.160705</td>
-      <td>34.796409</td>
-      <td>221</td>
-      <td>שרון</td>
-      <td>11101</td>
-      <td>0</td>
-      <td>228</td>
-      <td>אגוז/אורן-כוכב יאיר&lt;-&gt;השונית/יורדי ים-הרצליה-1#</td>
-    </tr>
-    <tr>
-      <th>1548972</th>
-      <td>9959393_171217</td>
-      <td>1 days 00:35:55</td>
-      <td>1 days 00:35:55</td>
-      <td>14365</td>
-      <td>69</td>
-      <td>2017-12-21</td>
-      <td>השונית/יורדי ים</td>
-      <td>32.160705</td>
-      <td>34.796409</td>
-      <td>221</td>
-      <td>שרון</td>
-      <td>11101</td>
-      <td>0</td>
-      <td>228</td>
-      <td>אגוז/אורן-כוכב יאיר&lt;-&gt;השונית/יורדי ים-הרצליה-1#</td>
-    </tr>
-    <tr>
-      <th>3227525</th>
-      <td>9967462_171217</td>
-      <td>0 days 11:44:53</td>
-      <td>0 days 11:44:53</td>
-      <td>34503</td>
-      <td>19</td>
-      <td>2017-12-21</td>
-      <td>אוניברסיטת אריאל/כביש 31</td>
-      <td>32.105926</td>
-      <td>35.210692</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9193</td>
-      <td>1</td>
-      <td>102</td>
-      <td>קופת חולים כללית-ברכה&lt;-&gt;אוניברסיטת אריאל/כביש ...</td>
-    </tr>
-    <tr>
-      <th>3227544</th>
-      <td>9967467_171217</td>
-      <td>0 days 18:59:53</td>
-      <td>0 days 18:59:53</td>
-      <td>34503</td>
-      <td>19</td>
-      <td>2017-12-21</td>
-      <td>אוניברסיטת אריאל/כביש 31</td>
-      <td>32.105926</td>
-      <td>35.210692</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9193</td>
-      <td>1</td>
-      <td>102</td>
-      <td>קופת חולים כללית-ברכה&lt;-&gt;אוניברסיטת אריאל/כביש ...</td>
-    </tr>
   </tbody>
 </table>
-<p>92212 rows × 15 columns</p>
 </div>
 </div>
 
@@ -14210,7 +12674,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
@@ -14226,7 +12690,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[44]:</div>
+<div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -14254,7 +12718,7 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">trip_id</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14270,17 +12734,17 @@ Found out it's the file is even more fd-up than I realized, so I add the souther
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[49]:</div>
+<div class="prompt output_prompt">Out[24]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>24167955_171217    2
-24026560_211217    2
-24474733_211217    2
-30282177_211217    2
-24024130_211217    2
+<pre>29881457_211217    2
+24473826_211217    2
+29871173_211217    2
+10475384_211217    2
+11944462_171217    2
 Name: trip_id, dtype: int64</pre>
 </div>
 
@@ -14292,7 +12756,7 @@ Name: trip_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">st</span> <span class="o">=</span> <span class="n">feed</span><span class="o">.</span><span class="n">stop_times</span>
@@ -14309,7 +12773,7 @@ Name: trip_id, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[50]:</div>
+<div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -14367,7 +12831,7 @@ Name: trip_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="p">[((</span><span class="n">f</span><span class="o">.</span><span class="n">trip_id</span><span class="o">==</span><span class="s1">&#39;24167955_171217&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">stop_sequence</span><span class="o">==</span><span class="mi">31</span><span class="p">))</span> <span class="p">]</span>
@@ -14383,7 +12847,7 @@ Name: trip_id, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[51]:</div>
+<div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -14483,7 +12947,7 @@ Name: trip_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ftest</span> <span class="o">=</span> <span class="p">(</span><span class="n">feed</span><span class="o">.</span><span class="n">stop_times</span><span class="p">[[</span><span class="s1">&#39;trip_id&#39;</span><span class="p">,</span> <span class="s1">&#39;departure_time&#39;</span><span class="p">,</span> <span class="s1">&#39;arrival_time&#39;</span><span class="p">,</span> <span class="s1">&#39;stop_id&#39;</span><span class="p">,</span> <span class="s1">&#39;stop_sequence&#39;</span><span class="p">]]</span>
@@ -14506,7 +12970,7 @@ Name: trip_id, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[52]:</div>
+<div class="prompt output_prompt">Out[27]:</div>
 
 
 
@@ -14584,7 +13048,7 @@ Name: trip_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tariff_df</span><span class="p">[</span><span class="n">tariff_df</span><span class="o">.</span><span class="n">zone_id</span><span class="o">==</span><span class="s1">&#39;232&#39;</span><span class="p">]</span>
@@ -14600,7 +13064,7 @@ Name: trip_id, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[37]:</div>
+<div class="prompt output_prompt">Out[28]:</div>
 
 
 
@@ -14678,7 +13142,7 @@ Name: trip_id, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tariff_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;zone_id&#39;</span><span class="p">,</span> <span class="s1">&#39;zone_name&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
@@ -14694,7 +13158,7 @@ Name: trip_id, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[47]:</div>
+<div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -14764,7 +13228,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ftry</span> <span class="o">=</span> <span class="p">(</span><span class="n">feed</span><span class="o">.</span><span class="n">stop_times</span><span class="p">[[</span><span class="s1">&#39;trip_id&#39;</span><span class="p">,</span> <span class="s1">&#39;departure_time&#39;</span><span class="p">,</span> <span class="s1">&#39;arrival_time&#39;</span><span class="p">,</span> <span class="s1">&#39;stop_id&#39;</span><span class="p">,</span> <span class="s1">&#39;stop_sequence&#39;</span><span class="p">]]</span>
@@ -14786,7 +13250,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[54]:</div>
+<div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -14850,7 +13314,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_f</span> <span class="o">=</span> <span class="p">(</span><span class="n">feed</span><span class="o">.</span><span class="n">stop_times</span><span class="p">[[</span><span class="s1">&#39;trip_id&#39;</span><span class="p">,</span> <span class="s1">&#39;departure_time&#39;</span><span class="p">,</span> <span class="s1">&#39;arrival_time&#39;</span><span class="p">,</span> <span class="s1">&#39;stop_id&#39;</span><span class="p">,</span> <span class="s1">&#39;stop_sequence&#39;</span><span class="p">]]</span>
@@ -14878,7 +13342,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[55]:</div>
+<div class="prompt output_prompt">Out[31]:</div>
 
 
 
@@ -15031,11 +13495,11 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="n">new_f</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;trip_id&#39;</span><span class="p">],</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s1">&#39;arrival_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="nb">max</span><span class="p">)</span> <span class="o">==</span> <span class="n">new_f</span><span class="p">[</span><span class="s1">&#39;arrival_time&#39;</span><span class="p">]</span>
-<span class="n">new_f</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;trip_id&#39;</span><span class="p">)</span>
+<span class="n">new_f</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">trip_id</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -15048,1149 +13512,18 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[56]:</div>
+<div class="prompt output_prompt">Out[32]:</div>
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>trip_id</th>
-      <th>departure_time</th>
-      <th>arrival_time</th>
-      <th>stop_id</th>
-      <th>stop_sequence</th>
-      <th>date</th>
-      <th>stop_name</th>
-      <th>stop_lat</th>
-      <th>stop_lon</th>
-      <th>zone_id</th>
-      <th>zone_name</th>
-      <th>route_id</th>
-      <th>direction_id</th>
-      <th>route_short_name</th>
-      <th>route_long_name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>3144684</th>
-      <td>10096398_171217</td>
-      <td>0 days 22:05:22</td>
-      <td>0 days 22:05:22</td>
-      <td>34503</td>
-      <td>37</td>
-      <td>2017-12-21</td>
-      <td>אוניברסיטת אריאל/כביש 31</td>
-      <td>32.105926</td>
-      <td>35.210692</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9735</td>
-      <td>1</td>
-      <td>70</td>
-      <td>קניון קרני שומרון-קרני שומרון&lt;-&gt;אוניברסיטת ארי...</td>
-    </tr>
-    <tr>
-      <th>3144721</th>
-      <td>10096399_171217</td>
-      <td>1 days 00:05:22</td>
-      <td>1 days 00:05:22</td>
-      <td>34503</td>
-      <td>37</td>
-      <td>2017-12-21</td>
-      <td>אוניברסיטת אריאל/כביש 31</td>
-      <td>32.105926</td>
-      <td>35.210692</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9735</td>
-      <td>1</td>
-      <td>70</td>
-      <td>קניון קרני שומרון-קרני שומרון&lt;-&gt;אוניברסיטת ארי...</td>
-    </tr>
-    <tr>
-      <th>3145339</th>
-      <td>10221383_171217</td>
-      <td>0 days 15:21:28</td>
-      <td>0 days 15:21:28</td>
-      <td>34654</td>
-      <td>16</td>
-      <td>2017-12-21</td>
-      <td>קופת חולים לאומית/דרך הנחשונים</td>
-      <td>32.105873</td>
-      <td>35.171849</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9194</td>
-      <td>1</td>
-      <td>102</td>
-      <td>קופת חולים כללית-ברכה&lt;-&gt;קופת חולים לאומית/דרך ...</td>
-    </tr>
-    <tr>
-      <th>3145355</th>
-      <td>10221384_171217</td>
-      <td>0 days 16:26:28</td>
-      <td>0 days 16:26:28</td>
-      <td>34654</td>
-      <td>16</td>
-      <td>2017-12-21</td>
-      <td>קופת חולים לאומית/דרך הנחשונים</td>
-      <td>32.105873</td>
-      <td>35.171849</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9194</td>
-      <td>1</td>
-      <td>102</td>
-      <td>קופת חולים כללית-ברכה&lt;-&gt;קופת חולים לאומית/דרך ...</td>
-    </tr>
-    <tr>
-      <th>966190</th>
-      <td>10230038_171217</td>
-      <td>0 days 16:26:40</td>
-      <td>0 days 16:26:40</td>
-      <td>22173</td>
-      <td>31</td>
-      <td>2017-12-21</td>
-      <td>בריכה/עמק דותן</td>
-      <td>31.899377</td>
-      <td>35.017810</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11169</td>
-      <td>1</td>
-      <td>101</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;בריכה/עמק דותן-מודיעין...</td>
-    </tr>
-    <tr>
-      <th>559439</th>
-      <td>10232240_171217</td>
-      <td>0 days 15:40:38</td>
-      <td>0 days 15:40:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>559457</th>
-      <td>10232241_171217</td>
-      <td>0 days 15:55:38</td>
-      <td>0 days 15:55:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>559475</th>
-      <td>10232242_171217</td>
-      <td>0 days 16:15:38</td>
-      <td>0 days 16:15:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>559493</th>
-      <td>10232243_171217</td>
-      <td>0 days 16:25:38</td>
-      <td>0 days 16:25:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>559511</th>
-      <td>10232244_171217</td>
-      <td>0 days 16:40:38</td>
-      <td>0 days 16:40:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>559529</th>
-      <td>10232245_171217</td>
-      <td>0 days 16:55:38</td>
-      <td>0 days 16:55:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>559547</th>
-      <td>10232246_171217</td>
-      <td>0 days 17:10:38</td>
-      <td>0 days 17:10:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>559565</th>
-      <td>10232247_171217</td>
-      <td>0 days 17:25:38</td>
-      <td>0 days 17:25:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>559583</th>
-      <td>10232248_171217</td>
-      <td>0 days 17:40:38</td>
-      <td>0 days 17:40:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>559601</th>
-      <td>10232249_171217</td>
-      <td>0 days 17:55:38</td>
-      <td>0 days 17:55:38</td>
-      <td>24713</td>
-      <td>18</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת מרכז</td>
-      <td>31.900996</td>
-      <td>35.005017</td>
-      <td>232</td>
-      <td>חבל מודיעין</td>
-      <td>11200</td>
-      <td>1</td>
-      <td>112</td>
-      <td>מסוף 2000-תל אביב יפו&lt;-&gt;תחנה מרכזית/הורדה-מודי...</td>
-    </tr>
-    <tr>
-      <th>2526794</th>
-      <td>10253006_171217</td>
-      <td>0 days 05:34:11</td>
-      <td>0 days 05:34:11</td>
-      <td>3522</td>
-      <td>46</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חוף כרמל/הורדה</td>
-      <td>32.793368</td>
-      <td>34.959587</td>
-      <td>310</td>
-      <td>סובב חיפה</td>
-      <td>11286</td>
-      <td>1</td>
-      <td>115</td>
-      <td>בית התעשייה-חיפה&lt;-&gt;תחנה מרכזית חוף כרמל/הורדה-...</td>
-    </tr>
-    <tr>
-      <th>1508965</th>
-      <td>10292410_171217</td>
-      <td>0 days 08:43:40</td>
-      <td>0 days 08:43:40</td>
-      <td>21290</td>
-      <td>13</td>
-      <td>2017-12-21</td>
-      <td>סחנין משרד הרישוי</td>
-      <td>32.860660</td>
-      <td>35.308680</td>
-      <td>332</td>
-      <td>כרמיאל</td>
-      <td>9631</td>
-      <td>0</td>
-      <td>291</td>
-      <td>מגאר ג'/מרכז-מגאר&lt;-&gt;סחנין משרד הרישוי-סח'נין-1#</td>
-    </tr>
-    <tr>
-      <th>1508978</th>
-      <td>10292416_171217</td>
-      <td>0 days 16:03:40</td>
-      <td>0 days 16:03:40</td>
-      <td>21290</td>
-      <td>13</td>
-      <td>2017-12-21</td>
-      <td>סחנין משרד הרישוי</td>
-      <td>32.860660</td>
-      <td>35.308680</td>
-      <td>332</td>
-      <td>כרמיאל</td>
-      <td>9631</td>
-      <td>0</td>
-      <td>291</td>
-      <td>מגאר ג'/מרכז-מגאר&lt;-&gt;סחנין משרד הרישוי-סח'נין-1#</td>
-    </tr>
-    <tr>
-      <th>1704575</th>
-      <td>10320309_171217</td>
-      <td>0 days 10:08:42</td>
-      <td>0 days 10:08:42</td>
-      <td>11302</td>
-      <td>37</td>
-      <td>2017-12-21</td>
-      <td>מעלה הזיתים</td>
-      <td>31.772737</td>
-      <td>35.240924</td>
-      <td>110</td>
-      <td>סובב ירושלים</td>
-      <td>10490</td>
-      <td>0</td>
-      <td>51</td>
-      <td>ברנדייס-ירושלים&lt;-&gt;מעלה הזיתים-ירושלים-1#</td>
-    </tr>
-    <tr>
-      <th>1704612</th>
-      <td>10320310_171217</td>
-      <td>0 days 14:18:42</td>
-      <td>0 days 14:18:42</td>
-      <td>11302</td>
-      <td>37</td>
-      <td>2017-12-21</td>
-      <td>מעלה הזיתים</td>
-      <td>31.772737</td>
-      <td>35.240924</td>
-      <td>110</td>
-      <td>סובב ירושלים</td>
-      <td>10490</td>
-      <td>0</td>
-      <td>51</td>
-      <td>ברנדייס-ירושלים&lt;-&gt;מעלה הזיתים-ירושלים-1#</td>
-    </tr>
-    <tr>
-      <th>1704649</th>
-      <td>10320311_171217</td>
-      <td>0 days 16:53:42</td>
-      <td>0 days 16:53:42</td>
-      <td>11302</td>
-      <td>37</td>
-      <td>2017-12-21</td>
-      <td>מעלה הזיתים</td>
-      <td>31.772737</td>
-      <td>35.240924</td>
-      <td>110</td>
-      <td>סובב ירושלים</td>
-      <td>10490</td>
-      <td>0</td>
-      <td>51</td>
-      <td>ברנדייס-ירושלים&lt;-&gt;מעלה הזיתים-ירושלים-1#</td>
-    </tr>
-    <tr>
-      <th>2288988</th>
-      <td>10350680_171217</td>
-      <td>0 days 08:33:14</td>
-      <td>0 days 08:33:14</td>
-      <td>3522</td>
-      <td>53</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חוף כרמל/הורדה</td>
-      <td>32.793368</td>
-      <td>34.959587</td>
-      <td>310</td>
-      <td>סובב חיפה</td>
-      <td>7526</td>
-      <td>1</td>
-      <td>146</td>
-      <td>מרכזית המפרץ/רציפים בינעירוני-חיפה&lt;-&gt;תחנה מרכז...</td>
-    </tr>
-    <tr>
-      <th>2289041</th>
-      <td>10350682_171217</td>
-      <td>0 days 10:03:14</td>
-      <td>0 days 10:03:14</td>
-      <td>3522</td>
-      <td>53</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חוף כרמל/הורדה</td>
-      <td>32.793368</td>
-      <td>34.959587</td>
-      <td>310</td>
-      <td>סובב חיפה</td>
-      <td>7526</td>
-      <td>1</td>
-      <td>146</td>
-      <td>מרכזית המפרץ/רציפים בינעירוני-חיפה&lt;-&gt;תחנה מרכז...</td>
-    </tr>
-    <tr>
-      <th>2289094</th>
-      <td>10350684_171217</td>
-      <td>0 days 17:03:14</td>
-      <td>0 days 17:03:14</td>
-      <td>3522</td>
-      <td>53</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חוף כרמל/הורדה</td>
-      <td>32.793368</td>
-      <td>34.959587</td>
-      <td>310</td>
-      <td>סובב חיפה</td>
-      <td>7526</td>
-      <td>1</td>
-      <td>146</td>
-      <td>מרכזית המפרץ/רציפים בינעירוני-חיפה&lt;-&gt;תחנה מרכז...</td>
-    </tr>
-    <tr>
-      <th>2289147</th>
-      <td>10350687_171217</td>
-      <td>0 days 13:33:14</td>
-      <td>0 days 13:33:14</td>
-      <td>3522</td>
-      <td>53</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חוף כרמל/הורדה</td>
-      <td>32.793368</td>
-      <td>34.959587</td>
-      <td>310</td>
-      <td>סובב חיפה</td>
-      <td>7526</td>
-      <td>1</td>
-      <td>146</td>
-      <td>מרכזית המפרץ/רציפים בינעירוני-חיפה&lt;-&gt;תחנה מרכז...</td>
-    </tr>
-    <tr>
-      <th>2289200</th>
-      <td>10350693_171217</td>
-      <td>0 days 19:03:14</td>
-      <td>0 days 19:03:14</td>
-      <td>3522</td>
-      <td>53</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חוף כרמל/הורדה</td>
-      <td>32.793368</td>
-      <td>34.959587</td>
-      <td>310</td>
-      <td>סובב חיפה</td>
-      <td>7526</td>
-      <td>1</td>
-      <td>146</td>
-      <td>מרכזית המפרץ/רציפים בינעירוני-חיפה&lt;-&gt;תחנה מרכז...</td>
-    </tr>
-    <tr>
-      <th>2289253</th>
-      <td>10350694_171217</td>
-      <td>0 days 15:03:14</td>
-      <td>0 days 15:03:14</td>
-      <td>3522</td>
-      <td>53</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חוף כרמל/הורדה</td>
-      <td>32.793368</td>
-      <td>34.959587</td>
-      <td>310</td>
-      <td>סובב חיפה</td>
-      <td>7526</td>
-      <td>1</td>
-      <td>146</td>
-      <td>מרכזית המפרץ/רציפים בינעירוני-חיפה&lt;-&gt;תחנה מרכז...</td>
-    </tr>
-    <tr>
-      <th>2289306</th>
-      <td>10350695_171217</td>
-      <td>0 days 20:03:14</td>
-      <td>0 days 20:03:14</td>
-      <td>3522</td>
-      <td>53</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חוף כרמל/הורדה</td>
-      <td>32.793368</td>
-      <td>34.959587</td>
-      <td>310</td>
-      <td>סובב חיפה</td>
-      <td>7526</td>
-      <td>1</td>
-      <td>146</td>
-      <td>מרכזית המפרץ/רציפים בינעירוני-חיפה&lt;-&gt;תחנה מרכז...</td>
-    </tr>
-    <tr>
-      <th>2289359</th>
-      <td>10350699_171217</td>
-      <td>0 days 15:33:14</td>
-      <td>0 days 15:33:14</td>
-      <td>3522</td>
-      <td>53</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חוף כרמל/הורדה</td>
-      <td>32.793368</td>
-      <td>34.959587</td>
-      <td>310</td>
-      <td>סובב חיפה</td>
-      <td>7526</td>
-      <td>1</td>
-      <td>146</td>
-      <td>מרכזית המפרץ/רציפים בינעירוני-חיפה&lt;-&gt;תחנה מרכז...</td>
-    </tr>
-    <tr>
-      <th>2289412</th>
-      <td>10350701_171217</td>
-      <td>0 days 09:33:14</td>
-      <td>0 days 09:33:14</td>
-      <td>3522</td>
-      <td>53</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חוף כרמל/הורדה</td>
-      <td>32.793368</td>
-      <td>34.959587</td>
-      <td>310</td>
-      <td>סובב חיפה</td>
-      <td>7526</td>
-      <td>1</td>
-      <td>146</td>
-      <td>מרכזית המפרץ/רציפים בינעירוני-חיפה&lt;-&gt;תחנה מרכז...</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>1107838</th>
-      <td>9937764_171217</td>
-      <td>1 days 00:18:48</td>
-      <td>1 days 00:18:48</td>
-      <td>15299</td>
-      <td>47</td>
-      <td>2017-12-21</td>
-      <td>אהרון לובלין/ארבע עונות</td>
-      <td>31.958488</td>
-      <td>34.883585</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>10982</td>
-      <td>1</td>
-      <td>476</td>
-      <td>תחנה מרכזית תל אביב קומה 6/רציפים-תל אביב יפו&lt;...</td>
-    </tr>
-    <tr>
-      <th>1107885</th>
-      <td>9937765_171217</td>
-      <td>1 days 00:58:48</td>
-      <td>1 days 00:58:48</td>
-      <td>15299</td>
-      <td>47</td>
-      <td>2017-12-21</td>
-      <td>אהרון לובלין/ארבע עונות</td>
-      <td>31.958488</td>
-      <td>34.883585</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>10982</td>
-      <td>1</td>
-      <td>476</td>
-      <td>תחנה מרכזית תל אביב קומה 6/רציפים-תל אביב יפו&lt;...</td>
-    </tr>
-    <tr>
-      <th>553839</th>
-      <td>9937798_171217</td>
-      <td>0 days 08:56:43</td>
-      <td>0 days 08:56:43</td>
-      <td>22079</td>
-      <td>46</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת</td>
-      <td>31.943923</td>
-      <td>34.873991</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>10984</td>
-      <td>1</td>
-      <td>464</td>
-      <td>מסוף האוניברסיטה-תל אביב יפו&lt;-&gt;תחנת רכבת-לוד-20</td>
-    </tr>
-    <tr>
-      <th>553885</th>
-      <td>9937799_171217</td>
-      <td>0 days 15:21:43</td>
-      <td>0 days 15:21:43</td>
-      <td>22079</td>
-      <td>46</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת</td>
-      <td>31.943923</td>
-      <td>34.873991</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>10984</td>
-      <td>1</td>
-      <td>464</td>
-      <td>מסוף האוניברסיטה-תל אביב יפו&lt;-&gt;תחנת רכבת-לוד-20</td>
-    </tr>
-    <tr>
-      <th>553931</th>
-      <td>9937800_171217</td>
-      <td>0 days 16:21:43</td>
-      <td>0 days 16:21:43</td>
-      <td>22079</td>
-      <td>46</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת</td>
-      <td>31.943923</td>
-      <td>34.873991</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>10984</td>
-      <td>1</td>
-      <td>464</td>
-      <td>מסוף האוניברסיטה-תל אביב יפו&lt;-&gt;תחנת רכבת-לוד-20</td>
-    </tr>
-    <tr>
-      <th>553977</th>
-      <td>9937801_171217</td>
-      <td>0 days 17:21:43</td>
-      <td>0 days 17:21:43</td>
-      <td>22079</td>
-      <td>46</td>
-      <td>2017-12-21</td>
-      <td>תחנת רכבת</td>
-      <td>31.943923</td>
-      <td>34.873991</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>10984</td>
-      <td>1</td>
-      <td>464</td>
-      <td>מסוף האוניברסיטה-תל אביב יפו&lt;-&gt;תחנת רכבת-לוד-20</td>
-    </tr>
-    <tr>
-      <th>2620429</th>
-      <td>9951408_171217</td>
-      <td>0 days 06:27:44</td>
-      <td>0 days 06:27:44</td>
-      <td>1119</td>
-      <td>28</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חדרה/הורדה</td>
-      <td>32.435324</td>
-      <td>34.914147</td>
-      <td>702</td>
-      <td>חריש ואדי ערה</td>
-      <td>4711</td>
-      <td>1</td>
-      <td>14</td>
-      <td>הפרדס/משמר הגבול-חדרה&lt;-&gt;תחנה מרכזית חדרה/הורדה...</td>
-    </tr>
-    <tr>
-      <th>2620457</th>
-      <td>9951410_171217</td>
-      <td>0 days 05:17:44</td>
-      <td>0 days 05:17:44</td>
-      <td>1119</td>
-      <td>28</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חדרה/הורדה</td>
-      <td>32.435324</td>
-      <td>34.914147</td>
-      <td>702</td>
-      <td>חריש ואדי ערה</td>
-      <td>4711</td>
-      <td>1</td>
-      <td>14</td>
-      <td>הפרדס/משמר הגבול-חדרה&lt;-&gt;תחנה מרכזית חדרה/הורדה...</td>
-    </tr>
-    <tr>
-      <th>2620485</th>
-      <td>9951415_171217</td>
-      <td>0 days 05:52:44</td>
-      <td>0 days 05:52:44</td>
-      <td>1119</td>
-      <td>28</td>
-      <td>2017-12-21</td>
-      <td>תחנה מרכזית חדרה/הורדה</td>
-      <td>32.435324</td>
-      <td>34.914147</td>
-      <td>702</td>
-      <td>חריש ואדי ערה</td>
-      <td>4711</td>
-      <td>1</td>
-      <td>14</td>
-      <td>הפרדס/משמר הגבול-חדרה&lt;-&gt;תחנה מרכזית חדרה/הורדה...</td>
-    </tr>
-    <tr>
-      <th>3147654</th>
-      <td>9957519_171217</td>
-      <td>0 days 06:48:37</td>
-      <td>0 days 06:48:37</td>
-      <td>34354</td>
-      <td>20</td>
-      <td>2017-12-21</td>
-      <td>עלי זהב</td>
-      <td>32.070782</td>
-      <td>35.066418</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9111</td>
-      <td>0</td>
-      <td>77</td>
-      <td>מגרש כדורגל-אריאל&lt;-&gt;עלי זהב-עלי זהב-1#</td>
-    </tr>
-    <tr>
-      <th>3147674</th>
-      <td>9957520_171217</td>
-      <td>0 days 13:28:37</td>
-      <td>0 days 13:28:37</td>
-      <td>34354</td>
-      <td>20</td>
-      <td>2017-12-21</td>
-      <td>עלי זהב</td>
-      <td>32.070782</td>
-      <td>35.066418</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9111</td>
-      <td>0</td>
-      <td>77</td>
-      <td>מגרש כדורגל-אריאל&lt;-&gt;עלי זהב-עלי זהב-1#</td>
-    </tr>
-    <tr>
-      <th>3147694</th>
-      <td>9957521_171217</td>
-      <td>0 days 15:28:37</td>
-      <td>0 days 15:28:37</td>
-      <td>34354</td>
-      <td>20</td>
-      <td>2017-12-21</td>
-      <td>עלי זהב</td>
-      <td>32.070782</td>
-      <td>35.066418</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9111</td>
-      <td>0</td>
-      <td>77</td>
-      <td>מגרש כדורגל-אריאל&lt;-&gt;עלי זהב-עלי זהב-1#</td>
-    </tr>
-    <tr>
-      <th>3147714</th>
-      <td>9957522_171217</td>
-      <td>0 days 17:33:37</td>
-      <td>0 days 17:33:37</td>
-      <td>34354</td>
-      <td>20</td>
-      <td>2017-12-21</td>
-      <td>עלי זהב</td>
-      <td>32.070782</td>
-      <td>35.066418</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9111</td>
-      <td>0</td>
-      <td>77</td>
-      <td>מגרש כדורגל-אריאל&lt;-&gt;עלי זהב-עלי זהב-1#</td>
-    </tr>
-    <tr>
-      <th>3147734</th>
-      <td>9957541_171217</td>
-      <td>0 days 10:58:37</td>
-      <td>0 days 10:58:37</td>
-      <td>34354</td>
-      <td>20</td>
-      <td>2017-12-21</td>
-      <td>עלי זהב</td>
-      <td>32.070782</td>
-      <td>35.066418</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9111</td>
-      <td>0</td>
-      <td>77</td>
-      <td>מגרש כדורגל-אריאל&lt;-&gt;עלי זהב-עלי זהב-1#</td>
-    </tr>
-    <tr>
-      <th>1206940</th>
-      <td>9957728_171217</td>
-      <td>0 days 09:35:51</td>
-      <td>0 days 09:35:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1206972</th>
-      <td>9957734_171217</td>
-      <td>0 days 10:40:51</td>
-      <td>0 days 10:40:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1207004</th>
-      <td>9957740_171217</td>
-      <td>0 days 12:10:51</td>
-      <td>0 days 12:10:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1207036</th>
-      <td>9957746_171217</td>
-      <td>0 days 13:40:51</td>
-      <td>0 days 13:40:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1207068</th>
-      <td>9957752_171217</td>
-      <td>0 days 15:10:51</td>
-      <td>0 days 15:10:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1207100</th>
-      <td>9957757_171217</td>
-      <td>0 days 19:40:51</td>
-      <td>0 days 19:40:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1207132</th>
-      <td>9957762_171217</td>
-      <td>0 days 21:00:51</td>
-      <td>0 days 21:00:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1207164</th>
-      <td>9957767_171217</td>
-      <td>0 days 22:25:51</td>
-      <td>0 days 22:25:51</td>
-      <td>16117</td>
-      <td>33</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9239</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1206817</th>
-      <td>9957772_171217</td>
-      <td>1 days 00:15:23</td>
-      <td>1 days 00:15:23</td>
-      <td>16117</td>
-      <td>54</td>
-      <td>2017-12-21</td>
-      <td>זאב אורלוב/ליברמן</td>
-      <td>32.094310</td>
-      <td>34.885106</td>
-      <td>210</td>
-      <td>גוש דן</td>
-      <td>9241</td>
-      <td>0</td>
-      <td>185</td>
-      <td>בית כנסת עץ עפר/החרוב-עץ אפרים&lt;-&gt;זאב אורלוב/לי...</td>
-    </tr>
-    <tr>
-      <th>1212345</th>
-      <td>9957863_171217</td>
-      <td>0 days 17:18:02</td>
-      <td>0 days 17:18:02</td>
-      <td>34407</td>
-      <td>36</td>
-      <td>2017-12-21</td>
-      <td>בית כנסת עץ עפר/החרוב</td>
-      <td>32.118996</td>
-      <td>35.047666</td>
-      <td>222</td>
-      <td>ראש העין שוהם</td>
-      <td>9249</td>
-      <td>1</td>
-      <td>185</td>
-      <td>זאב אורלוב/ליברמן-פתח תקווה&lt;-&gt;בית כנסת עץ עפר/...</td>
-    </tr>
-    <tr>
-      <th>3145075</th>
-      <td>9957868_171217</td>
-      <td>0 days 14:23:50</td>
-      <td>0 days 14:23:50</td>
-      <td>34654</td>
-      <td>26</td>
-      <td>2017-12-21</td>
-      <td>קופת חולים לאומית/דרך הנחשונים</td>
-      <td>32.105873</td>
-      <td>35.171849</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9173</td>
-      <td>1</td>
-      <td>101</td>
-      <td>'איתמר א-איתמר&lt;-&gt;קופת חולים לאומית/דרך הנחשוני...</td>
-    </tr>
-    <tr>
-      <th>1014149</th>
-      <td>9957962_211217</td>
-      <td>0 days 17:45:03</td>
-      <td>0 days 17:45:03</td>
-      <td>34412</td>
-      <td>17</td>
-      <td>2017-12-21</td>
-      <td>ערבי הנחל/הדס</td>
-      <td>32.196098</td>
-      <td>35.008524</td>
-      <td>221</td>
-      <td>שרון</td>
-      <td>11077</td>
-      <td>1</td>
-      <td>211</td>
-      <td>דרך ז'בוטינסקי/רבי עקיבא-בני ברק&lt;-&gt;ערבי הנחל/ה...</td>
-    </tr>
-    <tr>
-      <th>1538586</th>
-      <td>9959391_171217</td>
-      <td>0 days 23:35:55</td>
-      <td>0 days 23:35:55</td>
-      <td>14365</td>
-      <td>69</td>
-      <td>2017-12-21</td>
-      <td>השונית/יורדי ים</td>
-      <td>32.160705</td>
-      <td>34.796409</td>
-      <td>221</td>
-      <td>שרון</td>
-      <td>11101</td>
-      <td>0</td>
-      <td>228</td>
-      <td>אגוז/אורן-כוכב יאיר&lt;-&gt;השונית/יורדי ים-הרצליה-1#</td>
-    </tr>
-    <tr>
-      <th>1538655</th>
-      <td>9959393_171217</td>
-      <td>1 days 00:35:55</td>
-      <td>1 days 00:35:55</td>
-      <td>14365</td>
-      <td>69</td>
-      <td>2017-12-21</td>
-      <td>השונית/יורדי ים</td>
-      <td>32.160705</td>
-      <td>34.796409</td>
-      <td>221</td>
-      <td>שרון</td>
-      <td>11101</td>
-      <td>0</td>
-      <td>228</td>
-      <td>אגוז/אורן-כוכב יאיר&lt;-&gt;השונית/יורדי ים-הרצליה-1#</td>
-    </tr>
-    <tr>
-      <th>3145309</th>
-      <td>9967462_171217</td>
-      <td>0 days 11:44:53</td>
-      <td>0 days 11:44:53</td>
-      <td>34503</td>
-      <td>19</td>
-      <td>2017-12-21</td>
-      <td>אוניברסיטת אריאל/כביש 31</td>
-      <td>32.105926</td>
-      <td>35.210692</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9193</td>
-      <td>1</td>
-      <td>102</td>
-      <td>קופת חולים כללית-ברכה&lt;-&gt;אוניברסיטת אריאל/כביש ...</td>
-    </tr>
-    <tr>
-      <th>3145328</th>
-      <td>9967467_171217</td>
-      <td>0 days 18:59:53</td>
-      <td>0 days 18:59:53</td>
-      <td>34503</td>
-      <td>19</td>
-      <td>2017-12-21</td>
-      <td>אוניברסיטת אריאל/כביש 31</td>
-      <td>32.105926</td>
-      <td>35.210692</td>
-      <td>234</td>
-      <td>השומרון</td>
-      <td>9193</td>
-      <td>1</td>
-      <td>102</td>
-      <td>קופת חולים כללית-ברכה&lt;-&gt;אוניברסיטת אריאל/כביש ...</td>
-    </tr>
-  </tbody>
-</table>
-<p>89768 rows × 15 columns</p>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>4593165_171217     1
+19066288_171217    1
+29835808_171217    1
+27599781_171217    1
+24078835_171217    1
+Name: trip_id, dtype: int64</pre>
 </div>
 
 </div>
@@ -16201,7 +13534,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_f</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
@@ -16217,7 +13550,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[57]:</div>
+<div class="prompt output_prompt">Out[33]:</div>
 
 
 
@@ -16236,7 +13569,8 @@ dtype: int64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>now we're missing 9. hmmmm...</p>
+<p>Trip duplicates - <span style="color:green">**check.**</span></p>
+<p>And now we're actually missing 9. hmmmm...</p>
 <p>Lets see which ones we're missing.</p>
 
 </div>
@@ -16244,23 +13578,11 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;trip_id&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">missing_trips</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="o">~</span><span class="n">t</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">new_f</span><span class="o">.</span><span class="n">trip_id</span><span class="p">)]</span>
+<span class="n">missing_trips</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="o">~</span><span class="n">t</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">new_f</span><span class="o">.</span><span class="n">trip_id</span><span class="p">)]</span>
 <span class="n">missing_trips</span>
 </pre></div>
 
@@ -16274,7 +13596,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[63]:</div>
+<div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -16407,10 +13729,10 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">st</span><span class="p">[</span><span class="n">st</span><span class="o">.</span><span class="n">trip_id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">missing_trips</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">st</span><span class="p">[</span><span class="n">st</span><span class="o">.</span><span class="n">trip_id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">missing_trips</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 
 </div>
@@ -16423,43 +13745,13 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[64]:</div>
+<div class="prompt output_prompt">Out[39]:</div>
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>trip_id</th>
-      <th>arrival_time</th>
-      <th>departure_time</th>
-      <th>stop_id</th>
-      <th>stop_sequence</th>
-      <th>pickup_type</th>
-      <th>drop_off_type</th>
-      <th>shape_dist_traveled</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>(0, 8)</pre>
 </div>
 
 </div>
@@ -16473,14 +13765,14 @@ dtype: int64</pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Nope. Good!</p>
-<p>To be safe lets test we are getting stop_times from the same line with different trips</p>
+<p>To be safe lets test we are getting <code>stop_times</code> rows from the same line of code, on another series of trips</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_trips</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -16497,7 +13789,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[65]:</div>
+<div class="prompt output_prompt">Out[37]:</div>
 
 
 
@@ -16589,10 +13881,10 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">st</span><span class="p">[</span><span class="n">st</span><span class="o">.</span><span class="n">trip_id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">test_trips</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">st</span><span class="p">[</span><span class="n">st</span><span class="o">.</span><span class="n">trip_id</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">test_trips</span><span class="o">.</span><span class="n">index</span><span class="p">)]</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 
 </div>
@@ -16605,715 +13897,13 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[66]:</div>
+<div class="prompt output_prompt">Out[41]:</div>
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>trip_id</th>
-      <th>arrival_time</th>
-      <th>departure_time</th>
-      <th>stop_id</th>
-      <th>stop_sequence</th>
-      <th>pickup_type</th>
-      <th>drop_off_type</th>
-      <th>shape_dist_traveled</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>14618361</th>
-      <td>30179315_211217</td>
-      <td>3600.0</td>
-      <td>3600.0</td>
-      <td>13284</td>
-      <td>1</td>
-      <td>0.0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>14618362</th>
-      <td>30179315_211217</td>
-      <td>3722.0</td>
-      <td>3722.0</td>
-      <td>14564</td>
-      <td>2</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>589</td>
-    </tr>
-    <tr>
-      <th>14618363</th>
-      <td>30179315_211217</td>
-      <td>3771.0</td>
-      <td>3771.0</td>
-      <td>13317</td>
-      <td>3</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>959</td>
-    </tr>
-    <tr>
-      <th>14618364</th>
-      <td>30179315_211217</td>
-      <td>3876.0</td>
-      <td>3876.0</td>
-      <td>12882</td>
-      <td>4</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>1353</td>
-    </tr>
-    <tr>
-      <th>14618365</th>
-      <td>30179315_211217</td>
-      <td>3988.0</td>
-      <td>3988.0</td>
-      <td>12896</td>
-      <td>5</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>1900</td>
-    </tr>
-    <tr>
-      <th>14618366</th>
-      <td>30179315_211217</td>
-      <td>4075.0</td>
-      <td>4075.0</td>
-      <td>13679</td>
-      <td>6</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>2335</td>
-    </tr>
-    <tr>
-      <th>14618367</th>
-      <td>30179315_211217</td>
-      <td>4178.0</td>
-      <td>4178.0</td>
-      <td>13127</td>
-      <td>7</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>2741</td>
-    </tr>
-    <tr>
-      <th>14618368</th>
-      <td>30179315_211217</td>
-      <td>4254.0</td>
-      <td>4254.0</td>
-      <td>12858</td>
-      <td>8</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>3173</td>
-    </tr>
-    <tr>
-      <th>14618369</th>
-      <td>30179315_211217</td>
-      <td>4308.0</td>
-      <td>4308.0</td>
-      <td>13634</td>
-      <td>9</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>3449</td>
-    </tr>
-    <tr>
-      <th>14618370</th>
-      <td>30179315_211217</td>
-      <td>4408.0</td>
-      <td>4408.0</td>
-      <td>14338</td>
-      <td>10</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>3816</td>
-    </tr>
-    <tr>
-      <th>14618371</th>
-      <td>30179315_211217</td>
-      <td>4562.0</td>
-      <td>4562.0</td>
-      <td>12824</td>
-      <td>11</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>4450</td>
-    </tr>
-    <tr>
-      <th>14618372</th>
-      <td>30179315_211217</td>
-      <td>4624.0</td>
-      <td>4624.0</td>
-      <td>12827</td>
-      <td>12</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>4677</td>
-    </tr>
-    <tr>
-      <th>14618373</th>
-      <td>30179315_211217</td>
-      <td>4657.0</td>
-      <td>4657.0</td>
-      <td>12876</td>
-      <td>13</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>4862</td>
-    </tr>
-    <tr>
-      <th>14618374</th>
-      <td>30179315_211217</td>
-      <td>4767.0</td>
-      <td>4767.0</td>
-      <td>13813</td>
-      <td>14</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>5329</td>
-    </tr>
-    <tr>
-      <th>14618375</th>
-      <td>30179315_211217</td>
-      <td>4878.0</td>
-      <td>4878.0</td>
-      <td>12829</td>
-      <td>15</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>5820</td>
-    </tr>
-    <tr>
-      <th>14618376</th>
-      <td>30179315_211217</td>
-      <td>4928.0</td>
-      <td>4928.0</td>
-      <td>12886</td>
-      <td>16</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>6236</td>
-    </tr>
-    <tr>
-      <th>14618377</th>
-      <td>30179315_211217</td>
-      <td>5057.0</td>
-      <td>5057.0</td>
-      <td>12831</td>
-      <td>17</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>6865</td>
-    </tr>
-    <tr>
-      <th>14618378</th>
-      <td>30179315_211217</td>
-      <td>5176.0</td>
-      <td>5176.0</td>
-      <td>12818</td>
-      <td>18</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>7628</td>
-    </tr>
-    <tr>
-      <th>14618379</th>
-      <td>30179315_211217</td>
-      <td>5261.0</td>
-      <td>5261.0</td>
-      <td>12816</td>
-      <td>19</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>8070</td>
-    </tr>
-    <tr>
-      <th>14618380</th>
-      <td>30179315_211217</td>
-      <td>5387.0</td>
-      <td>5387.0</td>
-      <td>12837</td>
-      <td>20</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>8705</td>
-    </tr>
-    <tr>
-      <th>14618381</th>
-      <td>30179315_211217</td>
-      <td>5499.0</td>
-      <td>5499.0</td>
-      <td>12867</td>
-      <td>21</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>9525</td>
-    </tr>
-    <tr>
-      <th>14618382</th>
-      <td>30179315_211217</td>
-      <td>5716.0</td>
-      <td>5716.0</td>
-      <td>25092</td>
-      <td>22</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>12009</td>
-    </tr>
-    <tr>
-      <th>14618383</th>
-      <td>30179315_211217</td>
-      <td>5955.0</td>
-      <td>5955.0</td>
-      <td>25338</td>
-      <td>23</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>13873</td>
-    </tr>
-    <tr>
-      <th>14618384</th>
-      <td>30179315_211217</td>
-      <td>6020.0</td>
-      <td>6020.0</td>
-      <td>15493</td>
-      <td>24</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>14285</td>
-    </tr>
-    <tr>
-      <th>14618385</th>
-      <td>30179315_211217</td>
-      <td>6121.0</td>
-      <td>6121.0</td>
-      <td>25070</td>
-      <td>25</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>14915</td>
-    </tr>
-    <tr>
-      <th>14618386</th>
-      <td>30179315_211217</td>
-      <td>6143.0</td>
-      <td>6143.0</td>
-      <td>15395</td>
-      <td>26</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>15087</td>
-    </tr>
-    <tr>
-      <th>14618387</th>
-      <td>30179315_211217</td>
-      <td>6158.0</td>
-      <td>6158.0</td>
-      <td>15393</td>
-      <td>27</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>15196</td>
-    </tr>
-    <tr>
-      <th>14618388</th>
-      <td>30179315_211217</td>
-      <td>6219.0</td>
-      <td>6219.0</td>
-      <td>24457</td>
-      <td>28</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>15668</td>
-    </tr>
-    <tr>
-      <th>14618389</th>
-      <td>30179315_211217</td>
-      <td>6273.0</td>
-      <td>6273.0</td>
-      <td>15674</td>
-      <td>29</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>16080</td>
-    </tr>
-    <tr>
-      <th>14618390</th>
-      <td>30179315_211217</td>
-      <td>6317.0</td>
-      <td>6317.0</td>
-      <td>15902</td>
-      <td>30</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>16414</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>14694269</th>
-      <td>30180188_211217</td>
-      <td>9050.0</td>
-      <td>9050.0</td>
-      <td>15635</td>
-      <td>19</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>10199</td>
-    </tr>
-    <tr>
-      <th>14694270</th>
-      <td>30180188_211217</td>
-      <td>9134.0</td>
-      <td>9134.0</td>
-      <td>22964</td>
-      <td>20</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>10647</td>
-    </tr>
-    <tr>
-      <th>14694271</th>
-      <td>30180188_211217</td>
-      <td>9206.0</td>
-      <td>9206.0</td>
-      <td>16824</td>
-      <td>21</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>11110</td>
-    </tr>
-    <tr>
-      <th>14694272</th>
-      <td>30180188_211217</td>
-      <td>9274.0</td>
-      <td>9274.0</td>
-      <td>25107</td>
-      <td>22</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>11469</td>
-    </tr>
-    <tr>
-      <th>14694273</th>
-      <td>30180188_211217</td>
-      <td>9394.0</td>
-      <td>9394.0</td>
-      <td>25128</td>
-      <td>23</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>12650</td>
-    </tr>
-    <tr>
-      <th>14694274</th>
-      <td>30180188_211217</td>
-      <td>9473.0</td>
-      <td>9473.0</td>
-      <td>25137</td>
-      <td>24</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>13716</td>
-    </tr>
-    <tr>
-      <th>14694275</th>
-      <td>30180188_211217</td>
-      <td>9510.0</td>
-      <td>9510.0</td>
-      <td>15679</td>
-      <td>25</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>14207</td>
-    </tr>
-    <tr>
-      <th>14694276</th>
-      <td>30180188_211217</td>
-      <td>9549.0</td>
-      <td>9549.0</td>
-      <td>14701</td>
-      <td>26</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>14811</td>
-    </tr>
-    <tr>
-      <th>14694277</th>
-      <td>30180188_211217</td>
-      <td>9627.0</td>
-      <td>9627.0</td>
-      <td>15826</td>
-      <td>27</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>16111</td>
-    </tr>
-    <tr>
-      <th>14694278</th>
-      <td>30180188_211217</td>
-      <td>9674.0</td>
-      <td>9674.0</td>
-      <td>15837</td>
-      <td>28</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>16578</td>
-    </tr>
-    <tr>
-      <th>14694279</th>
-      <td>30180188_211217</td>
-      <td>9773.0</td>
-      <td>9773.0</td>
-      <td>15505</td>
-      <td>29</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>18205</td>
-    </tr>
-    <tr>
-      <th>14694280</th>
-      <td>30180188_211217</td>
-      <td>9862.0</td>
-      <td>9862.0</td>
-      <td>15671</td>
-      <td>30</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>18646</td>
-    </tr>
-    <tr>
-      <th>14694281</th>
-      <td>30180188_211217</td>
-      <td>9892.0</td>
-      <td>9892.0</td>
-      <td>15873</td>
-      <td>31</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>18862</td>
-    </tr>
-    <tr>
-      <th>14694282</th>
-      <td>30180188_211217</td>
-      <td>9971.0</td>
-      <td>9971.0</td>
-      <td>15847</td>
-      <td>32</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>19373</td>
-    </tr>
-    <tr>
-      <th>14694283</th>
-      <td>30180188_211217</td>
-      <td>10005.0</td>
-      <td>10005.0</td>
-      <td>15856</td>
-      <td>33</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>19606</td>
-    </tr>
-    <tr>
-      <th>14694284</th>
-      <td>30180188_211217</td>
-      <td>10044.0</td>
-      <td>10044.0</td>
-      <td>15833</td>
-      <td>34</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>19911</td>
-    </tr>
-    <tr>
-      <th>14694285</th>
-      <td>30180188_211217</td>
-      <td>10081.0</td>
-      <td>10081.0</td>
-      <td>15787</td>
-      <td>35</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>20317</td>
-    </tr>
-    <tr>
-      <th>14694286</th>
-      <td>30180188_211217</td>
-      <td>10113.0</td>
-      <td>10113.0</td>
-      <td>15851</td>
-      <td>36</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>21126</td>
-    </tr>
-    <tr>
-      <th>14694287</th>
-      <td>30180188_211217</td>
-      <td>10166.0</td>
-      <td>10166.0</td>
-      <td>15618</td>
-      <td>37</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>21616</td>
-    </tr>
-    <tr>
-      <th>14694288</th>
-      <td>30180188_211217</td>
-      <td>10234.0</td>
-      <td>10234.0</td>
-      <td>15392</td>
-      <td>38</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>22124</td>
-    </tr>
-    <tr>
-      <th>14694289</th>
-      <td>30180188_211217</td>
-      <td>10277.0</td>
-      <td>10277.0</td>
-      <td>15620</td>
-      <td>39</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>22449</td>
-    </tr>
-    <tr>
-      <th>14694290</th>
-      <td>30180188_211217</td>
-      <td>10365.0</td>
-      <td>10365.0</td>
-      <td>15409</td>
-      <td>40</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>23134</td>
-    </tr>
-    <tr>
-      <th>14694291</th>
-      <td>30180188_211217</td>
-      <td>10401.0</td>
-      <td>10401.0</td>
-      <td>15411</td>
-      <td>41</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>23456</td>
-    </tr>
-    <tr>
-      <th>14694292</th>
-      <td>30180188_211217</td>
-      <td>10467.0</td>
-      <td>10467.0</td>
-      <td>25090</td>
-      <td>42</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>23901</td>
-    </tr>
-    <tr>
-      <th>14694293</th>
-      <td>30180188_211217</td>
-      <td>10500.0</td>
-      <td>10500.0</td>
-      <td>15479</td>
-      <td>43</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>24157</td>
-    </tr>
-    <tr>
-      <th>14694294</th>
-      <td>30180188_211217</td>
-      <td>10549.0</td>
-      <td>10549.0</td>
-      <td>15632</td>
-      <td>44</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>24529</td>
-    </tr>
-    <tr>
-      <th>14694295</th>
-      <td>30180188_211217</td>
-      <td>10582.0</td>
-      <td>10582.0</td>
-      <td>15524</td>
-      <td>45</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>24779</td>
-    </tr>
-    <tr>
-      <th>14694296</th>
-      <td>30180188_211217</td>
-      <td>10641.0</td>
-      <td>10641.0</td>
-      <td>15626</td>
-      <td>46</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>25230</td>
-    </tr>
-    <tr>
-      <th>14694297</th>
-      <td>30180188_211217</td>
-      <td>10665.0</td>
-      <td>10665.0</td>
-      <td>15633</td>
-      <td>47</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>25419</td>
-    </tr>
-    <tr>
-      <th>14694298</th>
-      <td>30180188_211217</td>
-      <td>10802.0</td>
-      <td>10802.0</td>
-      <td>41264</td>
-      <td>48</td>
-      <td>1.0</td>
-      <td>0</td>
-      <td>26207</td>
-    </tr>
-  </tbody>
-</table>
-<p>256 rows × 8 columns</p>
-</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>(256, 8)</pre>
 </div>
 
 </div>
@@ -17326,8 +13916,9 @@ dtype: int64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Woohoo! looks like we're good to go.</p>
-<p>To shortly sum up - cleanup is an ongoing process. I have found an issue in the original data (stop_sequence) and an issue with how I merged tables (double zone in the very very messy tariffs table).</p>
+<p>Missing trip - <span style="color:green">**check.**</span></p>
+<p>Woohoo! looks like we're good to go (For now :O )</p>
+<h2 id="Goodbye">Goodbye<a class="anchor-link" href="#Goodbye">&#182;</a></h2><p>To shortly sum up - cleanup is an ongoing process. I have found an issue in the original data (stop_sequence) and an issue with how I merged tables (double zone in the very very messy tariffs table).</p>
 <p>See you soon when I test <a href="http://gtfs.org/best-practices">GTFS best practices</a> on our GTFS files (with regards to loops routes, lasso routes and some more).</p>
 
 </div>
