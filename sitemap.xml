@@ -5,35 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://cjer.github.io/</loc>
-<lastmod>2018-03-02T19:10:15-00:00</lastmod>
+<lastmod>2018-04-01T17:00:06-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/archives.html</loc>
-<lastmod>2018-03-02T19:10:15-00:00</lastmod>
+<lastmod>2018-04-01T17:00:06-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/tags.html</loc>
-<lastmod>2018-03-02T19:10:15-00:00</lastmod>
+<lastmod>2018-04-01T17:00:06-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/categories.html</loc>
-<lastmod>2018-03-02T19:10:15-00:00</lastmod>
+<lastmod>2018-04-01T17:00:06-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://cjer.github.io/pages/about.html</loc>
-<lastmod>2018-03-02T19:10:15-00:00</lastmod>
+<lastmod>2018-04-01T17:00:06-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://cjer.github.io/nlp-yap-alternative-evaluation.html</loc>
+<lastmod>2018-04-01T16:56:00+03:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -68,7 +75,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://cjer.github.io/category/posts.html</loc>
-<lastmod>2018-02-07T01:45:00+02:21</lastmod>
+<lastmod>2018-04-01T16:56:00+02:21</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://cjer.github.io/tag/nlp.html</loc>
+<lastmod>2018-04-01T16:56:00+02:21</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://cjer.github.io/tag/yap.html</loc>
+<lastmod>2018-04-01T16:56:00+02:21</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://cjer.github.io/tag/pos-tagging.html</loc>
+<lastmod>2018-04-01T16:56:00+02:21</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://cjer.github.io/tag/evaluation.html</loc>
+<lastmod>2018-04-01T16:56:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -187,7 +222,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://cjer.github.io/author/dan-bareket.html</loc>
-<lastmod>2018-02-07T01:45:00+02:21</lastmod>
+<lastmod>2018-04-01T16:56:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
