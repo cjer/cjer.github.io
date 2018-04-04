@@ -5,35 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://simplistic.me/</loc>
-<lastmod>2018-04-04T02:37:09-00:00</lastmod>
+<lastmod>2018-04-04T03:06:18-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/archives.html</loc>
-<lastmod>2018-04-04T02:37:09-00:00</lastmod>
+<lastmod>2018-04-04T03:06:18-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/tags.html</loc>
-<lastmod>2018-04-04T02:37:09-00:00</lastmod>
+<lastmod>2018-04-04T03:06:18-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/categories.html</loc>
-<lastmod>2018-04-04T02:37:09-00:00</lastmod>
+<lastmod>2018-04-04T03:06:18-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/pages/about.html</loc>
-<lastmod>2018-04-04T02:37:09-00:00</lastmod>
+<lastmod>2018-04-04T03:06:18-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://simplistic.me/playing-with-gtfs-new-zones.html</loc>
+<lastmod>2018-04-04T02:53:00+03:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -82,35 +89,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://simplistic.me/category/posts.html</loc>
-<lastmod>2018-04-02T16:57:00+02:21</lastmod>
+<lastmod>2018-04-04T02:53:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/tag/openbus.html</loc>
-<lastmod>2018-04-02T16:57:00+02:21</lastmod>
+<lastmod>2018-04-04T02:53:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/tag/gtfs.html</loc>
-<lastmod>2018-04-02T16:57:00+02:21</lastmod>
+<lastmod>2018-04-04T02:53:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/tag/pandas.html</loc>
-<lastmod>2018-04-02T16:57:00+02:21</lastmod>
+<lastmod>2018-04-04T02:53:00+02:21</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://simplistic.me/tag/seaborn.html</loc>
+<lastmod>2018-04-04T02:53:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/tag/partridge.html</loc>
-<lastmod>2018-04-02T16:57:00+02:21</lastmod>
+<lastmod>2018-04-04T02:53:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -242,13 +256,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://simplistic.me/tag/seaborn.html</loc>
-<lastmod>2018-01-08T17:18:00+02:21</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>http://simplistic.me/tag/timeseries.html</loc>
 <lastmod>2018-01-08T17:18:00+02:21</lastmod>
 <changefreq>daily</changefreq>
@@ -264,7 +271,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://simplistic.me/author/dan-bareket.html</loc>
-<lastmod>2018-04-02T16:57:00+02:21</lastmod>
+<lastmod>2018-04-04T02:53:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
