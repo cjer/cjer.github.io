@@ -11884,14 +11884,6 @@ jQuery(document).ready(function($) {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Exploring-Israel's-MOT-GTFS-files...">Exploring Israel's MOT GTFS files...<a class="anchor-link" href="#Exploring-Israel's-MOT-GTFS-files...">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Get-the-data">Get the data<a class="anchor-link" href="#Get-the-data">&#182;</a></h1><p>Start by making an FTP connection and retrieve the gtfs zip file's modification date. We're restricted from using most commands, but we can LIST...</p>
 
 </div>
@@ -12054,141 +12046,6 @@ Oh goody! we&#39;re up-to-date!
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">h5_file_path</span> <span class="o">=</span> <span class="s1">&#39;data/gtfs_store.h5&#39;</span>
-<span class="k">if</span> <span class="n">our_uptodateness</span> <span class="o">&gt;</span> <span class="n">UPTODATE</span><span class="p">:</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">h5_file_path</span><span class="p">)</span>
-<span class="n">store</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">HDFStore</span><span class="p">(</span><span class="n">h5_file_path</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">our_uptodateness</span> <span class="o">&gt;</span> <span class="n">UPTODATE</span><span class="p">:</span>
-    <span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">local_zip_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">zf</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">fn</span> <span class="ow">in</span> <span class="n">zf</span><span class="o">.</span><span class="n">namelist</span><span class="p">():</span>
-            <span class="n">short</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">short</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">store</span><span class="p">:</span>
-                <span class="n">store</span><span class="p">[</span><span class="n">short</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">zf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fn</span><span class="p">))</span>
-
-<span class="n">store</span><span class="o">.</span><span class="n">stops</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[6]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>stop_id</th>
-      <th>stop_code</th>
-      <th>stop_name</th>
-      <th>stop_desc</th>
-      <th>stop_lat</th>
-      <th>stop_lon</th>
-      <th>location_type</th>
-      <th>parent_station</th>
-      <th>zone_id</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>38831</td>
-      <td>בי''ס בר לב/בן יהודה</td>
-      <td>רחוב:בן יהודה 76 עיר: כפר סבא רציף:   קומה:</td>
-      <td>32.183939</td>
-      <td>34.917812</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>221.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>38832</td>
-      <td>הרצל/צומת בילו</td>
-      <td>רחוב:הרצל  עיר: קרית עקרון רציף:   קומה:</td>
-      <td>31.870034</td>
-      <td>34.819541</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>223.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>38833</td>
-      <td>הנחשול/הדייגים</td>
-      <td>רחוב:הנחשול 30 עיר: ראשון לציון רציף:   קומה:</td>
-      <td>31.984558</td>
-      <td>34.782815</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>210.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>38834</td>
-      <td>פריד/ששת הימים</td>
-      <td>רחוב:משה פריד 9 עיר: רחובות רציף:   קומה:</td>
-      <td>31.888550</td>
-      <td>34.790904</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>223.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>6</td>
-      <td>38836</td>
-      <td>תחנה מרכזית לוד/הורדה</td>
-      <td>רחוב:  עיר: לוד רציף:   קומה:</td>
-      <td>31.956576</td>
-      <td>34.898125</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>210.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12245,7 +12102,7 @@ Oh goody! we&#39;re up-to-date!
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Tidy-it-up">Tidy it up<a class="anchor-link" href="#Tidy-it-up">&#182;</a></h1><p>We'll start with one tidy dataset for stop_times, I'll use <a href="https://github.com/remix/partridge/tree/master/partridge">partridge</a> for filtering on dates.</p>
+<h1 id="Tidy-it-up">Tidy it up<a class="anchor-link" href="#Tidy-it-up">&#182;</a></h1><p>One tidy dataset for stop_times, I'll use <a href="https://github.com/remix/partridge/tree/master/partridge">partridge</a> for filtering on dates.</p>
 
 </div>
 </div>
@@ -12286,135 +12143,9 @@ Oh goody! we&#39;re up-to-date!
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Getting a DataFrame is as easy as...</p>
-
+<h2 id="New-zone-mapping">New zone mapping<a class="anchor-link" href="#New-zone-mapping">&#182;</a></h2>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">feed</span><span class="o">.</span><span class="n">stops</span>
-<span class="n">s</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[10]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>stop_id</th>
-      <th>stop_code</th>
-      <th>stop_name</th>
-      <th>stop_desc</th>
-      <th>stop_lat</th>
-      <th>stop_lon</th>
-      <th>location_type</th>
-      <th>parent_station</th>
-      <th>zone_id</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>38831</td>
-      <td>בי''ס בר לב/בן יהודה</td>
-      <td>רחוב:בן יהודה 76 עיר: כפר סבא רציף:   קומה:</td>
-      <td>32.183939</td>
-      <td>34.917812</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>6900</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>38832</td>
-      <td>הרצל/צומת בילו</td>
-      <td>רחוב:הרצל  עיר: קרית עקרון רציף:   קומה:</td>
-      <td>31.870034</td>
-      <td>34.819541</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>469</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>38833</td>
-      <td>הנחשול/הדייגים</td>
-      <td>רחוב:הנחשול 30 עיר: ראשון לציון רציף:   קומה:</td>
-      <td>31.984558</td>
-      <td>34.782815</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>8300</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>38834</td>
-      <td>פריד/ששת הימים</td>
-      <td>רחוב:משה פריד 9 עיר: רחובות רציף:   קומה:</td>
-      <td>31.888550</td>
-      <td>34.790904</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>8400</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>6</td>
-      <td>38836</td>
-      <td>תחנה מרכזית לוד/הורדה</td>
-      <td>רחוב:  עיר: לוד רציף:   קומה:</td>
-      <td>31.956576</td>
-      <td>34.898125</td>
-      <td>0</td>
-      <td>NaN</td>
-      <td>7000</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
