@@ -12292,7 +12292,7 @@ Netanya Thu: 0.07
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#f = get_tidy_feed_df(feed, zones)</span>
@@ -12301,73 +12301,6 @@ Netanya Thu: 0.07
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">KeyboardInterrupt</span>                         Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-13-b0b92a20d0eb&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
-<span class="ansi-green-fg">      1</span> <span class="ansi-red-intense-fg ansi-bold">#f = get_tidy_feed_df(feed, zones)</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 2</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>f2 <span class="ansi-yellow-intense-fg ansi-bold">=</span> get_tidy_feed_df<span class="ansi-yellow-intense-fg ansi-bold">(</span>feed2<span class="ansi-yellow-intense-fg ansi-bold">,</span> zones<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">      3</span> f2<span class="ansi-yellow-intense-fg ansi-bold">.</span>head<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-6-0de621b45d09&gt;</span> in <span class="ansi-cyan-fg">get_tidy_feed_df</span><span class="ansi-blue-intense-fg ansi-bold">(feed, zones)</span>
-<span class="ansi-green-fg">     23</span> 
-<span class="ansi-green-fg">     24</span> <span class="ansi-green-intense-fg ansi-bold">def</span> get_tidy_feed_df<span class="ansi-yellow-intense-fg ansi-bold">(</span>feed<span class="ansi-yellow-intense-fg ansi-bold">,</span> zones<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 25</span><span class="ansi-yellow-intense-fg ansi-bold">     </span>s <span class="ansi-yellow-intense-fg ansi-bold">=</span> feed<span class="ansi-yellow-intense-fg ansi-bold">.</span>stops
-<span class="ansi-green-fg">     26</span>     r <span class="ansi-yellow-intense-fg ansi-bold">=</span> feed<span class="ansi-yellow-intense-fg ansi-bold">.</span>routes
-<span class="ansi-green-fg">     27</span>     t = (feed.trips
-
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\partridge\gtfs.py</span> in <span class="ansi-cyan-fg">&lt;lambda&gt;</span><span class="ansi-blue-intense-fg ansi-bold">(feed)</span>
-<span class="ansi-green-fg">     18</span> 
-<span class="ansi-green-fg">     19</span> <span class="ansi-green-intense-fg ansi-bold">def</span> read_file<span class="ansi-yellow-intense-fg ansi-bold">(</span>filename<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 20</span><span class="ansi-yellow-intense-fg ansi-bold">     </span><span class="ansi-green-intense-fg ansi-bold">return</span> property<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-green-intense-fg ansi-bold">lambda</span> feed<span class="ansi-yellow-intense-fg ansi-bold">:</span> feed<span class="ansi-yellow-intense-fg ansi-bold">.</span>get<span class="ansi-yellow-intense-fg ansi-bold">(</span>filename<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     21</span> 
-<span class="ansi-green-fg">     22</span> 
-
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\partridge\gtfs.py</span> in <span class="ansi-cyan-fg">get</span><span class="ansi-blue-intense-fg ansi-bold">(self, filename)</span>
-<span class="ansi-green-fg">    115</span>                 <span class="ansi-green-intense-fg ansi-bold">for</span> depfile<span class="ansi-yellow-intense-fg ansi-bold">,</span> dependencies <span class="ansi-green-intense-fg ansi-bold">in</span> file_dependencies<span class="ansi-yellow-intense-fg ansi-bold">.</span>items<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">    116</span>                     <span class="ansi-red-intense-fg ansi-bold"># Read the filtered, pruned, and cached file dependency</span>
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 117</span><span class="ansi-yellow-intense-fg ansi-bold">                     </span>depdf <span class="ansi-yellow-intense-fg ansi-bold">=</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>get<span class="ansi-yellow-intense-fg ansi-bold">(</span>depfile<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">    118</span> 
-<span class="ansi-green-fg">    119</span>                     <span class="ansi-green-intense-fg ansi-bold">for</span> col<span class="ansi-yellow-intense-fg ansi-bold">,</span> depcol <span class="ansi-green-intense-fg ansi-bold">in</span> dependencies<span class="ansi-yellow-intense-fg ansi-bold">:</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\partridge\gtfs.py</span> in <span class="ansi-cyan-fg">get</span><span class="ansi-blue-intense-fg ansi-bold">(self, filename)</span>
-<span class="ansi-green-fg">    120</span>                         <span class="ansi-red-intense-fg ansi-bold"># If applicable, prune this chunk by the other</span>
-<span class="ansi-green-fg">    121</span>                         <span class="ansi-green-intense-fg ansi-bold">if</span> col <span class="ansi-green-intense-fg ansi-bold">in</span> chunk<span class="ansi-yellow-intense-fg ansi-bold">.</span>columns <span class="ansi-green-intense-fg ansi-bold">and</span> depcol <span class="ansi-green-intense-fg ansi-bold">in</span> depdf<span class="ansi-yellow-intense-fg ansi-bold">.</span>columns<span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 122</span><span class="ansi-yellow-intense-fg ansi-bold">                             </span>chunk <span class="ansi-yellow-intense-fg ansi-bold">=</span> chunk<span class="ansi-yellow-intense-fg ansi-bold">[</span>chunk<span class="ansi-yellow-intense-fg ansi-bold">[</span>col<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>isin<span class="ansi-yellow-intense-fg ansi-bold">(</span>depdf<span class="ansi-yellow-intense-fg ansi-bold">[</span>depcol<span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">]</span>
-<span class="ansi-green-fg">    123</span> 
-<span class="ansi-green-fg">    124</span>                 <span class="ansi-red-intense-fg ansi-bold"># Discard entirely filtered/pruned chunks</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\pandas\core\series.py</span> in <span class="ansi-cyan-fg">isin</span><span class="ansi-blue-intense-fg ansi-bold">(self, values)</span>
-<span class="ansi-green-fg">   2801</span> 
-<span class="ansi-green-fg">   2802</span>         &#34;&#34;&#34;
-<span class="ansi-green-intense-fg ansi-bold">-&gt; 2803</span><span class="ansi-yellow-intense-fg ansi-bold">         </span>result <span class="ansi-yellow-intense-fg ansi-bold">=</span> algorithms<span class="ansi-yellow-intense-fg ansi-bold">.</span>isin<span class="ansi-yellow-intense-fg ansi-bold">(</span>_values_from_object<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> values<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">   2804</span>         <span class="ansi-green-intense-fg ansi-bold">return</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_constructor<span class="ansi-yellow-intense-fg ansi-bold">(</span>result<span class="ansi-yellow-intense-fg ansi-bold">,</span> index<span class="ansi-yellow-intense-fg ansi-bold">=</span>self<span class="ansi-yellow-intense-fg ansi-bold">.</span>index<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">.</span>__finalize__<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">   2805</span> 
-
-<span class="ansi-green-intense-fg ansi-bold">~\Anaconda3\lib\site-packages\pandas\core\algorithms.py</span> in <span class="ansi-cyan-fg">isin</span><span class="ansi-blue-intense-fg ansi-bold">(comps, values)</span>
-<span class="ansi-green-fg">    433</span>             comps <span class="ansi-yellow-intense-fg ansi-bold">=</span> comps<span class="ansi-yellow-intense-fg ansi-bold">.</span>astype<span class="ansi-yellow-intense-fg ansi-bold">(</span>object<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">    434</span> 
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 435</span><span class="ansi-yellow-intense-fg ansi-bold">     </span><span class="ansi-green-intense-fg ansi-bold">return</span> f<span class="ansi-yellow-intense-fg ansi-bold">(</span>comps<span class="ansi-yellow-intense-fg ansi-bold">,</span> values<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">    436</span> 
-<span class="ansi-green-fg">    437</span> 
-
-<span class="ansi-red-intense-fg ansi-bold">KeyboardInterrupt</span>: </pre>
-</div>
-</div>
-
 </div>
 </div>
 
