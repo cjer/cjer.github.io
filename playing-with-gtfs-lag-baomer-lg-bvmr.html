@@ -14168,18 +14168,20 @@ Netanya Thu: 0.07
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">conc</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">route_stats_lw</span><span class="p">[(</span><span class="n">route_stats_lw</span><span class="o">.</span><span class="n">date</span><span class="o">==</span><span class="s1">&#39;20180426&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">route_stats_lw</span><span class="o">.</span><span class="n">num_trips</span><span class="o">&gt;</span><span class="mi">30</span><span class="p">)]</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;route_id&#39;</span><span class="p">)[[</span><span class="s1">&#39;route_short_name&#39;</span><span class="p">,</span> <span class="s1">&#39;num_trips&#39;</span><span class="p">,</span> <span class="s1">&#39;mean_headway&#39;</span><span class="p">]],</span> 
 <span class="n">route_stats</span><span class="p">[</span><span class="n">route_stats</span><span class="o">.</span><span class="n">date</span><span class="o">==</span><span class="s1">&#39;20180503&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;route_id&#39;</span><span class="p">)[[</span><span class="s1">&#39;num_trips&#39;</span><span class="p">,</span> <span class="s1">&#39;mean_headway&#39;</span><span class="p">]]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;last_week&#39;</span><span class="p">,</span> <span class="s1">&#39;this_week&#39;</span><span class="p">])</span>
  <span class="o">.</span><span class="n">dropna</span><span class="p">()</span>  
 <span class="p">)</span>
-<span class="n">conc</span><span class="p">[(</span><span class="s1">&#39;dif&#39;</span><span class="p">,</span> <span class="s1">&#39;headway&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span><span class="n">conc</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">conc</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">])</span><span class="o">/</span><span class="n">conc</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">conc</span><span class="p">[(</span><span class="s1">&#39;dif&#39;</span><span class="p">,</span> <span class="s1">&#39;num_trips&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span><span class="n">conc</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">conc</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">])</span><span class="o">/</span><span class="n">conc</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">conc</span><span class="p">[(</span><span class="s1">&#39;dif&#39;</span><span class="p">,</span> <span class="s1">&#39;headway&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">conc</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span><span class="o">/</span><span class="n">conc</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">conc</span><span class="p">[(</span><span class="s1">&#39;dif&#39;</span><span class="p">,</span> <span class="s1">&#39;num_trips&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="p">(</span><span class="n">conc</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">])</span><span class="o">/</span><span class="n">conc</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
 
-<span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">option_context</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span>
-     <span class="n">display</span><span class="p">(</span><span class="n">conc</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;dif&#39;</span><span class="p">,</span> <span class="s1">&#39;headway&#39;</span><span class="p">)],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+<span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">option_context</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+     <span class="n">display</span><span class="p">(</span><span class="n">conc</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;dif&#39;</span><span class="p">,</span> <span class="s1">&#39;headway&#39;</span><span class="p">)],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">merge</span><span class="p">((</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">feed26</span><span class="o">.</span><span class="n">routes</span><span class="p">[[</span><span class="s1">&#39;route_id&#39;</span><span class="p">,</span> <span class="s1">&#39;route_long_name&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;route_id&#39;</span><span class="p">)],</span> 
+                                                                                                  <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">])),</span> 
+                                                                                       <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -14218,6 +14220,7 @@ Netanya Thu: 0.07
       <th colspan="3" halign="left">last_week</th>
       <th colspan="2" halign="left">this_week</th>
       <th colspan="2" halign="left">dif</th>
+      <th>a</th>
     </tr>
     <tr>
       <th></th>
@@ -14228,6 +14231,7 @@ Netanya Thu: 0.07
       <th>mean_headway</th>
       <th>headway</th>
       <th>num_trips</th>
+      <th>route_long_name</th>
     </tr>
   </thead>
   <tbody>
@@ -14238,8 +14242,9 @@ Netanya Thu: 0.07
       <td>20.275862</td>
       <td>15.0</td>
       <td>62.000000</td>
-      <td>-2.057823</td>
-      <td>1.266667</td>
+      <td>0.672970</td>
+      <td>0.441176</td>
+      <td>ת. מרכזית נתניה/רציפים-נתניה&lt;-&gt;ת. מרכזית נתניה...</td>
     </tr>
     <tr>
       <th>10509</th>
@@ -14248,8 +14253,9 @@ Netanya Thu: 0.07
       <td>6.600000</td>
       <td>35.0</td>
       <td>20.000000</td>
-      <td>-2.030303</td>
-      <td>0.828571</td>
+      <td>0.670000</td>
+      <td>0.546875</td>
+      <td>קדושת לוי/שלום רב-ביתר עילית&lt;-&gt;קדושת לוי/אוהל ...</td>
     </tr>
     <tr>
       <th>3768</th>
@@ -14258,8 +14264,9 @@ Netanya Thu: 0.07
       <td>19.459459</td>
       <td>22.0</td>
       <td>53.076923</td>
-      <td>-1.727564</td>
-      <td>1.136364</td>
+      <td>0.633373</td>
+      <td>0.468085</td>
+      <td>ת. רכבת בת גלים-חיפה&lt;-&gt;אוניברסיטה/רב תכליתי-נש...</td>
     </tr>
     <tr>
       <th>1397</th>
@@ -14268,8 +14275,9 @@ Netanya Thu: 0.07
       <td>24.482759</td>
       <td>15.0</td>
       <td>64.090909</td>
-      <td>-1.617798</td>
-      <td>1.666667</td>
+      <td>0.618000</td>
+      <td>0.375000</td>
+      <td>שכונת ראס אלח'אביה-מגאר&lt;-&gt;שכונת ראס אלח'אביה-מ...</td>
     </tr>
     <tr>
       <th>1398</th>
@@ -14278,8 +14286,9 @@ Netanya Thu: 0.07
       <td>24.642857</td>
       <td>15.0</td>
       <td>62.727273</td>
-      <td>-1.545455</td>
-      <td>1.666667</td>
+      <td>0.607143</td>
+      <td>0.375000</td>
+      <td>שכונת ראס אלח'אביה-מגאר&lt;-&gt;שכונת ראס אלח'אביה-מ...</td>
     </tr>
     <tr>
       <th>15729</th>
@@ -14288,8 +14297,9 @@ Netanya Thu: 0.07
       <td>8.650602</td>
       <td>55.0</td>
       <td>20.285714</td>
-      <td>-1.345006</td>
-      <td>1.127273</td>
+      <td>0.573562</td>
+      <td>0.470085</td>
+      <td>אבא שאול/איסוף-ביתר עילית&lt;-&gt;דרך הרמ''ז/מפעל הש...</td>
     </tr>
     <tr>
       <th>15730</th>
@@ -14298,8 +14308,9 @@ Netanya Thu: 0.07
       <td>8.756098</td>
       <td>55.0</td>
       <td>20.285714</td>
-      <td>-1.316753</td>
-      <td>1.109091</td>
+      <td>0.568361</td>
+      <td>0.474138</td>
+      <td>דרך הרמז/סדיגורא-ביתר עילית&lt;-&gt;אבא שאול/הורדה-ב...</td>
     </tr>
     <tr>
       <th>9623</th>
@@ -14308,8 +14319,9 @@ Netanya Thu: 0.07
       <td>28.750000</td>
       <td>16.0</td>
       <td>64.000000</td>
-      <td>-1.226087</td>
-      <td>1.312500</td>
+      <td>0.550781</td>
+      <td>0.432432</td>
+      <td>תרדיון/ביטוח לאומי-תרדיון&lt;-&gt;סחנין עיריה-סח'נין-2#</td>
     </tr>
     <tr>
       <th>1575</th>
@@ -14318,8 +14330,9 @@ Netanya Thu: 0.07
       <td>20.588235</td>
       <td>16.0</td>
       <td>45.714286</td>
-      <td>-1.220408</td>
-      <td>1.500000</td>
+      <td>0.549632</td>
+      <td>0.400000</td>
+      <td>ת. רכבת חיפה מרכז-חיפה&lt;-&gt;מרכז מסחרי/שדרות מעלה...</td>
     </tr>
     <tr>
       <th>17090</th>
@@ -14328,8 +14341,9 @@ Netanya Thu: 0.07
       <td>13.769231</td>
       <td>33.0</td>
       <td>30.000000</td>
-      <td>-1.178771</td>
-      <td>0.939394</td>
+      <td>0.541026</td>
+      <td>0.515625</td>
+      <td>כיכר צפניה-אשקלון&lt;-&gt;מסוף-רמז-אשקלון-21</td>
     </tr>
     <tr>
       <th>17089</th>
@@ -14338,8 +14352,9 @@ Netanya Thu: 0.07
       <td>13.788462</td>
       <td>34.0</td>
       <td>30.000000</td>
-      <td>-1.175732</td>
-      <td>0.911765</td>
+      <td>0.540385</td>
+      <td>0.523077</td>
+      <td>שוק/הכרם-אשקלון&lt;-&gt;מרכז אפרידר/ככר צפניה-אשקלון-11</td>
     </tr>
     <tr>
       <th>10252</th>
@@ -14348,8 +14363,9 @@ Netanya Thu: 0.07
       <td>16.744186</td>
       <td>33.0</td>
       <td>36.000000</td>
-      <td>-1.150000</td>
-      <td>1.060606</td>
+      <td>0.534884</td>
+      <td>0.485294</td>
+      <td>ביטוח לאומי-ירושלים&lt;-&gt;וינוגרד/זווין-ירושלים-1#</td>
     </tr>
     <tr>
       <th>9622</th>
@@ -14358,8 +14374,9 @@ Netanya Thu: 0.07
       <td>30.000000</td>
       <td>16.0</td>
       <td>64.090909</td>
-      <td>-1.136364</td>
-      <td>1.312500</td>
+      <td>0.531915</td>
+      <td>0.432432</td>
+      <td>סחנין עיריה-סח'נין&lt;-&gt;תרדיון/מכללת וינגייט-תרדי...</td>
     </tr>
     <tr>
       <th>14068</th>
@@ -14368,8 +14385,9 @@ Netanya Thu: 0.07
       <td>23.000000</td>
       <td>18.0</td>
       <td>48.928571</td>
-      <td>-1.127329</td>
-      <td>1.222222</td>
+      <td>0.529927</td>
+      <td>0.450000</td>
+      <td>סחנין עיריה-סח'נין&lt;-&gt;סחנין עיריה-סח'נין-3#</td>
     </tr>
     <tr>
       <th>3593</th>
@@ -14378,8 +14396,9 @@ Netanya Thu: 0.07
       <td>28.541667</td>
       <td>22.0</td>
       <td>60.000000</td>
-      <td>-1.102190</td>
-      <td>0.681818</td>
+      <td>0.524306</td>
+      <td>0.594595</td>
+      <td>טרומפלדור/מרכז זיו-חיפה&lt;-&gt;טרומפלדור/מרכז זיו-ח...</td>
     </tr>
     <tr>
       <th>16277</th>
@@ -14388,8 +14407,9 @@ Netanya Thu: 0.07
       <td>19.459459</td>
       <td>29.0</td>
       <td>40.000000</td>
-      <td>-1.055556</td>
-      <td>0.931034</td>
+      <td>0.513514</td>
+      <td>0.517857</td>
+      <td>אליהו חכים/מאיר פיינשטיין-ירושלים&lt;-&gt;אליהו חכים...</td>
     </tr>
     <tr>
       <th>16877</th>
@@ -14398,8 +14418,9 @@ Netanya Thu: 0.07
       <td>30.000000</td>
       <td>16.0</td>
       <td>61.500000</td>
-      <td>-1.050000</td>
-      <td>0.937500</td>
+      <td>0.512195</td>
+      <td>0.516129</td>
+      <td>קניון איילון-רמת גן&lt;-&gt;ת. מרכזית ת''א ק. 6/הורד...</td>
     </tr>
     <tr>
       <th>20785</th>
@@ -14408,18 +14429,9 @@ Netanya Thu: 0.07
       <td>32.727273</td>
       <td>16.0</td>
       <td>66.000000</td>
-      <td>-1.016667</td>
-      <td>0.937500</td>
-    </tr>
-    <tr>
-      <th>20317</th>
-      <td>52</td>
-      <td>34.0</td>
-      <td>32.727273</td>
-      <td>16.0</td>
-      <td>66.000000</td>
-      <td>-1.016667</td>
-      <td>1.125000</td>
+      <td>0.504132</td>
+      <td>0.516129</td>
+      <td>בילאל/102926-נצרת&lt;-&gt;בית ספר תיכון שנלר-נצרת-1#</td>
     </tr>
     <tr>
       <th>20391</th>
@@ -14428,8 +14440,20 @@ Netanya Thu: 0.07
       <td>32.727273</td>
       <td>16.0</td>
       <td>66.000000</td>
-      <td>-1.016667</td>
-      <td>1.062500</td>
+      <td>0.504132</td>
+      <td>0.484848</td>
+      <td>1006/אל פאח'ורה-נצרת&lt;-&gt;אלג'ליל/כניסה צפונית-נצ...</td>
+    </tr>
+    <tr>
+      <th>20317</th>
+      <td>52</td>
+      <td>34.0</td>
+      <td>32.727273</td>
+      <td>16.0</td>
+      <td>66.000000</td>
+      <td>0.504132</td>
+      <td>0.470588</td>
+      <td>7061/7074-נצרת&lt;-&gt;שוק נצרת עלית-נצרת עילית-1#</td>
     </tr>
     <tr>
       <th>19671</th>
@@ -14438,8 +14462,9 @@ Netanya Thu: 0.07
       <td>29.782609</td>
       <td>19.0</td>
       <td>60.000000</td>
-      <td>-1.014599</td>
-      <td>0.631579</td>
+      <td>0.503623</td>
+      <td>0.612903</td>
+      <td>ת. מרכזית המפרת/רציפים בינעירוני-חיפה&lt;-&gt;ת. מרכ...</td>
     </tr>
     <tr>
       <th>17428</th>
@@ -14448,28 +14473,9 @@ Netanya Thu: 0.07
       <td>31.363636</td>
       <td>16.0</td>
       <td>63.000000</td>
-      <td>-1.008696</td>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <th>20786</th>
-      <td>54</td>
-      <td>31.0</td>
-      <td>32.727273</td>
-      <td>17.0</td>
-      <td>65.454545</td>
-      <td>-1.000000</td>
-      <td>0.823529</td>
-    </tr>
-    <tr>
-      <th>3600</th>
-      <td>10</td>
-      <td>32.0</td>
-      <td>30.000000</td>
-      <td>17.0</td>
-      <td>60.000000</td>
-      <td>-1.000000</td>
-      <td>0.882353</td>
+      <td>0.502165</td>
+      <td>0.500000</td>
+      <td>מרכז מסחרי ביג-נצרת&lt;-&gt;ריינה/יציאה-ריינה-2#</td>
     </tr>
     <tr>
       <th>17427</th>
@@ -14478,28 +14484,20 @@ Netanya Thu: 0.07
       <td>32.727273</td>
       <td>16.0</td>
       <td>65.454545</td>
-      <td>-1.000000</td>
-      <td>1.000000</td>
+      <td>0.500000</td>
+      <td>0.500000</td>
+      <td>ריינה א'/כניסה-ריינה&lt;-&gt;מרכז מסחרי ביג-נצרת-1#</td>
     </tr>
     <tr>
-      <th>20318</th>
-      <td>52</td>
-      <td>34.0</td>
-      <td>32.727273</td>
-      <td>17.0</td>
-      <td>65.454545</td>
-      <td>-1.000000</td>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <th>16876</th>
-      <td>146</td>
+      <th>3600</th>
+      <td>10</td>
       <td>32.0</td>
       <td>30.000000</td>
       <td>17.0</td>
       <td>60.000000</td>
-      <td>-1.000000</td>
-      <td>0.882353</td>
+      <td>0.500000</td>
+      <td>0.531250</td>
+      <td>חסן שוקרי/הנביאים-חיפה&lt;-&gt;חסן שוקרי/הנביאים-חיפ...</td>
     </tr>
     <tr>
       <th>20392</th>
@@ -14508,18 +14506,42 @@ Netanya Thu: 0.07
       <td>32.727273</td>
       <td>17.0</td>
       <td>65.454545</td>
-      <td>-1.000000</td>
-      <td>0.941176</td>
+      <td>0.500000</td>
+      <td>0.515152</td>
+      <td>אלג'ליל/כניסה צפונית-נצרת&lt;-&gt;1006/אל פאח'ורה-נצ...</td>
     </tr>
     <tr>
-      <th>17943</th>
-      <td>307</td>
-      <td>35.0</td>
+      <th>20786</th>
+      <td>54</td>
+      <td>31.0</td>
+      <td>32.727273</td>
+      <td>17.0</td>
+      <td>65.454545</td>
+      <td>0.500000</td>
+      <td>0.548387</td>
+      <td>בית ספר תיכון שנלר-נצרת&lt;-&gt;בילאל/102926-נצרת-2#</td>
+    </tr>
+    <tr>
+      <th>16876</th>
+      <td>146</td>
+      <td>32.0</td>
       <td>30.000000</td>
-      <td>18.0</td>
+      <td>17.0</td>
       <td>60.000000</td>
-      <td>-1.000000</td>
-      <td>0.944444</td>
+      <td>0.500000</td>
+      <td>0.531250</td>
+      <td>ת.מרכזית ת''א ק.6/רציפים-תל אביב יפו&lt;-&gt;קניון א...</td>
+    </tr>
+    <tr>
+      <th>20318</th>
+      <td>52</td>
+      <td>34.0</td>
+      <td>32.727273</td>
+      <td>17.0</td>
+      <td>65.454545</td>
+      <td>0.500000</td>
+      <td>0.500000</td>
+      <td>שוק-נצרת עילית&lt;-&gt;7061/7074-נצרת-2#</td>
     </tr>
     <tr>
       <th>17944</th>
@@ -14528,8 +14550,20 @@ Netanya Thu: 0.07
       <td>30.000000</td>
       <td>18.0</td>
       <td>60.000000</td>
-      <td>-1.000000</td>
-      <td>0.944444</td>
+      <td>0.500000</td>
+      <td>0.514286</td>
+      <td>כאבול כניסה-כאבול&lt;-&gt;שדות-טמרה-2#</td>
+    </tr>
+    <tr>
+      <th>17943</th>
+      <td>307</td>
+      <td>35.0</td>
+      <td>30.000000</td>
+      <td>18.0</td>
+      <td>60.000000</td>
+      <td>0.500000</td>
+      <td>0.514286</td>
+      <td>טמרה כניסה-טמרה&lt;-&gt;כאבול ו'/יציאה-כאבול-1#</td>
     </tr>
     <tr>
       <th>4187</th>
@@ -14538,8 +14572,9 @@ Netanya Thu: 0.07
       <td>13.846154</td>
       <td>35.0</td>
       <td>27.230769</td>
-      <td>-0.966667</td>
-      <td>0.885714</td>
+      <td>0.491525</td>
+      <td>0.530303</td>
+      <td>המכללה האקדמית גליל מערבי/דרך המכללה-עכו&lt;-&gt;שלו...</td>
     </tr>
     <tr>
       <th>12428</th>
@@ -14548,8 +14583,9 @@ Netanya Thu: 0.07
       <td>16.604651</td>
       <td>42.0</td>
       <td>32.500000</td>
-      <td>-0.957283</td>
-      <td>0.523810</td>
+      <td>0.489088</td>
+      <td>0.656250</td>
+      <td>דרך דוד בנבנישתי-ירושלים&lt;-&gt;מסוף אגד/בר כוכבא-י...</td>
     </tr>
     <tr>
       <th>4189</th>
@@ -14558,8 +14594,9 @@ Netanya Thu: 0.07
       <td>14.117647</td>
       <td>33.0</td>
       <td>27.307692</td>
-      <td>-0.934295</td>
-      <td>0.909091</td>
+      <td>0.483016</td>
+      <td>0.523810</td>
+      <td>שלום הגליל/בן עמי-עכו&lt;-&gt;המכללה האקדמית גליל מע...</td>
     </tr>
     <tr>
       <th>19672</th>
@@ -14568,8 +14605,9 @@ Netanya Thu: 0.07
       <td>30.000000</td>
       <td>19.0</td>
       <td>56.666667</td>
-      <td>-0.888889</td>
-      <td>0.631579</td>
+      <td>0.470588</td>
+      <td>0.612903</td>
+      <td>ת. מרכזית ק''ש/רציפים-קרית שמונה&lt;-&gt;ת. מרכזית ה...</td>
     </tr>
     <tr>
       <th>1569</th>
@@ -14578,8 +14616,9 @@ Netanya Thu: 0.07
       <td>22.419355</td>
       <td>18.0</td>
       <td>42.083333</td>
-      <td>-0.877098</td>
-      <td>1.277778</td>
+      <td>0.467263</td>
+      <td>0.439024</td>
+      <td>מרכז מסחרי/שדרות מעלה יצחק-נצרת עילית&lt;-&gt;ת. רכב...</td>
     </tr>
     <tr>
       <th>10811</th>
@@ -14588,8 +14627,9 @@ Netanya Thu: 0.07
       <td>8.000000</td>
       <td>69.0</td>
       <td>15.000000</td>
-      <td>-0.875000</td>
-      <td>0.681159</td>
+      <td>0.466667</td>
+      <td>0.594828</td>
+      <td>האוניברסיטה העברית הר הצופים-ירושלים&lt;-&gt;האונ' ה...</td>
     </tr>
     <tr>
       <th>1275</th>
@@ -14598,8 +14638,9 @@ Netanya Thu: 0.07
       <td>24.000000</td>
       <td>23.0</td>
       <td>45.000000</td>
-      <td>-0.875000</td>
-      <td>0.869565</td>
+      <td>0.466667</td>
+      <td>0.534884</td>
+      <td>אזור תעשיה ב-נצרת עילית&lt;-&gt;אזור תעשיה ב-נצרת עי...</td>
     </tr>
     <tr>
       <th>12374</th>
@@ -14608,8 +14649,9 @@ Netanya Thu: 0.07
       <td>16.090909</td>
       <td>43.0</td>
       <td>30.000000</td>
-      <td>-0.864407</td>
-      <td>0.534884</td>
+      <td>0.463636</td>
+      <td>0.651515</td>
+      <td>מסוף אגד/בר כוכבא-ירושלים&lt;-&gt;מסוף אגד/בנבנישתי-...</td>
     </tr>
     <tr>
       <th>15352</th>
@@ -14618,8 +14660,9 @@ Netanya Thu: 0.07
       <td>22.500000</td>
       <td>22.0</td>
       <td>41.875000</td>
-      <td>-0.861111</td>
-      <td>0.863636</td>
+      <td>0.462687</td>
+      <td>0.536585</td>
+      <td>שכונת נמסאווי-נצרת&lt;-&gt;גן טכנולוגי/כניסה ראשית-נ...</td>
     </tr>
     <tr>
       <th>9624</th>
@@ -14628,8 +14671,9 @@ Netanya Thu: 0.07
       <td>25.961538</td>
       <td>23.0</td>
       <td>48.214286</td>
-      <td>-0.857143</td>
-      <td>0.956522</td>
+      <td>0.461538</td>
+      <td>0.511111</td>
+      <td>סחנין עיריה-סח'נין&lt;-&gt;סחנין עיריה-סח'נין-3#</td>
     </tr>
     <tr>
       <th>10516</th>
@@ -14638,8 +14682,9 @@ Netanya Thu: 0.07
       <td>8.814815</td>
       <td>67.0</td>
       <td>16.363636</td>
-      <td>-0.856379</td>
-      <td>0.731343</td>
+      <td>0.461317</td>
+      <td>0.577586</td>
+      <td>בית כנסת/הרב שך-ביתר עילית&lt;-&gt;בית כנסת/הרב שך-ב...</td>
     </tr>
     <tr>
       <th>13516</th>
@@ -14648,8 +14693,9 @@ Netanya Thu: 0.07
       <td>22.580645</td>
       <td>23.0</td>
       <td>41.250000</td>
-      <td>-0.826786</td>
-      <td>0.739130</td>
+      <td>0.452590</td>
+      <td>0.575000</td>
+      <td>ת. מרכזית חדרה/רציפים-חדרה&lt;-&gt;רוטשילד/מנחם ציונ...</td>
     </tr>
     <tr>
       <th>15353</th>
@@ -14658,8 +14704,9 @@ Netanya Thu: 0.07
       <td>23.225806</td>
       <td>22.0</td>
       <td>42.352941</td>
-      <td>-0.823529</td>
-      <td>0.818182</td>
+      <td>0.451613</td>
+      <td>0.550000</td>
+      <td>גן טכנולוגי-נצרת&lt;-&gt;שכונת נמסאוי-נצרת-2#</td>
     </tr>
     <tr>
       <th>10944</th>
@@ -14668,8 +14715,9 @@ Netanya Thu: 0.07
       <td>10.833333</td>
       <td>56.0</td>
       <td>19.722222</td>
-      <td>-0.820513</td>
-      <td>0.660714</td>
+      <td>0.450704</td>
+      <td>0.602151</td>
+      <td>קדושת לוי/ברוק-ביתר עילית&lt;-&gt;בית כנסת/הרב שך-בי...</td>
     </tr>
     <tr>
       <th>21175</th>
@@ -14678,8 +14726,9 @@ Netanya Thu: 0.07
       <td>16.666667</td>
       <td>36.0</td>
       <td>30.000000</td>
-      <td>-0.800000</td>
-      <td>0.583333</td>
+      <td>0.444444</td>
+      <td>0.631579</td>
+      <td>ששת הימים/הנשיאים-מגדל העמק&lt;-&gt;מסוף מגדל העמק-מ...</td>
     </tr>
     <tr>
       <th>17855</th>
@@ -14688,8 +14737,9 @@ Netanya Thu: 0.07
       <td>16.666667</td>
       <td>36.0</td>
       <td>30.000000</td>
-      <td>-0.800000</td>
-      <td>0.583333</td>
+      <td>0.444444</td>
+      <td>0.631579</td>
+      <td>מסוף מגדל העמק/רציפים-מגדל העמק&lt;-&gt;ששת הימים/הנ...</td>
     </tr>
     <tr>
       <th>10943</th>
@@ -14698,8 +14748,9 @@ Netanya Thu: 0.07
       <td>11.000000</td>
       <td>56.0</td>
       <td>19.722222</td>
-      <td>-0.792929</td>
-      <td>0.642857</td>
+      <td>0.442254</td>
+      <td>0.608696</td>
+      <td>בית כנסת/הרב שך-ביתר עילית&lt;-&gt;קדושת לוי/ברוק-בי...</td>
     </tr>
     <tr>
       <th>12406</th>
@@ -14708,8 +14759,9 @@ Netanya Thu: 0.07
       <td>11.428571</td>
       <td>54.0</td>
       <td>20.285714</td>
-      <td>-0.775000</td>
-      <td>0.611111</td>
+      <td>0.436620</td>
+      <td>0.620690</td>
+      <td>האומן/ברעם-ירושלים&lt;-&gt;בנייני האומה-ירושלים-2#</td>
     </tr>
     <tr>
       <th>12024</th>
@@ -14718,8 +14770,9 @@ Netanya Thu: 0.07
       <td>30.652174</td>
       <td>19.0</td>
       <td>54.230769</td>
-      <td>-0.769231</td>
-      <td>0.631579</td>
+      <td>0.434783</td>
+      <td>0.612903</td>
+      <td>ת. מרכזית נהריה/רציפים-נהריה&lt;-&gt;ת. מרכזית נהריה...</td>
     </tr>
     <tr>
       <th>13517</th>
@@ -14728,8 +14781,9 @@ Netanya Thu: 0.07
       <td>20.645161</td>
       <td>23.0</td>
       <td>36.470588</td>
-      <td>-0.766544</td>
-      <td>0.695652</td>
+      <td>0.433923</td>
+      <td>0.589744</td>
+      <td>שד. הנשיא וייצמן/הרצוג-אור עקיבא&lt;-&gt;אחד העם/סמס...</td>
     </tr>
     <tr>
       <th>20691</th>
@@ -14738,8 +14792,9 @@ Netanya Thu: 0.07
       <td>17.073171</td>
       <td>36.0</td>
       <td>30.000000</td>
-      <td>-0.757143</td>
-      <td>0.555556</td>
+      <td>0.430894</td>
+      <td>0.642857</td>
+      <td>ששת הימים/הנשיאים-מגדל העמק&lt;-&gt;מסוף מגדל העמק-מ...</td>
     </tr>
     <tr>
       <th>20690</th>
@@ -14748,8 +14803,9 @@ Netanya Thu: 0.07
       <td>17.142857</td>
       <td>35.0</td>
       <td>30.000000</td>
-      <td>-0.750000</td>
-      <td>0.571429</td>
+      <td>0.428571</td>
+      <td>0.636364</td>
+      <td>מסוף מגדל העמק/רציפים-מגדל העמק&lt;-&gt;ששת הימים/הנ...</td>
     </tr>
     <tr>
       <th>10946</th>
@@ -14758,8 +14814,9 @@ Netanya Thu: 0.07
       <td>33.000000</td>
       <td>25.0</td>
       <td>57.500000</td>
-      <td>-0.742424</td>
-      <td>0.240000</td>
+      <td>0.426087</td>
+      <td>0.806452</td>
+      <td>ת. מרכזית לוד/רציפים-לוד&lt;-&gt;ת. מרכזית לוד/רציפי...</td>
     </tr>
     <tr>
       <th>12405</th>
@@ -14768,8 +14825,9 @@ Netanya Thu: 0.07
       <td>11.639344</td>
       <td>57.0</td>
       <td>20.000000</td>
-      <td>-0.718310</td>
-      <td>0.491228</td>
+      <td>0.418033</td>
+      <td>0.670588</td>
+      <td>ביטוח לאומי-ירושלים&lt;-&gt;האומן/ברעם-ירושלים-1#</td>
     </tr>
     <tr>
       <th>19760</th>
@@ -14778,8 +14836,9 @@ Netanya Thu: 0.07
       <td>29.791667</td>
       <td>23.0</td>
       <td>51.071429</td>
-      <td>-0.714286</td>
-      <td>0.521739</td>
+      <td>0.416667</td>
+      <td>0.657143</td>
+      <td>רשי/צלאח-קרית אתא&lt;-&gt;ת. רכבת חוצות המפרץ-חיפה-2#</td>
     </tr>
     <tr>
       <th>1130</th>
@@ -14788,8 +14847,9 @@ Netanya Thu: 0.07
       <td>10.588235</td>
       <td>61.0</td>
       <td>18.000000</td>
-      <td>-0.700000</td>
-      <td>0.557377</td>
+      <td>0.411765</td>
+      <td>0.642105</td>
+      <td>בן ציון גליס/צבי ברגמן-פתח תקווה&lt;-&gt;מסוף שניידר...</td>
     </tr>
     <tr>
       <th>1125</th>
@@ -14798,18 +14858,9 @@ Netanya Thu: 0.07
       <td>11.612903</td>
       <td>58.0</td>
       <td>19.459459</td>
-      <td>-0.675676</td>
-      <td>0.448276</td>
-    </tr>
-    <tr>
-      <th>19759</th>
-      <td>21</td>
-      <td>33.0</td>
-      <td>30.000000</td>
-      <td>22.0</td>
-      <td>49.285714</td>
-      <td>-0.642857</td>
-      <td>0.500000</td>
+      <td>0.403226</td>
+      <td>0.690476</td>
+      <td>ת. מרכזית פ''ת/רציפים אזורי-פתח תקווה&lt;-&gt;רכבת ק...</td>
     </tr>
     <tr>
       <th>14556</th>
@@ -14818,8 +14869,9 @@ Netanya Thu: 0.07
       <td>15.000000</td>
       <td>39.0</td>
       <td>24.642857</td>
-      <td>-0.642857</td>
-      <td>0.641026</td>
+      <td>0.391304</td>
+      <td>0.609375</td>
+      <td>דרך הארבעה/העצמאות-עכו&lt;-&gt;שלום הגליל/הרב רייפמן...</td>
     </tr>
     <tr>
       <th>14555</th>
@@ -14828,8 +14880,20 @@ Netanya Thu: 0.07
       <td>15.000000</td>
       <td>37.0</td>
       <td>24.642857</td>
-      <td>-0.642857</td>
-      <td>0.729730</td>
+      <td>0.391304</td>
+      <td>0.578125</td>
+      <td>שלום הגליל/בן עמי-עכו&lt;-&gt;דרך הארבעה/העצמאות-עכו-1#</td>
+    </tr>
+    <tr>
+      <th>19759</th>
+      <td>21</td>
+      <td>33.0</td>
+      <td>30.000000</td>
+      <td>22.0</td>
+      <td>49.285714</td>
+      <td>0.391304</td>
+      <td>0.666667</td>
+      <td>ת. רכבת חוצות המפרץ-חיפה&lt;-&gt;רשי/צלאח-קרית אתא-1#</td>
     </tr>
     <tr>
       <th>3748</th>
@@ -14838,18 +14902,9 @@ Netanya Thu: 0.07
       <td>18.421053</td>
       <td>32.0</td>
       <td>30.000000</td>
-      <td>-0.628571</td>
-      <td>0.531250</td>
-    </tr>
-    <tr>
-      <th>10812</th>
-      <td>68</td>
-      <td>97.0</td>
-      <td>9.230769</td>
-      <td>64.0</td>
-      <td>15.000000</td>
-      <td>-0.625000</td>
-      <td>0.515625</td>
+      <td>0.385965</td>
+      <td>0.653061</td>
+      <td>הנשיא/מרכז פנורמה-חיפה&lt;-&gt;הנשיא/מרכז פנורמה-חיפ...</td>
     </tr>
     <tr>
       <th>3743</th>
@@ -14858,8 +14913,20 @@ Netanya Thu: 0.07
       <td>18.461538</td>
       <td>31.0</td>
       <td>30.000000</td>
-      <td>-0.625000</td>
-      <td>0.580645</td>
+      <td>0.384615</td>
+      <td>0.632653</td>
+      <td>הנשיא/מרכז פנורמה-חיפה&lt;-&gt;הנשיא/מרכז פנורמה-חיפ...</td>
+    </tr>
+    <tr>
+      <th>10812</th>
+      <td>68</td>
+      <td>97.0</td>
+      <td>9.230769</td>
+      <td>64.0</td>
+      <td>15.000000</td>
+      <td>0.384615</td>
+      <td>0.659794</td>
+      <td>האונ' העברית קמפוס אדמונד י. ספרא/מסוף כפר ההי...</td>
     </tr>
     <tr>
       <th>496</th>
@@ -14868,8 +14935,9 @@ Netanya Thu: 0.07
       <td>29.166667</td>
       <td>23.0</td>
       <td>47.142857</td>
-      <td>-0.616327</td>
-      <td>0.478261</td>
+      <td>0.381313</td>
+      <td>0.676471</td>
+      <td>הסחלב/קהילת יהדות צרפת-מעלות תרשיחא&lt;-&gt;בית כנסת...</td>
     </tr>
     <tr>
       <th>13367</th>
@@ -14878,8 +14946,9 @@ Netanya Thu: 0.07
       <td>17.142857</td>
       <td>41.0</td>
       <td>27.692308</td>
-      <td>-0.615385</td>
-      <td>0.439024</td>
+      <td>0.380952</td>
+      <td>0.694915</td>
+      <td>מר. קריות איסוף-קרית מוצקין&lt;-&gt;מינץ/הרצוג-קרית ...</td>
     </tr>
     <tr>
       <th>10510</th>
@@ -14888,8 +14957,9 @@ Netanya Thu: 0.07
       <td>7.797101</td>
       <td>45.0</td>
       <td>12.558140</td>
-      <td>-0.610616</td>
-      <td>0.577778</td>
+      <td>0.379120</td>
+      <td>0.633803</td>
+      <td>חניון עילית 1/תומכי תמימים-ביתר עילית&lt;-&gt;חניון ...</td>
     </tr>
     <tr>
       <th>16711</th>
@@ -14898,8 +14968,9 @@ Netanya Thu: 0.07
       <td>18.684211</td>
       <td>35.0</td>
       <td>30.000000</td>
-      <td>-0.605634</td>
-      <td>0.485714</td>
+      <td>0.377193</td>
+      <td>0.673077</td>
+      <td>דרך הטייסים/דרך בוזגלו-אופקים&lt;-&gt;ת. רכבת אופקים...</td>
     </tr>
     <tr>
       <th>11322</th>
@@ -14908,8 +14979,9 @@ Netanya Thu: 0.07
       <td>9.355263</td>
       <td>68.0</td>
       <td>15.000000</td>
-      <td>-0.603376</td>
-      <td>0.470588</td>
+      <td>0.376316</td>
+      <td>0.680000</td>
+      <td>ת. מרכזית חוף הכרמל/רציפים עירוני-חיפה&lt;-&gt;ת. מר...</td>
     </tr>
     <tr>
       <th>3559</th>
@@ -14918,8 +14990,9 @@ Netanya Thu: 0.07
       <td>25.000000</td>
       <td>23.0</td>
       <td>40.000000</td>
-      <td>-0.600000</td>
-      <td>0.478261</td>
+      <td>0.375000</td>
+      <td>0.676471</td>
+      <td>אבן גבירול/ביל''ו-חיפה&lt;-&gt;אבן גבירול/ביל''ו-חיפ...</td>
     </tr>
     <tr>
       <th>1126</th>
@@ -14928,8 +15001,9 @@ Netanya Thu: 0.07
       <td>12.118644</td>
       <td>58.0</td>
       <td>19.324324</td>
-      <td>-0.594595</td>
-      <td>0.448276</td>
+      <td>0.372881</td>
+      <td>0.690476</td>
+      <td>ת. רכבת קרית אריה-פתח תקווה&lt;-&gt;ת. מרכזית פ''ת/ה...</td>
     </tr>
     <tr>
       <th>16706</th>
@@ -14938,8 +15012,9 @@ Netanya Thu: 0.07
       <td>18.918919</td>
       <td>36.0</td>
       <td>30.000000</td>
-      <td>-0.585714</td>
-      <td>0.416667</td>
+      <td>0.369369</td>
+      <td>0.705882</td>
+      <td>דרך הטייסים/דרך בוזגלו-אופקים&lt;-&gt;ת. רכבת אופקים...</td>
     </tr>
     <tr>
       <th>2117</th>
@@ -14948,8 +15023,9 @@ Netanya Thu: 0.07
       <td>7.833333</td>
       <td>77.0</td>
       <td>12.421053</td>
-      <td>-0.585666</td>
-      <td>0.454545</td>
+      <td>0.369350</td>
+      <td>0.687500</td>
+      <td>ת. מרכזית נתניה-נתניה&lt;-&gt;ת. מרכזית נתניה-נתניה-3#</td>
     </tr>
     <tr>
       <th>2143</th>
@@ -14958,8 +15034,9 @@ Netanya Thu: 0.07
       <td>15.775000</td>
       <td>34.0</td>
       <td>24.960000</td>
-      <td>-0.582250</td>
-      <td>0.470588</td>
+      <td>0.367989</td>
+      <td>0.680000</td>
+      <td>ת. מרכזית נתניה-נתניה&lt;-&gt;ת. מרכזית נתניה-נתניה-3ה</td>
     </tr>
     <tr>
       <th>4444</th>
@@ -14968,8 +15045,9 @@ Netanya Thu: 0.07
       <td>11.428571</td>
       <td>39.0</td>
       <td>18.064516</td>
-      <td>-0.580645</td>
-      <td>0.461538</td>
+      <td>0.367347</td>
+      <td>0.684211</td>
+      <td>ת. מרכזית נהריה/רציפים-נהריה&lt;-&gt;ת. מרכזית המפרץ...</td>
     </tr>
     <tr>
       <th>16066</th>
@@ -14978,8 +15056,9 @@ Netanya Thu: 0.07
       <td>22.000000</td>
       <td>30.0</td>
       <td>34.736842</td>
-      <td>-0.578947</td>
-      <td>0.500000</td>
+      <td>0.366667</td>
+      <td>0.666667</td>
+      <td>מסוף אגד/הר חוצבים-ירושלים&lt;-&gt;יחזקאל הנביא/חבקו...</td>
     </tr>
     <tr>
       <th>15620</th>
@@ -14988,8 +15067,9 @@ Netanya Thu: 0.07
       <td>17.875000</td>
       <td>58.0</td>
       <td>28.000000</td>
-      <td>-0.566434</td>
-      <td>-0.017241</td>
+      <td>0.361607</td>
+      <td>1.017544</td>
+      <td>הנשיא וייצמן/שז''ר-טבריה&lt;-&gt;ת. מרכזית טבריה/הור...</td>
     </tr>
     <tr>
       <th>19579</th>
@@ -14998,8 +15078,9 @@ Netanya Thu: 0.07
       <td>19.189189</td>
       <td>35.0</td>
       <td>30.000000</td>
-      <td>-0.563380</td>
-      <td>0.428571</td>
+      <td>0.360360</td>
+      <td>0.700000</td>
+      <td>בית חולים אסף הרופא/מכון אונקולוגיה-באר יעקב&lt;-...</td>
     </tr>
     <tr>
       <th>19580</th>
@@ -15008,8 +15089,9 @@ Netanya Thu: 0.07
       <td>19.189189</td>
       <td>35.0</td>
       <td>30.000000</td>
-      <td>-0.563380</td>
-      <td>0.400000</td>
+      <td>0.360360</td>
+      <td>0.714286</td>
+      <td>מסוף קניון הזהב-ראשון לציון&lt;-&gt;בית חולים אסף הר...</td>
     </tr>
     <tr>
       <th>11071</th>
@@ -15018,8 +15100,9 @@ Netanya Thu: 0.07
       <td>12.909091</td>
       <td>58.0</td>
       <td>20.000000</td>
-      <td>-0.549296</td>
-      <td>0.344828</td>
+      <td>0.354545</td>
+      <td>0.743590</td>
+      <td>אבי עזרי א-מודיעין עילית&lt;-&gt;מעלות החכמה-מודיעין...</td>
     </tr>
     <tr>
       <th>3662</th>
@@ -15028,8 +15111,9 @@ Netanya Thu: 0.07
       <td>15.000000</td>
       <td>45.0</td>
       <td>23.225806</td>
-      <td>-0.548387</td>
-      <td>0.422222</td>
+      <td>0.354167</td>
+      <td>0.703125</td>
+      <td>ערד/סובה-חיפה&lt;-&gt;ערד/סובה-חיפה-3#</td>
     </tr>
     <tr>
       <th>11072</th>
@@ -15038,8 +15122,9 @@ Netanya Thu: 0.07
       <td>12.962963</td>
       <td>58.0</td>
       <td>20.000000</td>
-      <td>-0.542857</td>
-      <td>0.327586</td>
+      <td>0.351852</td>
+      <td>0.753247</td>
+      <td>מעלות החכמה-מודיעין עילית&lt;-&gt;אבי עזרי ז-מודיעין...</td>
     </tr>
     <tr>
       <th>20665</th>
@@ -15048,8 +15133,9 @@ Netanya Thu: 0.07
       <td>19.459459</td>
       <td>37.0</td>
       <td>30.000000</td>
-      <td>-0.541667</td>
-      <td>0.405405</td>
+      <td>0.351351</td>
+      <td>0.711538</td>
+      <td>דרך מנחם בגין-מסוף-מודיעין מכבים רעות&lt;-&gt;עיריית...</td>
     </tr>
     <tr>
       <th>4202</th>
@@ -15058,8 +15144,9 @@ Netanya Thu: 0.07
       <td>15.434783</td>
       <td>39.0</td>
       <td>23.666667</td>
-      <td>-0.533333</td>
-      <td>0.410256</td>
+      <td>0.347826</td>
+      <td>0.709091</td>
+      <td>מסוף אגד ביג כרמיאל-כרמיאל&lt;-&gt;ביג כרמיאל/מרכז מ...</td>
     </tr>
     <tr>
       <th>10647</th>
@@ -15068,8 +15155,9 @@ Netanya Thu: 0.07
       <td>26.730769</td>
       <td>26.0</td>
       <td>40.882353</td>
-      <td>-0.529412</td>
       <td>0.346154</td>
+      <td>0.742857</td>
+      <td>בנייני האומה/שז''ר-ירושלים&lt;-&gt;מרכז מסחרי/אגן הא...</td>
     </tr>
     <tr>
       <th>12392</th>
@@ -15078,8 +15166,9 @@ Netanya Thu: 0.07
       <td>14.875000</td>
       <td>50.0</td>
       <td>22.741935</td>
-      <td>-0.528870</td>
-      <td>0.440000</td>
+      <td>0.345922</td>
+      <td>0.694444</td>
+      <td>רב החובל/אדם-ירושלים&lt;-&gt;בנייני האומה-ירושלים-1#</td>
     </tr>
     <tr>
       <th>12403</th>
@@ -15088,8 +15177,9 @@ Netanya Thu: 0.07
       <td>13.090909</td>
       <td>53.0</td>
       <td>20.000000</td>
-      <td>-0.527778</td>
-      <td>0.377358</td>
+      <td>0.345455</td>
+      <td>0.726027</td>
+      <td>מסוף אגד/כנפי נשרים-ירושלים&lt;-&gt;מסוף אגד/בנבנישת...</td>
     </tr>
     <tr>
       <th>13389</th>
@@ -15098,8 +15188,9 @@ Netanya Thu: 0.07
       <td>13.557692</td>
       <td>47.0</td>
       <td>20.571429</td>
-      <td>-0.517325</td>
-      <td>0.425532</td>
+      <td>0.340946</td>
+      <td>0.701493</td>
+      <td>השיטה/מגרשי טניס-נשר&lt;-&gt;ת. מרכזית חוף הכרמל/הור...</td>
     </tr>
     <tr>
       <th>2141</th>
@@ -15108,8 +15199,9 @@ Netanya Thu: 0.07
       <td>15.853659</td>
       <td>37.0</td>
       <td>24.000000</td>
-      <td>-0.513846</td>
-      <td>0.405405</td>
+      <td>0.339431</td>
+      <td>0.711538</td>
+      <td>ת. מרכזית נתניה-נתניה&lt;-&gt;ת. מרכזית נתניה-נתניה-3#</td>
     </tr>
     <tr>
       <th>12394</th>
@@ -15118,8 +15210,9 @@ Netanya Thu: 0.07
       <td>13.226415</td>
       <td>56.0</td>
       <td>20.000000</td>
-      <td>-0.512126</td>
-      <td>0.375000</td>
+      <td>0.338679</td>
+      <td>0.727273</td>
+      <td>בנייני האומה/שדרות שז''ר-ירושלים&lt;-&gt;רב החובל/אד...</td>
     </tr>
     <tr>
       <th>1128</th>
@@ -15128,8 +15221,9 @@ Netanya Thu: 0.07
       <td>11.076923</td>
       <td>62.0</td>
       <td>16.744186</td>
-      <td>-0.511628</td>
-      <td>0.451613</td>
+      <td>0.338462</td>
+      <td>0.688889</td>
+      <td>מסוף שניידר-פתח תקווה&lt;-&gt;בן ציון גליס/צבי ברגמן...</td>
     </tr>
     <tr>
       <th>965</th>
@@ -15138,8 +15232,9 @@ Netanya Thu: 0.07
       <td>13.692308</td>
       <td>54.0</td>
       <td>20.588235</td>
-      <td>-0.503635</td>
-      <td>0.351852</td>
+      <td>0.334945</td>
+      <td>0.739726</td>
+      <td>ת.מרכזית ת''א ק.7/רציפים-תל אביב יפו&lt;-&gt;מסוף יה...</td>
     </tr>
     <tr>
       <th>1256</th>
@@ -15148,18 +15243,9 @@ Netanya Thu: 0.07
       <td>32.857143</td>
       <td>20.0</td>
       <td>49.285714</td>
-      <td>-0.500000</td>
-      <td>0.550000</td>
-    </tr>
-    <tr>
-      <th>10512</th>
-      <td>3</td>
-      <td>95.0</td>
-      <td>10.909091</td>
-      <td>70.0</td>
-      <td>16.363636</td>
-      <td>-0.500000</td>
-      <td>0.357143</td>
+      <td>0.333333</td>
+      <td>0.645161</td>
+      <td>אלכרום/יציאה-נצרת&lt;-&gt;בית ספר נעמ''ת-נצרת-2#</td>
     </tr>
     <tr>
       <th>850</th>
@@ -15168,28 +15254,20 @@ Netanya Thu: 0.07
       <td>20.000000</td>
       <td>39.0</td>
       <td>30.000000</td>
-      <td>-0.500000</td>
-      <td>0.358974</td>
+      <td>0.333333</td>
+      <td>0.735849</td>
+      <td>ת. מרכזית עפולה/רציפים-עפולה&lt;-&gt;צוקית/טבלן-עפול...</td>
     </tr>
     <tr>
-      <th>15153</th>
-      <td>14</td>
+      <th>849</th>
+      <td>2</td>
       <td>57.0</td>
       <td>20.000000</td>
       <td>39.0</td>
       <td>30.000000</td>
-      <td>-0.500000</td>
-      <td>0.461538</td>
-    </tr>
-    <tr>
-      <th>16713</th>
-      <td>3</td>
-      <td>46.0</td>
-      <td>20.000000</td>
-      <td>34.0</td>
-      <td>30.000000</td>
-      <td>-0.500000</td>
-      <td>0.352941</td>
+      <td>0.333333</td>
+      <td>0.684211</td>
+      <td>כפר דחי-דחי&lt;-&gt;ת. מרכזית עפולה/הורדה-עפולה-20</td>
     </tr>
     <tr>
       <th>16712</th>
@@ -15198,38 +15276,64 @@ Netanya Thu: 0.07
       <td>20.000000</td>
       <td>34.0</td>
       <td>30.000000</td>
-      <td>-0.500000</td>
-      <td>0.411765</td>
+      <td>0.333333</td>
+      <td>0.708333</td>
+      <td>איצטדיון כדורגל/וייצמן-נתיבות&lt;-&gt;ת. רכבת נתיבות...</td>
     </tr>
     <tr>
-      <th>19615</th>
-      <td>29</td>
-      <td>43.0</td>
+      <th>16713</th>
+      <td>3</td>
+      <td>46.0</td>
       <td>20.000000</td>
-      <td>31.0</td>
+      <td>34.0</td>
       <td>30.000000</td>
-      <td>-0.500000</td>
-      <td>0.387097</td>
+      <td>0.333333</td>
+      <td>0.739130</td>
+      <td>ת. רכבת נתיבות-נתיבות&lt;-&gt;בעלי המלאכה/שד.וייצמן-...</td>
     </tr>
     <tr>
-      <th>16559</th>
-      <td>1</td>
-      <td>47.0</td>
+      <th>11108</th>
+      <td>9</td>
+      <td>54.0</td>
       <td>20.000000</td>
-      <td>33.0</td>
+      <td>36.0</td>
       <td>30.000000</td>
-      <td>-0.500000</td>
-      <td>0.424242</td>
+      <td>0.333333</td>
+      <td>0.666667</td>
+      <td>שח''ל/הרצוג-ירושלים&lt;-&gt;בנייני האומה-ירושלים-2ד</td>
     </tr>
     <tr>
-      <th>16561</th>
-      <td>1</td>
-      <td>47.0</td>
+      <th>16709</th>
+      <td>5</td>
+      <td>46.0</td>
       <td>20.000000</td>
-      <td>33.0</td>
+      <td>34.0</td>
       <td>30.000000</td>
-      <td>-0.500000</td>
-      <td>0.424242</td>
+      <td>0.333333</td>
+      <td>0.739130</td>
+      <td>דרך הטייסים/דרך בוזגלו-אופקים&lt;-&gt;ת. רכבת אופקים...</td>
+    </tr>
+    <tr>
+      <th>11107</th>
+      <td>9</td>
+      <td>54.0</td>
+      <td>20.000000</td>
+      <td>36.0</td>
+      <td>30.000000</td>
+      <td>0.333333</td>
+      <td>0.666667</td>
+      <td>ביטוח לאומי-ירושלים&lt;-&gt;שח''ל/הרצוג-ירושלים-1ד</td>
+    </tr>
+    <tr>
+      <th>16704</th>
+      <td>3</td>
+      <td>46.0</td>
+      <td>20.000000</td>
+      <td>34.0</td>
+      <td>30.000000</td>
+      <td>0.333333</td>
+      <td>0.739130</td>
+      <td>ת. רכבת אופקים-אופקים&lt;-&gt;דרך הטייסים/דרך בוזגלו...</td>
     </tr>
   </tbody>
 </table>
@@ -15238,52 +15342,6 @@ Netanya Thu: 0.07
 
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">conc</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[60]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(1009, 6)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">feed26</span><span class="o">.</span><span class="n">routes</span><span class="p">[</span><span class="n">feed26</span><span class="o">.</span><span class="n">routes</span><span class="o">.</span><span class="n">route_id</span><span class="o">==</span><span class="s1">&#39;2184&#39;</span><span class="p">]</span>
-</pre></div>
-
-</div>
 </div>
 </div>
 
