@@ -5,42 +5,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://simplistic.me/</loc>
-<lastmod>2018-05-13T20:14:39-00:00</lastmod>
+<lastmod>2018-05-13T21:56:38-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/archives.html</loc>
-<lastmod>2018-05-13T20:14:39-00:00</lastmod>
+<lastmod>2018-05-13T21:56:38-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/tags.html</loc>
-<lastmod>2018-05-13T20:14:39-00:00</lastmod>
+<lastmod>2018-05-13T21:56:38-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/categories.html</loc>
-<lastmod>2018-05-13T20:14:39-00:00</lastmod>
+<lastmod>2018-05-13T21:56:38-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/pages/about.html</loc>
-<lastmod>2018-05-13T20:14:39-00:00</lastmod>
+<lastmod>2018-05-13T21:56:38-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/eurovision-2018-explorations.html</loc>
-<lastmod>2018-05-13T20:14:00+03:00</lastmod>
+<lastmod>2018-05-13T21:56:00+03:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -110,28 +110,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://simplistic.me/category/posts.html</loc>
-<lastmod>2018-05-13T20:14:00+02:21</lastmod>
+<lastmod>2018-05-13T21:56:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/tag/eurovision.html</loc>
-<lastmod>2018-05-13T20:14:00+02:21</lastmod>
+<lastmod>2018-05-13T21:56:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/tag/pandas.html</loc>
-<lastmod>2018-05-13T20:14:00+02:21</lastmod>
+<lastmod>2018-05-13T21:56:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://simplistic.me/tag/networkx.html</loc>
-<lastmod>2018-05-13T20:14:00+02:21</lastmod>
+<lastmod>2018-05-13T21:56:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -313,7 +313,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://simplistic.me/author/dan-bareket.html</loc>
-<lastmod>2018-05-13T20:14:00+02:21</lastmod>
+<lastmod>2018-05-13T21:56:00+02:21</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
