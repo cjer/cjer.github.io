@@ -11851,17 +11851,14 @@ jQuery(document).ready(function($) {
             <p>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[126]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">qgrid</span>
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-
-<span class="n">qgrid</span><span class="o">.</span><span class="n">enable</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -11979,16 +11976,15 @@ jQuery(document).ready(function($) {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="prompt input_prompt">In&nbsp;[127]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">qgrid</span><span class="o">.</span><span class="n">set_grid_option</span><span class="p">(</span><span class="s1">&#39;maxVisibleRows&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-
-<span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Participants&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]][</span><span class="n">df</span><span class="o">.</span><span class="n">Participants</span><span class="o">==</span><span class="s1">&#39;Israel&#39;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Participants&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]][</span><span class="n">df</span><span class="o">.</span><span class="n">Participants</span><span class="o">==</span><span class="s1">&#39;Israel&#39;</span><span class="p">]</span>
  <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">jury_avg_rank</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">A</span><span class="o">+</span><span class="n">x</span><span class="o">.</span><span class="n">B</span><span class="o">+</span><span class="n">x</span><span class="o">.</span><span class="n">C</span><span class="o">+</span><span class="n">x</span><span class="o">.</span><span class="n">D</span><span class="o">+</span><span class="n">x</span><span class="o">.</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
  <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Antisemitism</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">jury_avg_rank</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
  <span class="o">.</span><span class="n">reset_index</span><span class="p">()[[</span><span class="s1">&#39;level_0&#39;</span><span class="p">,</span> <span class="s1">&#39;jury_avg_rank&#39;</span><span class="p">,</span> <span class="s1">&#39;Antisemitism&#39;</span><span class="p">]]</span>
  <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;level_0&#39;</span><span class="p">:</span> <span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;jury_avg_rank&#39;</span><span class="p">:</span> <span class="s1">&#39;Jury Average Ranking&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span>
+ <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Antisemitism&#39;</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -12002,22 +11998,257 @@ jQuery(document).ready(function($) {
 
 <div class="output_area">
 
-<div class="prompt"></div>
+<div class="prompt output_prompt">Out[127]:</div>
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
- 
- 
-<div id="281bd252-955f-413a-8174-a711732d8e1b"></div>
-<div class="output_subarea output_widget_view ">
-<script type="text/javascript">
-var element = $('#281bd252-955f-413a-8174-a711732d8e1b');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "2fbcc8b5397a43b09858c126f1741568", "version_major": 2, "version_minor": 0}
-</script>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Jury Average Ranking</th>
+      <th>Antisemitism</th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Estonia</th>
+      <td>20.4</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Poland</th>
+      <td>20.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>Belarus</th>
+      <td>17.2</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>Norway</th>
+      <td>16.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>Montenegro</th>
+      <td>15.6</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>Slovenia</th>
+      <td>15.4</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>Latvia</th>
+      <td>14.8</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>F.Y.R. Macedonia</th>
+      <td>13.8</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>Romania</th>
+      <td>13.0</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>Switzerland</th>
+      <td>12.4</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>Serbia</th>
+      <td>11.6</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>Azerbaijan</th>
+      <td>11.4</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>Portugal</th>
+      <td>11.0</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>10.2</td>
+      <td>14.0</td>
+    </tr>
+    <tr>
+      <th>The Netherlands</th>
+      <td>9.8</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td>9.6</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>Cyprus</th>
+      <td>9.2</td>
+      <td>17.5</td>
+    </tr>
+    <tr>
+      <th>Hungary</th>
+      <td>9.2</td>
+      <td>17.5</td>
+    </tr>
+    <tr>
+      <th>Georgia</th>
+      <td>8.6</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>8.2</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>Croatia</th>
+      <td>7.4</td>
+      <td>21.0</td>
+    </tr>
+    <tr>
+      <th>Greece</th>
+      <td>7.2</td>
+      <td>22.5</td>
+    </tr>
+    <tr>
+      <th>Moldova</th>
+      <td>7.2</td>
+      <td>22.5</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>7.0</td>
+      <td>24.5</td>
+    </tr>
+    <tr>
+      <th>Bulgaria</th>
+      <td>7.0</td>
+      <td>24.5</td>
+    </tr>
+    <tr>
+      <th>Belgium</th>
+      <td>6.8</td>
+      <td>26.0</td>
+    </tr>
+    <tr>
+      <th>Sweden</th>
+      <td>6.0</td>
+      <td>27.0</td>
+    </tr>
+    <tr>
+      <th>Ireland</th>
+      <td>5.8</td>
+      <td>28.5</td>
+    </tr>
+    <tr>
+      <th>Malta</th>
+      <td>5.8</td>
+      <td>28.5</td>
+    </tr>
+    <tr>
+      <th>Albania</th>
+      <td>5.4</td>
+      <td>30.0</td>
+    </tr>
+    <tr>
+      <th>Iceland</th>
+      <td>5.0</td>
+      <td>31.0</td>
+    </tr>
+    <tr>
+      <th>Lithuania</th>
+      <td>4.8</td>
+      <td>32.0</td>
+    </tr>
+    <tr>
+      <th>Russia</th>
+      <td>4.0</td>
+      <td>33.0</td>
+    </tr>
+    <tr>
+      <th>Ukraine</th>
+      <td>3.8</td>
+      <td>34.5</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>3.8</td>
+      <td>34.5</td>
+    </tr>
+    <tr>
+      <th>Finland</th>
+      <td>3.0</td>
+      <td>36.5</td>
+    </tr>
+    <tr>
+      <th>Armenia</th>
+      <td>3.0</td>
+      <td>36.5</td>
+    </tr>
+    <tr>
+      <th>Spain</th>
+      <td>2.6</td>
+      <td>38.0</td>
+    </tr>
+    <tr>
+      <th>San Marino</th>
+      <td>2.4</td>
+      <td>39.5</td>
+    </tr>
+    <tr>
+      <th>France</th>
+      <td>2.4</td>
+      <td>39.5</td>
+    </tr>
+    <tr>
+      <th>Austria</th>
+      <td>2.2</td>
+      <td>41.0</td>
+    </tr>
+    <tr>
+      <th>Czech Republic</th>
+      <td>1.6</td>
+      <td>42.0</td>
+    </tr>
+    <tr>
+      <th>Israel</th>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -12028,7 +12259,7 @@ var element = $('#281bd252-955f-413a-8174-a711732d8e1b');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[123]:</div>
+<div class="prompt input_prompt">In&nbsp;[128]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Participants&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]][</span><span class="n">df</span><span class="o">.</span><span class="n">Participants</span><span class="o">==</span><span class="s1">&#39;Israel&#39;</span><span class="p">]</span>
@@ -12048,22 +12279,482 @@ var element = $('#281bd252-955f-413a-8174-a711732d8e1b');
 
 <div class="output_area">
 
-<div class="prompt"></div>
+<div class="prompt output_prompt">Out[128]:</div>
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
- 
- 
-<div id="b3563460-2637-4e62-92b7-68fef03de452"></div>
-<div class="output_subarea output_widget_view ">
-<script type="text/javascript">
-var element = $('#b3563460-2637-4e62-92b7-68fef03de452');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "f96d2a1d6f5a4fbbbbd3ee275bf7d477", "version_major": 2, "version_minor": 0}
-</script>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Jury Average Ranking</th>
+      <th>Antisemitism</th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+      <th>E</th>
+    </tr>
+    <tr>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Albania</th>
+      <td>5.4</td>
+      <td>30.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>4.0</td>
+      <td>6.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>Armenia</th>
+      <td>3.0</td>
+      <td>36.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>Australia</th>
+      <td>7.0</td>
+      <td>24.0</td>
+      <td>9.0</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>Austria</th>
+      <td>2.2</td>
+      <td>41.0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>Azerbaijan</th>
+      <td>11.4</td>
+      <td>12.0</td>
+      <td>11.0</td>
+      <td>10.0</td>
+      <td>12.0</td>
+      <td>12.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>Belarus</th>
+      <td>17.2</td>
+      <td>3.0</td>
+      <td>23.0</td>
+      <td>16.0</td>
+      <td>10.0</td>
+      <td>14.0</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>Belgium</th>
+      <td>6.8</td>
+      <td>26.0</td>
+      <td>5.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>Bulgaria</th>
+      <td>7.0</td>
+      <td>24.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>10.0</td>
+      <td>7.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>Croatia</th>
+      <td>7.4</td>
+      <td>21.0</td>
+      <td>6.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>22.0</td>
+    </tr>
+    <tr>
+      <th>Cyprus</th>
+      <td>9.2</td>
+      <td>17.0</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>10.0</td>
+      <td>8.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>Czech Republic</th>
+      <td>1.6</td>
+      <td>42.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Denmark</th>
+      <td>9.6</td>
+      <td>16.0</td>
+      <td>13.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+      <td>16.0</td>
+      <td>13.0</td>
+    </tr>
+    <tr>
+      <th>Estonia</th>
+      <td>20.4</td>
+      <td>1.0</td>
+      <td>24.0</td>
+      <td>22.0</td>
+      <td>7.0</td>
+      <td>24.0</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>F.Y.R. Macedonia</th>
+      <td>13.8</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>12.0</td>
+      <td>2.0</td>
+      <td>24.0</td>
+      <td>24.0</td>
+    </tr>
+    <tr>
+      <th>Finland</th>
+      <td>3.0</td>
+      <td>36.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>10.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>France</th>
+      <td>2.4</td>
+      <td>39.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>Georgia</th>
+      <td>8.6</td>
+      <td>19.0</td>
+      <td>8.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>Germany</th>
+      <td>10.2</td>
+      <td>14.0</td>
+      <td>5.0</td>
+      <td>16.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>Greece</th>
+      <td>7.2</td>
+      <td>22.0</td>
+      <td>2.0</td>
+      <td>7.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>Hungary</th>
+      <td>9.2</td>
+      <td>17.0</td>
+      <td>14.0</td>
+      <td>13.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>7.0</td>
+    </tr>
+    <tr>
+      <th>Iceland</th>
+      <td>5.0</td>
+      <td>31.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>8.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>Ireland</th>
+      <td>5.8</td>
+      <td>28.0</td>
+      <td>9.0</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>10.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>Israel</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Italy</th>
+      <td>8.2</td>
+      <td>20.0</td>
+      <td>3.0</td>
+      <td>8.0</td>
+      <td>11.0</td>
+      <td>9.0</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>Latvia</th>
+      <td>14.8</td>
+      <td>7.0</td>
+      <td>2.0</td>
+      <td>23.0</td>
+      <td>18.0</td>
+      <td>21.0</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>Lithuania</th>
+      <td>4.8</td>
+      <td>32.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>10.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>Malta</th>
+      <td>5.8</td>
+      <td>28.0</td>
+      <td>7.0</td>
+      <td>6.0</td>
+      <td>8.0</td>
+      <td>4.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>Moldova</th>
+      <td>7.2</td>
+      <td>22.0</td>
+      <td>24.0</td>
+      <td>4.0</td>
+      <td>3.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>Montenegro</th>
+      <td>15.6</td>
+      <td>5.0</td>
+      <td>26.0</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>18.0</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>Norway</th>
+      <td>16.0</td>
+      <td>4.0</td>
+      <td>23.0</td>
+      <td>12.0</td>
+      <td>13.0</td>
+      <td>12.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>Poland</th>
+      <td>20.0</td>
+      <td>2.0</td>
+      <td>19.0</td>
+      <td>12.0</td>
+      <td>24.0</td>
+      <td>20.0</td>
+      <td>25.0</td>
+    </tr>
+    <tr>
+      <th>Portugal</th>
+      <td>11.0</td>
+      <td>13.0</td>
+      <td>9.0</td>
+      <td>10.0</td>
+      <td>13.0</td>
+      <td>7.0</td>
+      <td>16.0</td>
+    </tr>
+    <tr>
+      <th>Romania</th>
+      <td>13.0</td>
+      <td>9.0</td>
+      <td>9.0</td>
+      <td>10.0</td>
+      <td>13.0</td>
+      <td>25.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <th>Russia</th>
+      <td>4.0</td>
+      <td>33.0</td>
+      <td>3.0</td>
+      <td>3.0</td>
+      <td>6.0</td>
+      <td>3.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>San Marino</th>
+      <td>2.4</td>
+      <td>39.0</td>
+      <td>6.0</td>
+      <td>2.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>Serbia</th>
+      <td>11.6</td>
+      <td>11.0</td>
+      <td>1.0</td>
+      <td>17.0</td>
+      <td>11.0</td>
+      <td>8.0</td>
+      <td>21.0</td>
+    </tr>
+    <tr>
+      <th>Slovenia</th>
+      <td>15.4</td>
+      <td>6.0</td>
+      <td>23.0</td>
+      <td>22.0</td>
+      <td>2.0</td>
+      <td>11.0</td>
+      <td>19.0</td>
+    </tr>
+    <tr>
+      <th>Spain</th>
+      <td>2.6</td>
+      <td>38.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>Sweden</th>
+      <td>6.0</td>
+      <td>27.0</td>
+      <td>3.0</td>
+      <td>10.0</td>
+      <td>9.0</td>
+      <td>3.0</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>Switzerland</th>
+      <td>12.4</td>
+      <td>10.0</td>
+      <td>13.0</td>
+      <td>2.0</td>
+      <td>7.0</td>
+      <td>17.0</td>
+      <td>23.0</td>
+    </tr>
+    <tr>
+      <th>The Netherlands</th>
+      <td>9.8</td>
+      <td>15.0</td>
+      <td>5.0</td>
+      <td>9.0</td>
+      <td>16.0</td>
+      <td>1.0</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>Ukraine</th>
+      <td>3.8</td>
+      <td>34.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>8.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>United Kingdom</th>
+      <td>3.8</td>
+      <td>34.0</td>
+      <td>5.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>4.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </div>
