@@ -11869,10 +11869,11 @@ jQuery(document).ready(function($) {
 <h2 id="Installation">Installation<a class="anchor-link" href="#Installation">&#182;</a></h2><p>TODO: Go to open-bus README (this needs to be there)</p>
 <ol>
 <li>Install Anaconda3</li>
-<li>Create a (call it openbus or something indicative): <code>conda create -n openbus</code></li>
-<li>Install everything on requirements.txt<ol>
-<li>partridge and peartree require pip. </li>
-<li>the rest you should install using <code>conda install</code></li>
+<li>Create a virtual environment (call it openbus or something indicative): <code>conda create -n openbus</code></li>
+<li>Clone <a href="https://github.com/cjer/open-bus-explore">open-bus-explore</a> - <code>git clone https://github.com/cjer/open-bus-explore</code></li>
+<li>Install everything in <a href="https://github.com/cjer/open-bus-explore/blob/master/requirements.txt">requirements.txt</a><ol>
+<li>partridge, peartree and GTFSTK require <code>pip install</code></li>
+<li>the rest you should install using <code>conda install -c conda-forge &lt;package_name&gt;</code></li>
 </ol>
 </li>
 <li>Run JupyterLab or Jupyter Notebook</li>
@@ -12896,10 +12897,10 @@ Done.
 
 
 
-<div id="bd89c19b-f40d-4cb2-9787-0fd9a85194e3"></div>
+<div id="21541298-a264-4a01-9d40-440f5b5aacaf"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#bd89c19b-f40d-4cb2-9787-0fd9a85194e3');
+var element = $('#21541298-a264-4a01-9d40-440f5b5aacaf');
 var spec = {"config": {"view": {"width": 400, "height": 300}}, "layer": [{"data": {"url": "altair-data-207d55d7-3f5c-40fd-b29f-afae37f3f238.json", "format": {"type": "json"}}, "mark": "line", "encoding": {"color": {"type": "nominal", "field": "zone_name", "legend": null}, "tooltip": {"type": "nominal", "field": "zone_name"}, "x": {"type": "temporal", "axis": {"format": "%H:%M"}, "field": "time"}, "y": {"type": "quantitative", "field": "trips"}}, "selection": {"selector035": {"type": "interval", "bind": "scales", "encodings": ["x", "y"]}}}, {"data": {"url": "altair-data-004affd1-27da-4ac5-9d3e-36389bee7f7f.json", "format": {"type": "json"}}, "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 4, "fontSize": 12}, "encoding": {"text": {"type": "nominal", "field": "zone_name"}, "x": {"type": "temporal", "field": "time"}, "y": {"type": "quantitative", "field": "trips"}}, "transform": [{"filter": "(((datum.trips === 8785) || (datum.trips === 5347)) || (datum.trips === 1985))"}]}], "height": 400, "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v2.4.1.json"};
 var opt = {};
 var selector = "#c376271e-5cd9-4628-8904-22bdfd92cde5";
